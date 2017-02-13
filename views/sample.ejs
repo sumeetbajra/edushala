@@ -1,0 +1,24 @@
+﻿
+<html>
+<head>
+    <title>Edushala - Home</title>
+</head>
+<body>
+<% include common/header %>
+
+<div class="container">
+    <div class="row">
+        My name is <%=person.name%>. I am <%=person.age%> years old.<br />
+        These are my hobbies:<br />
+        <ul>
+            <% hobbies.forEach(function(hobby) { %>
+            <li><%= hobby.name %></li>
+            <% }); %>
+        </ul>
+        This application version defined in config file is <%=version%>
+    </div>
+</div>
+
+<% include common/footer %>
+</body>
+</html>

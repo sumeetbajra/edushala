@@ -1,0 +1,112 @@
+
+<html>
+<head>
+    <% include common/head %>
+    <!--additional JS and css-->
+    <script src="/js/api/misc.js" type="text/javascript"></script>
+    <script src="/js/app/pages/contact.js" type="text/javascript"></script>
+</head>
+<body>
+<header id="header">
+    <% include common/header %>
+</header>
+
+<section id="content_body">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="about-widget clearfix">
+                        <span class="fa fa-map-marker"></span>
+                        <div class="widget-title">
+                            <h3>Location</h3>
+                            <hr>
+                        </div><!-- end title -->
+
+                        <div class="education-widget">
+                            <ul>
+                                <li>
+                                    <h3> KUPONDOLE, LALITPUR</h3>
+                                    <p>Jwagal Chowk</p>
+                                </li>
+                            </ul><!-- end ul -->
+                        </div><!-- end education-widget -->
+                    </div><!-- end about-widget -->
+                </div><!-- end col -->
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="about-widget clearfix">
+                        <span class="fa fa-envelope"></span>
+                        <div class="widget-title">
+                            <h3>Email</h3>
+                            <hr>
+                        </div><!-- end title -->
+
+                        <div class="education-widget">
+                            <ul>
+                                <li>
+                                    <h3>team@edushala.com</h3>
+                                    <p>Contact with us when you need anything.
+                                </li>
+                            </ul><!-- end ul -->
+                        </div><!-- end education-widget -->
+                    </div><!-- end about-widget -->
+                </div><!-- end col -->
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="about-widget clearfix">
+                        <span class="fa fa-phone"></span>
+                        <div class="widget-title">
+                            <h3>Phone</h3>
+                            <hr>
+                        </div><!-- end title -->
+
+                        <div class="education-widget">
+                            <ul>
+                                <li>
+                                    <h3> 01 55 28 766</h3>
+                                    <p>Also contact with us on skype : <a href="#">@edushala.</a></p>
+                                </li>
+                            </ul><!-- end ul -->
+                        </div><!-- end education-widget -->
+                    </div><!-- end about-widget -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+            <div class="space-top-small"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe style="border-radius:10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0060502338797!2d85.31619201514371!3d27.68620788280066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19b5c45b4a65%3A0xc689e4c985937ba6!2sEdushala!5e0!3m2!1sen!2snp!4v1482296641786" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="big-title text-center contact-heading">
+                        <h2>Get In Touch</h2>
+                        <div id="info" style="margin-top: 20px"></div>
+                    </div><!-- end title -->
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Message:</label>
+                            <textarea style="resize:vertical;" class="form-control" id="query" placeholder="Enter your query..." rows="3"></textarea>
+                        </div>
+                        <button type="button" id="btnSendEmail" class="btn btn-edushala">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end section -->
+</section>
+
+
+<footer id="footer">
+    <% include common/footer %>
+</footer>
+
+</body>
+</html>

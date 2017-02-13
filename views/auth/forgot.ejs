@@ -1,0 +1,65 @@
+
+<html>
+<head>
+    <% include ../common/head %>
+    <script src="/js/api/user.js" type="text/javascript"></script>
+    <!--additional JS and css-->
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                api.user.forgot({
+                    data: {email: $('#email').val()},
+                    success: function () {
+                        location.href = 'forgot/checkemail'
+                    },
+                    error: function (d) {
+                        $('#message-text').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                       // alert(d.message);
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<header id="header">
+    <% include ../common/header %>
+</header>
+
+<section id="content_body">
+    <div class="section lightbg onecourse">
+        <div class="container">
+            <div class="text-center">
+                <h2><strong>Get your password</strong></h2>
+            </div><!-- end title -->
+            <div class="section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div id="message-text"></div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="cname">Email Address:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Please enter your email address to get verification code.">
+                                </div>
+                                <button type="button" class="btn btn-edushala" id="submit">Submit</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+
+</section>
+
+
+<footer id="footer">
+    <% include ../common/footer %>
+</footer>
+
+</body>
+</html>

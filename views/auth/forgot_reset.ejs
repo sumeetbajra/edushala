@@ -1,0 +1,89 @@
+
+<html>
+<head>
+    <% include ../common/head %>
+    <script src="/js/api/user.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $('#btnReset').on("click", function () {
+                var pwd = $('#pwd').val();
+                if(!pwd)
+                {
+                    $( "#msg" ).html( '<div class="text-danger"><strong>Password can not be empty.</strong></div>' );
+                    return;
+                }
+                if(pwd!=$('#pwd2').val()){
+                    $( "#msg" ).html( '<div class="text-danger"><strong>Password did not match. Please try again</strong></div>' );
+                    return;
+                }
+                var data = {
+                    code: $('#code').val(),
+                    password: pwd
+                };
+                api.user.change_password({
+                    data: data,
+                    success: function (data) {
+                        sessionMgr.set('isLoggedIn', true);
+                        sessionMgr.set('user', data);
+                        sessionMgr.makeSecure(true);
+                        location.replace('/forgot/thankyou');
+                    },
+                    error: function (data) {
+                        $( "#msg" ).html( '<div class="text-danger"><strong>' + data.message + '</strong></div>' );
+                    }
+                });
+            });
+        });
+    </script>
+    <!--additional JS and css-->
+</head>
+<body>
+<header id="header">
+    <% include ../common/header %>
+</header>
+
+<section id="content_body">
+    <div class="section lightbg onecourse">
+        <div class="container">
+            <div class="text-center">
+                <h2><strong>Reset your password</strong></h2>
+            </div><!-- end title -->
+            <div class="section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div id="msg"></div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="cname">Verification code:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="code" placeholder="Please enter your temporary verification code" value="<%=verify_code%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter a strong password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Retype password:</label>
+                                    <input type="password" class="form-control" id="pwd2" placeholder="Reenter the password">
+                                </div>
+                                <button type="button" id="btnReset" class="btn btn-edushala">Submit</button>
+                            </form>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end section -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+
+</section>
+
+
+<footer id="footer">
+    <% include ../common/footer %>
+</footer>
+
+</body>
+</html>

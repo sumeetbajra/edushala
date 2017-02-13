@@ -1,0 +1,47 @@
+﻿{
+    "rs": {
+        "secret": "T$mp1234", //user for session token and various other encryption functions. Change it to invalid existing tokens. Keep it secret;
+        "user": {
+            "db": {
+                "conn": {
+                    "name": "rs.user",
+                    "host": "localhost",
+                    "port": "1433",
+                    "user": "develop",
+                    "password": "T$mp1234",
+                    "database": "rs_users"
+                }
+            }
+        },
+        "raven": {
+            "carriers": {
+                "default": {
+                    "type": "email",
+                    "config": {
+                        "service": "gmail",
+                        "auth": {
+                            "user": "service@rumsan.com",
+                            "pass": "T$mp9670"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "app": {
+        "db": {
+            "conn": {
+                "name": "default",
+                "host": "localhost",
+                "port": "1433",
+                "user": "develop",
+                "password": "T$mp1234",
+                "database": "ezzo_dev"
+            }
+        },
+        "data_path":"S:\\edushala\\localdata"
+    }
+}
+
+
+
