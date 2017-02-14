@@ -70,13 +70,6 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
     min-height: 500px;
 }
 
-.default-header {
-    background-color: #666666;
-}
-
-.normal-header.affix {
-    background-color: #666666 !important;
-}
 .course-catalog  {
     width:100%;
     height: 290px;
@@ -103,7 +96,7 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
     color: #ffffff;
 }
 .edu-green {
-    color: #69aa46!important;
+    color: #99cc66!important;
 }
 body {
     font-size: 15px;
@@ -117,4 +110,18 @@ body {
 }
 .onecourse {
     padding: 60px 0 !important;
+}
+
+.btn-edushala {
+    border-radius: 0 !important;
+    background-color: #99cc66;
+    color: #ffffff !important;
+    padding: 10px 15px;
+    border: 0;
+}
+
+.btn-edushala:hover,
+.btn-edushala:focus {
+    background-color: #99cc66 !important;
+    color: #fff !important;
 }

@@ -25,12 +25,12 @@
                         <div class="video-wrapper course-catalog course-widget clearfix">
                             <div class="post-media">
                                 <div class="entry">
-                                    <img alt="" class="img-responsive" src="http://lorempixel.com/400/210">
+                                    <img alt="" class="img-responsive" src="<%= courses[i].pictureUrl %>">
                                     <div></div>
                                 </div>
                             </div><!-- end media -->
                             <div class="widget-title edu-box clearfix">
-                                <h3><a href="/learn/'+%20v.class_uuid%20+%20'"><%= courses[i].name %></a></h3>
+                                <h3><a href="/learn/<%= courses[i]._id %>"><%= courses[i].name %></a></h3>
                                 <hr>
                                 <div class="bottom-line clearfix">
                                     <div class="pull-left">

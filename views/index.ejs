@@ -33,8 +33,33 @@
                     <hr class="customhr customhrcenter">
                 </div><!-- end title -->
 
-                <div class="row course-list" id="popular_courses">
-
+                <div id="course_catalog" class="row course-list">
+                    <% for (var i = 0; i < 6; i++) { %>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeIn">
+                        <div class="video-wrapper course-catalog course-widget clearfix">
+                            <div class="post-media">
+                                <div class="entry">
+                                    <img alt="" class="img-responsive" src="<%= courses[i].pictureUrl %>">
+                                    <div></div>
+                                </div>
+                            </div><!-- end media -->
+                            <div class="widget-title edu-box clearfix">
+                                <h3><a href="/learn/<%= courses[i]._id %>"><%= courses[i].name %></a></h3>
+                                <hr>
+                                <div class="bottom-line clearfix">
+                                    <div class="pull-left">
+                                        <a class="readmore" href="#"><%= courses[i].educator %></a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="course-single.html" class="btn btn-sm btn-inverse">
+                                            <span>Rs.</span><%= courses[i].price %>
+                                        </a>
+                                    </div>
+                                </div><!-- end bottom -->
+                            </div><!-- end title -->
+                        </div><!--widget --><!-- end col -->
+                    </div>
+                    <% } %>
                 </div><!-- end row -->
 
                 <div class="row">

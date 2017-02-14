@@ -26,8 +26,17 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/', function(req, res){
-        data.page.title = 'Edushala';
-        res.render('index', data)
+        request.get(APIConstants.COURSE, function(error, response, body) {
+            if(!error && response.statusCode === 200) {
+                var data = {
+                    page: {
+                        title: 'Edushala - Home'
+                    },
+                    courses: JSON.parse(body).result
+                }
+                res.render('index', data);
+            }
+        })
     });
 
     ctx.app.get('/dashboard', function(req, res){
@@ -79,20 +88,31 @@ module.exports = function (ctx) {
         res.render('logout_process',data);
     });
 
-    ctx.app.get('/learn/:class_uuid',function(req,res){
-        ctx.api.services.kachha.get({
-            data: {class_uuid:req.params.class_uuid},
-            success: function (results) {
+    ctx.app.get('/learn/:id',function(req,res){
+        request.get(APIConstants.COURSE, function(error, response, body) {
+            if(!error && response.statusCode === 200) {
                 var data = {
-                    page: {title: results.course.name},
-                    kachha: results
-                };
-                res.render('course_details',data);
-            },
-            failure: function (error) {
-                res.json(error)
+                    page: {
+                        title: 'Edushala - Learn'
+                    },
+                    courses: JSON.parse(body).result
+                }
+                res.render('learn', data);
             }
-        });
+        })
+        // ctx.api.services.kachha.get({
+        //     data: {class_uuid:req.params.class_uuid},
+        //     success: function (results) {
+        //         var data = {
+        //             page: {title: results.course.name},
+        //             kachha: results
+        //         };
+        //         res.render('course_details',data);
+        //     },
+        //     failure: function (error) {
+        //         res.json(error)
+        //     }
+        // });
     });
 
 
