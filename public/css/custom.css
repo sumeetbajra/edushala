@@ -13,7 +13,7 @@
 ******************************************/
 
 a {
-    color:#27ae60;
+    color:#99cc66;
     text-decoration: none;
     font-weight: bold;
 }
@@ -32,7 +32,7 @@ a {
 }
 
 div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquote .small, blockquote footer, blockquote small, .course-table .fa-question-circle, .course-table .fa-play-circle, .video-wrapper .widget-title .btn-inverse, .awards small, .colorized h3, .team-member-name span, .service-style2 h3, .conecourse hr.customhr::before, .custom_fact_item h6, .blog-wrapper .blog-meta a i, .check li .fa-circle-o, .service-list span, .about-widget span, .yamm-content li:hover a, .copyrights p a, .testibox small a, a:hover, a:focus, .fa-heart, .copyrights li:hover a {
-    color: #5cb85c !important;
+    color: #99cc66 !important;
 }
 
 .space-box {
@@ -48,10 +48,8 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
     margin-top:50px;
 }
 
-.team-member-img {
-    width:241px;
-    height: 246px;
-    overflow: hidden;
+.team-member-img img {
+    height: 240px;
 }
 
 .portfolio-thumb {
@@ -65,9 +63,6 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
     float: right;
     padding: 20px;
     margin-left: 20px;
-}
-.team-member {
-    min-height: 500px;
 }
 
 .course-catalog  {
@@ -124,4 +119,10 @@ body {
 .btn-edushala:focus {
     background-color: #99cc66 !important;
     color: #fff !important;
+}
+
+#superslides .widget:hover .alignleft, .looking-photo .centermessage .btn:hover, .looking-photo .centermessage .btn:focus, .btn-primary:hover, .btn-primary:focus {
+    background-color: #99cc66 !important;
+    border-color: #99cc66 !important;
+    color: #ffffff !important;
 }
