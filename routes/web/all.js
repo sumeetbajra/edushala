@@ -1,4 +1,6 @@
 ﻿var rs = require('../../misc/rs');
+var request = require('request');
+var APIConstants = require('../../constants/APIConstants');
 
 module.exports = function (ctx) {
 
@@ -39,8 +41,17 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/learn',function(req,res){
-        data.page.title = 'Edushala - Learn';
-        res.render('learn',data);
+        request.get(APIConstants.COURSE, function(error, response, body) {
+            if(!error && response.statusCode === 200) {
+                var data = {
+                    page: {
+                        title: 'Edushala - Learn'
+                    },
+                    courses: JSON.parse(body).result
+                }
+                res.render('learn', data);
+            }
+        })
     });
 
     ctx.app.get('/terms',function(req,res){
