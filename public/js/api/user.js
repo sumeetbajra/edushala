@@ -4,7 +4,6 @@ var ajax = function(cfg){
         return;
     }
 
-
     $.ajax({
         url: cfg.url,
         method: cfg.method || 'GET',
@@ -24,6 +23,7 @@ var ajax = function(cfg){
 };
 
 var api_user_path = "/rs/user/1/";
+var serverUrl = 'http://139.59.111.216:8081/';
 
 var api = {
     user: {
@@ -34,7 +34,8 @@ var api = {
         },
         login: function(cfg){
             cfg.method = 'POST';
-            cfg.url = '/auth';
+            cfg.url = serverUrl + 'users/login';
+            console.log(cfg.url);
             ajax(cfg)
         },
         change_password: function(cfg){
