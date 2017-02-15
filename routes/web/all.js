@@ -93,7 +93,7 @@ module.exports = function (ctx) {
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
-                        title: 'Edushala - Learn'
+                        title: 'Edushala - Course'
                     },
                     courses: JSON.parse(body).result
                 }
