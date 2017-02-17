@@ -58,17 +58,15 @@ module.exports = function (ctx) {
                             },
                             data: body.result
                 }
-                console.log(data.data);
+               // console.log(data.data);
                 if(data.data.token != null){
                       req.session.authenticated = true;
-                      req.session.user = data.data.user;
-                     /* res.render('auth/signup', {
-                        layout:false,
-                        session: req.session.user
-                      }); */
-                   //   res.locals.sessionUser = req.session.user;
-                    // console.log(res.locals.sessionUser.email);
-                      res.redirect('/login');
+                      req.session.user = data.data;
+                      console.log(req.session.user.token);
+                      res.render('get_token',{
+                          userToken:req.session.user.token,
+                          user: JSON.stringify(req.session.user)
+                      });
                 }
                 else {
                     req.flash('error', 'Username or password did not match!')

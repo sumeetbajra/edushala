@@ -53,6 +53,10 @@ module.exports = function (ctx) {
         res.render('teach/teach',data);
     });
 
+    ctx.app.get('/get-token',function(req,res){
+        res.render('get_token');
+    });
+
     ctx.app.get('/learn',function(req,res){
         request.get(APIConstants.COURSE, function(error, response, body) {
             console.log(APIConstants.COURSE);
