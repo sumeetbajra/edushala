@@ -3,7 +3,9 @@
 
 var express = require('express');
 var session = require('express-session');
+
 var path = require('path');
+var flash = require('connect-flash');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -21,7 +23,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({secret: '1234567890QWERTY', cookie: { maxAge: 60000 }}));
+app.use(session({secret: '1234567890QWERTY', cookie: { maxAge: 600000 }}));
+app.use(flash());
 
 app.use(express.static('public'));
 app.use('/static', express.static('frontend/build/static'));

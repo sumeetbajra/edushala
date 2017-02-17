@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    userDetails();
     calculatePrice();
     $( "#btnEnroll" ).click(function() {
        alert('Enroll');

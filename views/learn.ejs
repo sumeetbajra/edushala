@@ -25,7 +25,10 @@
                         <div class="video-wrapper course-catalog course-widget clearfix">
                             <div class="post-media">
                                 <div class="entry">
-                                    <img alt="" class="img-responsive" src="<%= courses[i].pictureUrl %>">
+                                    <a href="/learn/<%= courses[i]._id %>">
+                                        <img alt="" class="" height="160" src="<%= courses[i].pictureUrl %>">
+                                    </a>
+
                                     <div></div>
                                 </div>
                             </div><!-- end media -->
@@ -34,7 +37,7 @@
                                 <hr>
                                 <div class="bottom-line clearfix">
                                     <div class="pull-left">
-                                        <a class="readmore" href="#"><%= courses[i].educator %></a>
+                                        <a class="readmore" href="#"><%= courses[i].educator.firstName + ' ' + courses[i].educator.lastName  %></a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="course-single.html" class="btn btn-sm btn-inverse">
