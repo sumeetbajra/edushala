@@ -90,6 +90,11 @@ module.exports = function (ctx) {
         res.render('cms/blog',data);
     });
 
+    ctx.app.get('/blog_single',function(req,res){
+        data.page.title = 'Edushala - Blog';
+        res.render('cms/blog_single',data);
+    });
+
     ctx.app.get('/college',function(req,res){
         data.page.title = 'Edushala - Courses for College';
         res.render('college_courses',data);
