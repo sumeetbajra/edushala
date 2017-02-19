@@ -4,6 +4,7 @@
     <% include ../common/head %>
     <!--additional JS and css-->
     <script src="/js/vendors/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="/js/app/pages/add_content.js" type="text/javascript"></script>
 </head>
 <body>
 <header id="header" class="header full-width transparent fixed header-small clearfix">
@@ -29,9 +30,11 @@
                         <label for="comment">Content:</label>
                         <textarea class="form-control" name="blog_content" rows="5" id="blog_content"></textarea>
                     </div>
-                    <button type="button" class="btn btn-edushala">Submit</button>
+                    <button type="button" id="btnAddConent" class="btn btn-edushala">Submit</button>
                     <script>
                         CKEDITOR.replace( 'blog_content' );
+                        config.extraPlugins = 'imageUploader';
+                        config.imageUploadUrl = '/imgUploader/imgupload.php';
                     </script>
                 </form>
             </div>
