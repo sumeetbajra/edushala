@@ -3565,7 +3565,7 @@ h6,
 }
 
 .cssload-loader:before {
-    border: 2px solid #27ae60;
+    border: 2px solid #8bc750;
     top: -1px;
     left: -1px;
     opacity: 0;
@@ -3577,7 +3577,7 @@ h6,
 }
 
 .cssload-loader:after {
-    background-color: #27ae60;
+    background-color: #8bc750;
     animation-name: cssload-pulse-2;
     -o-animation-name: cssload-pulse-2;
     -ms-animation-name: cssload-pulse-2;
@@ -3740,4 +3740,8 @@ h6,
     body.landingpage .normal-header .navbar-nav > li > a {
         font-weight: bold !important;
     }
+
+
+
+/*end*/
 
