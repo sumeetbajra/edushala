@@ -3,7 +3,7 @@ $(document).ready(function() {
        var  username = $('#username').val();
        var  password = $('#password').val();
       if(username == 'edu_admin' && password == 'T$mp1234'){
-          location.replace('/blog');
+          location.replace('/add_content');
       }else {
           $('#msg').html('<p class="text-danger"><strong>Username or password did not match</strong></p>');
       }

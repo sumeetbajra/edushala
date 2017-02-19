@@ -85,6 +85,11 @@ module.exports = function (ctx) {
         res.render('cms/admin_login',data);
     });
 
+    ctx.app.get('/add_content',function(req,res){
+        data.page.title = 'CMS - Add Content ';
+        res.render('cms/add_content',data);
+    });
+
     ctx.app.get('/blog',function(req,res){
         data.page.title = 'Edushala - Blog';
         res.render('cms/blog',data);
