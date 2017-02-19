@@ -20,31 +20,33 @@
     <div class="section">
         <div class="container">
             <div id="course_catalog" class="row course-list">
-                <% for (var i = 0; i < courses.length; i++) { %>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeIn">
-                        <div class="video-wrapper course-catalog course-widget clearfix">
-                            <div class="post-media">
-                                <div class="entry">
-                                    <img alt="" class="img-responsive" src="<%= courses[i].pictureUrl %>">
-                                    <div></div>
+                <% for (var i = 0; i < 8; i++) { %>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeIn">
+                    <div class="video-wrapper course-catalog course-widget clearfix">
+                        <div class="post-media">
+                            <div class="entry">
+                                <a href="/learn/<%= courses[i]._id %>">
+                                    <img alt="" class="" height="160" src="<%= courses[i].pictureUrl %>">
+                                </a>
+                                <div></div>
+                            </div>
+                        </div><!-- end media -->
+                        <div class="widget-title edu-box clearfix">
+                            <h3><a href="/learn/<%= courses[i]._id %>"><%= courses[i].name %></a></h3>
+                            <hr>
+                            <div class="bottom-line clearfix">
+                                <div class="pull-left">
+                                    <a class="readmore" href="#"><%= courses[i].educator.firstName + ' ' + courses[i].educator.lastName  %></a>
                                 </div>
-                            </div><!-- end media -->
-                            <div class="widget-title edu-box clearfix">
-                                <h3><a href="/learn/<%= courses[i]._id %>"><%= courses[i].name %></a></h3>
-                                <hr>
-                                <div class="bottom-line clearfix">
-                                    <div class="pull-left">
-                                        <a class="readmore" href="#"><%= courses[i].educator %></a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="course-single.html" class="btn btn-sm btn-inverse">
-                                            <span>Rs.</span><%= courses[i].price %>
-                                        </a>
-                                    </div>
-                                </div><!-- end bottom -->
-                            </div><!-- end title -->
-                        </div><!--widget --><!-- end col -->
-                    </div>
+                                <div class="pull-right">
+                                    <a href="course-single.html" class="btn btn-sm btn-inverse">
+                                        <span>Rs.</span><%= courses[i].price %>
+                                    </a>
+                                </div>
+                            </div><!-- end bottom -->
+                        </div><!-- end title -->
+                    </div><!--widget --><!-- end col -->
+                </div>
                 <% } %>
             </div><!-- end row -->
         </div><!-- end container -->
