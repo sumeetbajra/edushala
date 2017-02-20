@@ -30,6 +30,7 @@
     </div><!-- end page-title -->
 
     <div class="section">
+        <% for (var i = 0; i < blog.length; i++) { %>
         <div class="container">
             <div class="row">
                 <div class="content col-md-9 col-sm-12">
@@ -39,26 +40,17 @@
 
                     <div class="post-padding">
                         <div class="blog-big-title clearfix">
-                            <h3>Welcome to the EduPress Blog.</h3>
+                            <h3><%= blog.title %>></h3>
                         </div>
 
                         <div class="blog-single-meta clearfix">
                             <ul class="list-inline">
                                 <li> <a href="/" class="readmore">Edushala</a></li>
-                                <li><i class="fa fa-clock-o"></i> 21 Jan 2016</li>
+                                <li><i class="fa fa-clock-o"></i> <%= blog.dateAdded %> </li>
                             </ul>
                         </div><!-- end meta -->
 
-                        <p>Morbi congue leo et est sodales consequat a quis est. Nunc aliquam ut massa et accumsan. Donec cursus pretium porta. Maecenas vehicula pellentesque eros, non consectetur massa finibus quis. Ut ut rhoncus purus. Donec varius ultricies dapibus. Aliquam facilisis lacus purus, sit amet maximus lectus auctor et. Nam vehicula eget leo sed gravida.</p>
-
-                        <p><img src="images/education.png" alt="" class="alignleft">In dignissim feugiat gravida. <em>Proin feugiat quam sed gravida fringilla.</em> Proin quis mauris ut magna fringilla vulputate quis non ante. Integer bibendum velit dui. Sed consequat nisi id convallis eleifend. Proin rhoncus dapibus vulputate. Phasellus eget fringilla justo. Aliquam erat volutpat. <a href="#">Praesent lorem nisi</a> vehicula fringilla rutrum facilisis, tempus sed ipsum. Mauris commodo mattis ante, at consequat lectus blandit nec. Nulla facilisi. Phasellus aliquet est ac faucibus iaculis. <strong>Sed non lorem in quam placerat</strong> facilisis nec eu quam. Etiam at tincidunt felis, et posuere eros. Nulla dictum id enim vitae fermentum. In dignissim feugiat gravida. Proin feugiat quam sed gravida fringilla. Proin quis mauris ut magna fringilla vulputate quis non ante. Integer bibendum velit dui. Sed consequat nisi id convallis eleifend. Proin rhoncus dapibus vulputate. Phasellus eget fringilla justo. Aliquam erat volutpat. Praesent lorem nisi vehicula fringilla rutrum facilisis, tempus sed ipsum. Mauris commodo mattis ante, at consequat lectus blandit nec. Nulla facilisi. Phasellus aliquet est ac faucibus iaculis. Sed non lorem in quam placerat facilisis nec eu quam. Etiam at tincidunt felis, et posuere eros. Nulla dictum id enim vitae fermentum. In dignissim feugiat gravida. Proin feugiat quam sed gravida fringilla. Proin quis mauris ut magna fringilla vulputate quis non ante. Integer bibendum velit dui. Sed consequat nisi id convallis eleifend. Proin rhoncus dapibus vulputate. Phasellus eget fringilla justo. Aliquam erat volutpat. Praesent lorem nisi vehicula fringilla rutrum facilisis, tempus sed ipsum. Mauris commodo mattis ante, at consequat lectus blandit nec. Nulla facilisi. Phasellus aliquet est ac faucibus iaculis. Sed non lorem in quam placerat facilisis nec eu quam. Etiam at tincidunt felis, et posuere eros. Nulla dictum id enim vitae fermentum. </p>
-
-                        <p>In dignissim feugiat gravida. Proin feugiat quam sed gravida fringilla. Proin quis mauris ut magna fringilla vulputate quis non ante. Integer bibendum velit dui. Sed consequat nisi id convallis eleifend. Proin rhoncus dapibus vulputate. Phasellus eget fringilla justo. Aliquam erat volutpat. Praesent lorem nisi vehicula fringilla rutrum facilisis, tempus sed ipsum. Mauris commodo mattis ante, at consequat lectus blandit nec. Nulla facilisi. Phasellus aliquet est ac faucibus iaculis. Sed non lorem in quam placerat facilisis nec eu quam. Etiam at tincidunt felis, et posuere eros. Nulla dictum id enim vitae fermentum. </p>
-
-                        <hr>
-
-                        <p> In dignissim feugiat gravida. Proin quis mauris ut magna fringilla vulputate quis non ante. Integer bibendum velit dui. Sed consequat nisi id convallis eleifend. Proin rhoncus dapibus vulputate. Phasellus eget fringilla justo. Aliquam erat volutpat. Praesent lorem nisi, vehicula fringilla rutrum facilisis, tempus sed ipsum. Mauris commodo mattis ante, at consequat lectus blandit nec. Nulla facilisi. Phasellus  Sed non lorem in quam placerat facilisis nec eu quam. Etiam at tincidunt felis,. Nulla dictum id enim vitae </p>
-
+                        <%- blog[i].blogContent %>
                         <hr>
 
                     </div><!-- end post-padding -->
@@ -196,11 +188,14 @@
                     </div><!-- end widget -->
 
                 </div><!-- end col -->
+
             </div><!-- end row -->
         </div><!-- end container -->
-    </div><!-- end section -->
+        <% } %>
 
+    </div><!-- end section -->
 </section>
+
 
 <footer id="footer">
     <% include ../common/footer %>

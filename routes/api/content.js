@@ -1,6 +1,6 @@
 const express = require('express');
 const  router = express.Router();
-const config = require('../../config/db')
+const config = require('../../config/db');
 const Content = require('../../models/content');
 
 //Add Content

@@ -91,13 +91,35 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/blog',function(req,res){
-        data.page.title = 'Edushala - Blog';
-        res.render('cms/blog',data);
+        request.get('http://localhost:4232/cms/list', function(error, response, body) {
+            if(!error && response.statusCode === 200) {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog: JSON.parse(body).result
+                }
+                console.log(data);
+                res.render('cms/blog', data);
+            } else {
+                console.log(error);
+            }
+        })
     });
 
-    ctx.app.get('/blog_single',function(req,res){
-        data.page.title = 'Edushala - Blog';
-        res.render('cms/blog_single',data);
+    ctx.app.get('/blog/:id',function(req,res){
+        request.get('http://localhost:4232/cms/' + req.params.id, function(error, response, body) {
+            if(!error && response.statusCode === 200) {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog: JSON.parse(body).result
+                }
+                console.log(data);
+                res.render('cms/blog_single', data);
+            }
+        })
     });
 
     ctx.app.get('/college',function(req,res){
