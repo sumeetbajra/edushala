@@ -58,7 +58,7 @@ context.api = api;
 require('./routes/web/index')(context);
 require('./routes/web/misc')(context);
 
-// catch 404 and forward to error handlers
+// catch 404 and forward to error handlers.
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
