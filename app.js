@@ -5,7 +5,7 @@ var express = require('express');
 var session = require('express-session');
 
 var path = require('path');
-var flash = require('connect-flash');
+var flash = require('express-flash');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');

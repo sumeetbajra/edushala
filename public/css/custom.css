@@ -27,6 +27,11 @@ a {
     margin: 2px 0 -4px 0;
 }
 
+.logo {
+  position: relative;
+  top: -6px;
+}
+
 .check > li > a:hover {
     text-decoration: none;
 }

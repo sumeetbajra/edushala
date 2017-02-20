@@ -21,7 +21,11 @@
                         <div class="widget-title">
                             <h2>Sign in Account</h2>
                             <hr>
-
+                              <% if(messages.error) { %>
+                                <div class="alert alert-danger">
+                                  <%= messages.error %>
+                                </div>
+                              <% } %>
 
 
                         </div><!-- end title -->

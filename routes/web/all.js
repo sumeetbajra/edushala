@@ -80,6 +80,11 @@ module.exports = function (ctx) {
         res.render('terms',data);
     });
 
+    ctx.app.get('/admin',function(req,res){
+        data.page.title = 'Edushala - CMS Login';
+        res.render('cms/admin_login',data);
+    });
+
     ctx.app.get('/college',function(req,res){
         data.page.title = 'Edushala - Courses for College';
         res.render('college_courses',data);

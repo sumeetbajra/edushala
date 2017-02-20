@@ -3,8 +3,6 @@ var serverUrl = 'http://139.59.111.216:8081/'
 
 module.exports = {
 	COURSE: serverUrl + 'courses/',
-    login: serverUrl + 'users/login/',
-    SIGNUP: serverUrl + 'users/create/',
-    course_detail: serverUrl + 'courses/:id'
+  LOGIN: serverUrl + 'users/login/',
+  SIGNUP: serverUrl + 'users/create/'
 }
-
