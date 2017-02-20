@@ -32,69 +32,76 @@
         <div class="container">
 
             <div class="row">
-                <% for (var i = 0; i < blog.length; i++) { %>
+
                 <div class="content col-md-9 col-sm-12">
-                    <div class="blog-list course-list normal-list">
-                        <div class="video-wrapper course-widget clearfix">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="post-media">
-                                        <div class="entry">
-                                            <img src="images/blog_small.jpg" alt="" class="img-responsive">
-                                        </div>
-                                    </div><!-- end media -->
-                                    <div class="course-meta clearfix">
-                                        <div class="pull-left">
-                                            <p><i class="fa fa-clock-o"></i> <%= blog[i].dateAdded %> </p>
-                                        </div>
-                                    </div><!-- end meta -->
-                                </div><!-- end col-->
+                    <% for (var i = 0; i < blog.length; i++) { %>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="blog-list course-list normal-list">
+                                <div class="video-wrapper course-widget clearfix">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="post-media">
+                                                <div class="entry">
+                                                    <img src="images/blog_small.jpg" alt="" class="img-responsive">
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="course-meta clearfix">
+                                                <div class="pull-left">
+                                                    <p><i class="fa fa-clock-o"></i> <%= blog[i].dateAdded %> </p>
+                                                </div>
+                                            </div><!-- end meta -->
+                                        </div><!-- end col-->
 
-                                <div class="col-md-8">
-                                    <div class="widget-title clearfix">
-                                        <h3><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h3>
-                                        <hr>
-                                        <div class="truncate">
-                                            <%- blog[i].blogContent %>
-                                        </div>
-                                        <hr>
+                                        <div class="col-md-8">
+                                            <div class="widget-title clearfix">
+                                                <h3><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h3>
+                                                <hr>
+                                                <div class="truncate">
+                                                    <%- blog[i].blogContent %>
+                                                </div>
+                                                <hr>
 
-                                        <div class="bottom-line clearfix">
-                                            <div class="pull-left">
-                                                <a href="/" class="readmore">Edushala</a>
-                                            </div>
-                                            <div class="pull-right">
-                                                <a href="/blog/<%= blog[i]._id %>" class="btn btn-sm btn-edushala">Read More</a>
-                                            </div>
-                                        </div><!-- end bottom -->
-                                    </div><!-- end title -->
-                                </div><!-- end col -->
-                            </div>
-                        </div><!--widget -->
-                    </div><!-- end row -->
-
+                                                <div class="bottom-line clearfix">
+                                                    <div class="pull-left">
+                                                        <a href="/" class="readmore">Edushala</a>
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <a href="/blog/<%= blog[i]._id %>" class="btn btn-sm btn-edushala">Read More</a>
+                                                    </div>
+                                                </div><!-- end bottom -->
+                                            </div><!-- end title -->
+                                        </div><!-- end col -->
+                                    </div>
+                                </div><!--widget -->
+                            </div><!-- end row -->
+                        </div>
+                    </div>
+                    <% } %>
                 </div><!-- end content -->
-                <% } %>
-
 
 
                 <div class="sidebar col-md-3 col-sm-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Latest Articles</h3>
-                            <hr>
-                        </div><!-- end widget-title -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="widget clearfix">
+                                <div class="widget-title">
+                                    <h3>Latest Articles</h3>
+                                    <hr>
+                                </div><!-- end widget-title -->
 
-                        <% for (var i = 0; i < blog.length; i++) { %>
-                        <div class="related-posts">
-                            <div class="entry">
-                                <p><a href="/blog/<%= blog[i]._id %>" title=""> <%= blog[i].title %></a></p>
-                                <small><%= blog[i].dateAdded %></small>
-                                <hr>
-                            </div><!-- end entry -->
-                        </div><!-- end related -->
-                        <% } %>
-                    </div><!-- end widget -->
+                                <% for (var i = 0; i < blog.length; i++) { %>
+                                <div class="related-posts">
+                                    <div class="entry">
+                                        <p><a href="/blog/<%= blog[i]._id %>" title=""> <%= blog[i].title %></a></p>
+                                        <small><%= blog[i].dateAdded %></small>
+                                        <hr>
+                                    </div><!-- end entry -->
+                                </div><!-- end related -->
+                                <% } %>
+                            </div><!-- end widget -->
+                        </div>
+                    </div>
                 </div><!-- end col -->
 
             </div><!-- end row -->

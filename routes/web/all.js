@@ -93,7 +93,7 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/blog',function(req,res){
-        Content.find({}, function(err, doc) {
+        Content.find({}).sort('-dateAdded').exec(function(err, doc) {
             if(err){
                 res.json({success : false, msg : 'Failed to list content!'});
             } else {
