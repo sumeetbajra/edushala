@@ -12,18 +12,93 @@
     </header>
 
     <section id="content_body">
-       <div class="demo-parallax parallax section looking-photo" data-stellar-background-ratio="0.5" style="background-image:url('images/edushala1.jpg');">
-            <div class="container">
-                <div class="row centermessage text-left">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="tagline"><h4> <span class="element"></span><br></h4></div>
-                        <p class="intro-edu">Edushala is an education marketplace where we connect passionate teachers with knowledge-hungry students. Sit in with our experts to create a course that you want to teach.</p>
-                        <div class="text-left large-buttons">
-                            <a href="/learn" class="btn btn-edushala btn-lg">VIEW OUR COURSES</a>
-                        </div><!-- end title -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                    <div class="banner-slider-carousel" style="background-image:url(images/edushala1.jpg); width:100%; height:600px; background-size:cover">
+                        <div class="container" style="padding-top:10%">
+                            <div class="row centermessage text-left">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="tagline"><h4>A Powerful <span class="element1"></span><br>Website Template.</h4></div>
+                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="text-left large-buttons">
+                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                    </div><!-- end title -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                </div>
+                <div class="item">
+
+                    <div class="banner-slider-carousel" style="background-image:url(images/edushala2.jpg); width:100%; height:600px; background-size:cover">
+                        <div class="container" style="padding-top:10%">
+                            <div class="row centermessage text-left">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="tagline"><h4>A Powerful <span class="element2"></span><br>Website Template.</h4></div>
+                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="text-left large-buttons">
+                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                    </div><!-- end title -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+
+                    <div class="banner-slider-carousel" style="background-image:url(images/edushala3.jpg); width:100%; height:600px; background-size:cover">
+                        <div class="container" style="padding-top:10%">
+                            <div class="row centermessage text-left">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="tagline"><h4>A Powerful <span class="element3"></span><br>Website Template.</h4></div>
+                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="text-left large-buttons">
+                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                    </div><!-- end title -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+
+                    <div class="banner-slider-carousel" style="background-image:url(images/edushala4.jpg); width:100%; height:600px; background-size:cover">
+                        <div class="container" style="padding-top:10%">
+                            <div class="row centermessage text-left">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="tagline"><h4>A Powerful <span class="element4"></span><br>Website Template.</h4></div>
+                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="text-left large-buttons">
+                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                    </div><!-- end title -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
         </div> <!-- end section -->
 
         <div class="section">
@@ -34,12 +109,14 @@
                 </div><!-- end title -->
 
                 <div id="course_catalog" class="row course-list">
-                    <% for (var i = 0; i < 6; i++) { %>
+                    <% for (var i = 0; i < 8; i++) { %>
                     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeIn">
                         <div class="video-wrapper course-catalog course-widget clearfix">
                             <div class="post-media">
                                 <div class="entry">
-                                    <img alt="" class="img-responsive" src="<%= courses[i].pictureUrl %>">
+                                    <a href="/learn/<%= courses[i]._id %>">
+                                        <img alt="" class="" height="160" src="<%= courses[i].pictureUrl %>">
+                                    </a>
                                     <div></div>
                                 </div>
                             </div><!-- end media -->
@@ -48,7 +125,7 @@
                                 <hr>
                                 <div class="bottom-line clearfix">
                                     <div class="pull-left">
-                                        <a class="readmore" href="#"><%= courses[i].educator %></a>
+                                        <a class="readmore" href="#"><%= courses[i].educator.firstName + ' ' + courses[i].educator.lastName  %></a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="course-single.html" class="btn btn-sm btn-inverse">
@@ -64,7 +141,7 @@
 
                 <div class="row">
                     <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <a class="btn btn-lg customhrcenter btn-edushala" href="/learn">Browse all courses</a>
                     </div>
                     <div class="col-md-4"></div>
@@ -76,9 +153,9 @@
         <div class="section" data-stellar-background-ratio="0.5" style="background-image:url('images/numbers_bg.jpg');">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="custom_fact_item">
-                            <div class="custom_fact_name">
+                            <div class="custom_fact_name text-center">
                                 <h3 id="course-stat" class="stat-count">224</h3>
                                 <h6>Completed Courses</h6>
                                 <span>We have delivered many courses in short time</span>
@@ -86,9 +163,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="custom_fact_item">
-                            <div class="custom_fact_name">
+                            <div class="custom_fact_name text-center">
                                 <h3 class="stat-count">664</h3>
                                 <h6>Happy Students</h6>
                                 <span>We have hundreds of happy students</span>
@@ -96,9 +173,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="custom_fact_item">
-                            <div class="custom_fact_name">
+                            <div class="custom_fact_name text-center">
                                 <h3 class="stat-count">154</h3>
                                 <h6>Proud Teachers</h6>
                                 <span>Hundreds of teachers have worked with edushala</span>
@@ -116,56 +193,61 @@
                         <h2 class="text-center edu-green"><strong>We are featured on</strong></h2>
                     </div><!-- end title -->
                 </div>
+            </div>
+            <div class="container">
                 <div class="space-top-small"></div>
-                <div class="row awards-list">
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="https://ventureplus.com.np/wp-content/themes/_tk-1.0/includes/inc/download_issue.php?slug=issue-14" target="_blank">
-                                <img src="images/ecs.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="https://www.facebook.com/TNM.Magazine/photos/a.573076362775123.1073741838.379744022108359/573076859441740/?type=3&theater" target="_blank">
-                                <img src="images/tnm.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
+                    <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="7000" id="myCarouselGrid">
 
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="https://glocalkhabar.com/featured/beginners-guide-successful-startup-feature-story/" target="_blank">
-                                <img src="images/glocal.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
+                        <div class="carouselGrid-inner">
+                            <div class="item active">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="https://ventureplus.com.np/wp-content/themes/_tk-1.0/includes/inc/download_issue.php?slug=issue-14" target="_blank">
+                                        <img src="images/ecs.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="http://admin.myrepublica.com/portal/index.php/ads/ncell.swf?action=news_details&news_id=67601" target="_blank">
-                                <img src="images/republica.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
+                            <div class="item">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="https://www.facebook.com/TNM.Magazine/photos/a.573076362775123.1073741838.379744022108359/573076859441740/?type=3&theater" target="_blank">
+                                        <img src="images/tnm.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="https://glocalkhabar.com/featured/beginners-guide-successful-startup-feature-story/" target="_blank">
+                                        <img src="images/glocal.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="http://admin.myrepublica.com/portal/index.php/ads/ncell.swf?action=news_details&news_id=67601" target="_blank">
+                                        <img src="images/republica.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="http://www.huffingtonpost.com/niranjan-kunwar/edushala_b_4541063.html" target="_blank">
+                                        <img src="images/huffing.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-15 col-md-3 col-sm-4 col-xs-6 ">
+                                    <a href="http://epaper-archive.ekantipur.com/kathmandupost/showtext.aspx?boxid=142451921&parentid=19406&issuedate=1872014" target="_blank">
+                                        <img src="images/ktm_post.png" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="http://www.huffingtonpost.com/niranjan-kunwar/edushala_b_4541063.html" target="_blank">
-                                <img src="images/huffing.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
 
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="widget clearfix">
-                            <a href="http://epaper-archive.ekantipur.com/kathmandupost/showtext.aspx?boxid=142451921&parentid=19406&issuedate=1872014" target="_blank">
-                                <img src="images/ktm_post.png" alt="" class="img-responsive">
-                            </a>
-                        </div><!--widget -->
-                    </div><!-- end col -->
-
-                </div>
+                        </div>
+                        <a class="left carouselGrid-control" href="#myCarouselGrid" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                        <a class="right carouselGrid-control" href="#myCarouselGrid" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
             </div><!-- end container -->
         </div><!-- end section -->
     </section>

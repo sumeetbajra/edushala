@@ -1,24 +1,22 @@
 ﻿var rs = require('../../misc/rs');
 var request = require('request');
 var APIConstants = require('../../constants/APIConstants');
+function checkAuth (req, res, next) {
+    console.log('checkAuth ' + req.url);
+    // you should add to this list, for each and every secure url
+    if (req.url === '/dashboard' && (!req.session || !req.session.authenticated)) {
+        res.render('unauthorised', { status: 403 });
+        return;
+    }
+    next();
+}
+
 
 module.exports = function (ctx) {
 
     var data = {
         page: {title: 'Edushala'}
     };
-
-    //Create route paths
-  //  ctx.app.get('/', index);
-   /* ctx.app.get('/about', function(req, res){
-        res.render('about', {
-            name: 'binod',
-            hobby: 'stamp collecting',
-            school: {
-                name:'Pulchowk Campus'
-            }
-        });
-    }); */
 
     ctx.app.get('/about', function(req, res){
         data.page.title = 'Edushala - About';
@@ -40,8 +38,14 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/dashboard', function(req, res){
-        data.page.title = 'Dashboard';
-        res.render('dashboard', data)
+        var data = {
+            user: req.session,
+            page : {
+                title: 'Edushala - Dashboard'
+            }
+        }
+       console.log(data.user.user.email);
+        res.render('dashboard', data);
     });
 
     ctx.app.get('/teach',function(req,res){
@@ -49,8 +53,13 @@ module.exports = function (ctx) {
         res.render('teach/teach',data);
     });
 
+    ctx.app.get('/get-token',function(req,res){
+        res.render('get_token');
+    });
+
     ctx.app.get('/learn',function(req,res){
         request.get(APIConstants.COURSE, function(error, response, body) {
+            console.log(APIConstants.COURSE);
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
@@ -58,7 +67,10 @@ module.exports = function (ctx) {
                     },
                     courses: JSON.parse(body).result
                 }
+                console.log(data);
                 res.render('learn', data);
+            } else {
+                console.log(error);
             }
         })
     });
@@ -66,6 +78,11 @@ module.exports = function (ctx) {
     ctx.app.get('/terms',function(req,res){
         data.page.title = 'Edushala - Terms & Conditions';
         res.render('terms',data);
+    });
+
+    ctx.app.get('/admin',function(req,res){
+        data.page.title = 'Edushala - CMS Login';
+        res.render('cms/admin_login',data);
     });
 
     ctx.app.get('/college',function(req,res){
@@ -89,7 +106,7 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/learn/:id',function(req,res){
-        request.get(APIConstants.COURSE, function(error, response, body) {
+        request.get(APIConstants.COURSE + '/' + req.params.id, function(error, response, body) {
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
@@ -97,7 +114,8 @@ module.exports = function (ctx) {
                     },
                     courses: JSON.parse(body).result
                 }
-                res.render('learn', data);
+                console.log(data.courses[0].name);
+                res.render('course_details', data);
             }
         })
         // ctx.api.services.kachha.get({

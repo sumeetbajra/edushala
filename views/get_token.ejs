@@ -1,0 +1,11 @@
+
+<input type="hidden" value="<%= userToken %>" id="token" />
+<input type="hidden" value="<%= user %>" id="user" />
+
+<script>
+        var userToken = document.getElementById('token').value;
+        var user = document.getElementById('user').value;
+
+        location.replace('http://139.59.111.216:9000/login?token=' + userToken);
+</script>
+
