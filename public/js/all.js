@@ -91,12 +91,12 @@ wow.init();
 
 $(function(){
   $(".element1").typed({
-    strings: ["Love What You Learn", "Teach What You Love"],
+    strings: ["Love What You Learn"],
     typeSpeed: 300,
     loop: true,
   });
   $(".element2").typed({
-    strings: ["Do What You Want", "Say What You Love"],
+    strings: ["Teach What You Love"],
     typeSpeed: 300,
     loop: true,
   });
