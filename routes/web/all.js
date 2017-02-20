@@ -1,6 +1,8 @@
 ﻿var rs = require('../../misc/rs');
 var request = require('request');
 var APIConstants = require('../../constants/APIConstants');
+const Content = require('../../models/content');
+
 function checkAuth (req, res, next) {
     console.log('checkAuth ' + req.url);
     // you should add to this list, for each and every secure url
@@ -91,7 +93,23 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/blog',function(req,res){
-        request.get('http://localhost:4232/cms/list', function(error, response, body) {
+        Content.find({}, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to list content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog:doc
+                }
+                console.log(data);
+                res.render('cms/blog', data);
+            }
+        });
+       // data.page.title = 'CMS - Blog ';
+       // res.render('cms/blog');
+     /*   request.get('http://localhost:4232/cms/list', function(error, response, body) {
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
@@ -104,22 +122,24 @@ module.exports = function (ctx) {
             } else {
                 console.log(error);
             }
-        })
+        }) */
     });
 
     ctx.app.get('/blog/:id',function(req,res){
-        request.get('http://localhost:4232/cms/' + req.params.id, function(error, response, body) {
-            if(!error && response.statusCode === 200) {
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
                 var data = {
                     page: {
                         title: 'Edushala - Blog'
                     },
-                    blog: JSON.parse(body).result
+                    blog: doc
                 }
                 console.log(data);
                 res.render('cms/blog_single', data);
             }
-        })
+        });
     });
 
     ctx.app.get('/college',function(req,res){

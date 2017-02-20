@@ -30,10 +30,10 @@
 
     <div class="section">
         <div class="container">
-            <div class="row">
-                <div class="content col-md-9 col-sm-12">
-                    <% for (var i = 0; i < blog.length; i++) { %>
 
+            <div class="row">
+                <% for (var i = 0; i < blog.length; i++) { %>
+                <div class="content col-md-9 col-sm-12">
                     <div class="blog-list course-list normal-list">
                         <div class="video-wrapper course-widget clearfix">
                             <div class="row">
@@ -54,7 +54,9 @@
                                     <div class="widget-title clearfix">
                                         <h3><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h3>
                                         <hr>
-                                        <%- blog[i].blogContent %>
+                                        <div class="truncate">
+                                            <%- blog[i].blogContent %>
+                                        </div>
                                         <hr>
 
                                         <div class="bottom-line clearfix">
@@ -71,39 +73,32 @@
                         </div><!--widget -->
                     </div><!-- end row -->
 
-                    <% } %>
-
                 </div><!-- end content -->
+                <% } %>
+
+
 
                 <div class="sidebar col-md-3 col-sm-12">
-
                     <div class="widget clearfix">
                         <div class="widget-title">
                             <h3>Latest Articles</h3>
                             <hr>
                         </div><!-- end widget-title -->
 
+                        <% for (var i = 0; i < blog.length; i++) { %>
                         <div class="related-posts">
                             <div class="entry">
-                                <p><a href="blog-single.html" title=""> What’s in My Desktop, 2016 edition.</a></p>
-                                <small>21 March 2016</small>
-                            </div><!-- end entry -->
-                            <div class="entry">
-                                <p><a href="blog-single.html" title="">Getting a Job After Coding World Event.</a></p>
-                                <small>20 March 2016</small>
-                            </div><!-- end entry -->
-                            <div class="entry">
-                                <p><a href="blog-single.html" title="">Arthur C. Clarke on Distributed Work.</a></p>
-                                <small>18 February 2016</small>
-                            </div><!-- end entry -->
-                            <div class="entry">
-                                <p><a href="blog-single.html" title="">Teach when you are filled with wonder.</a></p>
-                                <small>10 February 2016</small>
+                                <p><a href="/blog/<%= blog[i]._id %>" title=""> <%= blog[i].title %></a></p>
+                                <small><%= blog[i].dateAdded %></small>
+                                <hr>
                             </div><!-- end entry -->
                         </div><!-- end related -->
+                        <% } %>
                     </div><!-- end widget -->
                 </div><!-- end col -->
+
             </div><!-- end row -->
+
         </div><!-- end container -->
     </div><!-- end section -->
 
