@@ -47,7 +47,7 @@ module.exports = function (ctx) {
         request({
             method: 'POST',
             json : true,
-            url: APIConstants.login,
+            url: APIConstants.LOGIN,
             body: req.body
         },
         function(error, response, body) {
@@ -58,24 +58,20 @@ module.exports = function (ctx) {
                             },
                             data: body.result
                 }
-               // console.log(data.data);
-                if(data.data.token != null){
-                      req.session.authenticated = true;
-                      req.session.user = data.data;
-                      console.log(req.session.user.token);
-                      res.render('get_token',{
-                          userToken:req.session.user.token,
-                          user: JSON.stringify(req.session.user)
-                      });
-                }
-                else {
-                    req.flash('error', 'Username or password did not match!')
-                    res.redirect('/login');
-                }
-            } else {
-                req.flash('error', 'Oops error occured, please try again!')
+                  req.session.authenticated = true;
+                  req.session.user = data.data;
+                  res.render('get_token',{
+                      userToken:req.session.user.token,
+                      user: JSON.stringify(req.session.user.user)
+                  });
+
+            } else if(response.statusCode === 401) {
+                req.flash('error', 'Incorrect username or password!!')
                 res.redirect('/login');
-            }
+            } else {
+              req.flash('error', 'Oops!! Something went wrong. Please try again.')
+              res.redirect('/login');
+          }
         });
     });
 
@@ -89,14 +85,12 @@ module.exports = function (ctx) {
             function(error, response, body) {
             console.log(response);
                 if(!error && response.statusCode === 200) {
-                    console.log('aaaaaa');
                     var data = {
                         page: {
                             title: 'Edushala - Dashboard'
                         },
                         data: body.result
                     }
-                    console.log(data);
                     if(data.data._id != null){
                         req.session.authenticated = true;
                         req.session.user = data.data.user;
@@ -108,7 +102,7 @@ module.exports = function (ctx) {
                     }
                 } else {
                     req.flash('message', 'Error message');
-                    res.redirect('/auth/signup');
+                    res.redirect('/signup');
                 }
             });
     });
