@@ -62,7 +62,8 @@ module.exports = function (ctx) {
                   req.session.user = data.data;
                   res.render('get_token',{
                       userToken:req.session.user.token,
-                      user: JSON.stringify(req.session.user.user)
+                      user: JSON.stringify(req.session.user.user),
+                      lmsClient: APIConstants.LMS_CLIENT
                   });
 
             } else if(response.statusCode === 401) {
