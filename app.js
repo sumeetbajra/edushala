@@ -28,9 +28,12 @@ mongoose.connection.on('error',function (err) {
     console.log('Database error:' + ' ' + err);
 });
 
-// view engine setup
+// view engine setup.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'images/uploads')));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

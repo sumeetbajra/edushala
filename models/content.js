@@ -11,6 +11,9 @@ const contentSchema = mongoose.Schema({
     blogContent : {
         type : String
     },
+    featuredImgUrl : {
+      type: String
+    },
     isActive : {
         type : Boolean,
         default : true

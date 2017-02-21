@@ -23,6 +23,7 @@
     "mongoose": "*",
     "morgan": "~1.3.0",
     "request": "^2.79.0",
+    "multer":"*",
     "rs": "git+http://git.rumsan.net/rs/core.git",
     "rs.data": "git+http://git.rumsan.net/rs/data.git",
     "rs.user": "git+http://git.rumsan.net/rs/user.git"

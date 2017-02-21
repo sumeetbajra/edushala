@@ -2,9 +2,30 @@ const express = require('express');
 const  router = express.Router();
 const config = require('../../config/db');
 const Content = require('../../models/content');
+var multer  = require('multer');
+
+
+var storage = multer.diskStorage({
+    destination: './public/images/uploads/',
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1])
+    }
+})
+
+var upload = multer({ storage: storage });
+
+ router.post('/uploadImage', upload.single('featuredImg'), function(req, res, next) {
+    res.redirect('/add_content');
+    console.log(req.file.filename);
+  /*  res.json({
+        error: false,
+        result: req.file.path
+    }); */
+});
 
 //Add Content
 router.post('/addContent',function (req,res) {
+    console.log('aaaaaaa');
     var newContent = new Content({
         title : req.body.title,
         blogContent : req.body.blogContent
