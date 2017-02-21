@@ -131,6 +131,7 @@ body {
     border-color: #99cc66 !important;
     color: #ffffff !important;
 }
-.truncate {
-
+#blog-content p  img{
+    width:500px;
+    max-width:500px;
 }

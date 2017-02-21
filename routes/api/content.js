@@ -56,4 +56,17 @@ router.post('/:id',function (req,res) {
     });
 });
 
+router.delete('/:id',function (req,res) {
+    console.log(req.params.id);
+    Content.findById(req.params.id, function(err, doc) {
+        if (err) throw err;
+
+        // delete content
+        doc.remove(function(err) {
+            if (err) throw err;
+            res.json({success:true,msg:'Content deleted successfully'});
+        });
+    });
+});
+
 module.exports = router;

@@ -3,6 +3,7 @@
 <head>
     <% include ../common/head %>
     <!--additional JS and css-->
+    <link rel="stylesheet" href="/css/ck-style.css">
 </head>
 <body>
 <header id="header" class="header full-width transparent fixed header-small clearfix">
@@ -57,7 +58,7 @@
                                             <div class="widget-title clearfix">
                                                 <h3><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h3>
                                                 <hr>
-                                                <div class="truncate">
+                                                <div class="#bg-content">
                                                     <%- blog[i].blogContent %>
                                                 </div>
                                                 <hr>

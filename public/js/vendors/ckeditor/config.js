@@ -25,6 +25,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
+    config.disallowedContent = 'img{width,height}';
+
 
     config.extraPlugins = 'imageuploader';
     config.imageUploadUrl = '/imguploader/imgupload.php';
@@ -39,3 +41,4 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 };
+
