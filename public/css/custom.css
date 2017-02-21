@@ -131,7 +131,7 @@ body {
     border-color: #99cc66 !important;
     color: #ffffff !important;
 }
-#blog-content p  img{
-    width:500px;
-    max-width:500px;
+#bg-content img {
+    height: auto;
+    width:100%;
 }

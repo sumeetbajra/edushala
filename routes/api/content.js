@@ -25,7 +25,6 @@ var upload = multer({ storage: storage });
 
 //Add Content
 router.post('/addContent',function (req,res) {
-    console.log('aaaaaaa');
     var newContent = new Content({
         title : req.body.title,
         blogContent : req.body.blogContent
