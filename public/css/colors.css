@@ -30,8 +30,8 @@ body.leftmenu .alignleftlist.service-list .widget:hover img.alignleft,
 .large-buttons .btn-primary,
 .demo-parallax .btn-inverse,
 .btn-primary {
-    background-color: #e74c3c !important;
-    border-color: #e74c3c !important;
+    background-color: #8bc750 !important;
+    border-color: #8bc750 !important;
     color: #ffffff !important;
 }
 
@@ -130,7 +130,7 @@ a:focus,
 .open > .dropdown-toggle.btn-default,
 .btn-default:focus,
 .btn-default:hover {
-    background-color: #1ca355 !important;
-    border-color: #1ca355 !important;
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
     color: #fff !important;
 }
