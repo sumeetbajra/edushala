@@ -48,9 +48,10 @@
                     <button type="button" id="btnAddConent" class="btn btn-edushala">Save</button>
                     <script>
                         CKEDITOR.replace( 'blog_content' );
-                        CKEDITOR.replace( 'blog_content', {
-                            disallowedContent: 'img{width,height};'
-                        });
+                        CKEDITOR.replace( 'editor1', {
+                            extraAllowedContent:  'img[alt,border,width,height,align,vspace,hspace,!src];'
+                        } );
+                        CKEDITOR.config.allowedContent = true;
                     </script>
                 </form>
             </div>

@@ -35,9 +35,9 @@
         <div class="container">
             <div class="row">
                 <div class="content col-md-9 col-sm-12">
-                    <div class="post-media">
+                   <!-- <div class="post-media">
                         <img src="images/course.jpg" alt="" class="img-responsive">
-                    </div><!-- end media -->
+                    </div> -->
 
                     <div class="post-padding">
                         <div class="blog-big-title clearfix">
@@ -51,7 +51,10 @@
                             </ul>
                         </div><!-- end meta -->
 
-                        <%- blog.blogContent %>
+                        <div id="content-detail">
+                            <%- blog.blogContent %>
+                        </div>
+
                         <hr>
 
                     </div><!-- end post-padding -->
