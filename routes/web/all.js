@@ -161,7 +161,7 @@ module.exports = function (ctx) {
         }) */
     });
 
-    ctx.app.get('/blog/:id',function(req,res){
+    /* ctx.app.get('/blog/:id',function(req,res){
         Content.findById(req.params.id, function(err, doc) {
             if(err){
                 res.json({success : false, msg : 'Failed to get content!'});
@@ -173,6 +173,35 @@ module.exports = function (ctx) {
                     blog: doc
                 }
                 res.render('cms/blog_single', data);
+            }
+        });
+    }); */
+
+    var getLatestPosts = function() {
+        return Content.find({}).sort('-dateAdded')
+    }
+
+    ctx.app.get('/blog/:id',function(req,res){
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                getLatestPosts().sort('-dateAdded').exec(function(err, latestArticles) {
+                    if(err){
+                        res.json({success : false, msg : 'Failed to list content!'});
+                    } else {
+                        var data = {
+                            page:
+                                {
+                                    title:'Edushala - Blog'
+                                },
+                            blog: doc,
+                            articles: latestArticles
+                        }
+                        console.log(data);
+                        res.render('cms/blog_single', data)
+                    }
+                });
             }
         });
     });
