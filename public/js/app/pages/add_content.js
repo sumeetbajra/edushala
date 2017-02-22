@@ -27,7 +27,7 @@ $(document).ready(function() {
                 },
                 error: function(err) {
                     console.log(err);
-                    $( "#msg" ).html( '<p class="text-danger"><strong>Incorrect login details. Forgot Password? or Sign up for an account?</strong></p>' );
+                    $( "#msg" ).html( '<p class="edu-green"><strong>Something went wrogn, plese try again.</strong></p>' );
                 }
             });
         }
