@@ -47,7 +47,7 @@
         border: 0;
     }
     .section-signup {
-        margin-top: 30px;
+        margin-top: 124px;
     }
     .onecourse .big-title h2 {
         font-size: 42px;
@@ -85,6 +85,9 @@
     .normal-header .dropdown-menu > li {
         padding: 3px 0 !important;
     }
+    .sitemap-footer,.subscribe-footer{
+        padding-top:20px;
+    }
 }
 
 @media (max-width:640px){
@@ -102,7 +105,11 @@
         background:#8bc750;
         color:#fff !important;
     }
-    .centermessage h4{font-size: 20px !important}
+    a.requestdemo{
+        margin-top:20px;
+    }
+    .centermessage h4,.centermessage h4.crou-subscribe{font-size: 20px !important}
+
     .row.centermessage{margin-left: 0}
     .carousel-control.right, .carousel-control.left{display:none}
     .achievement .col-xs-12{margin-top: 2em}
@@ -111,6 +118,13 @@
         height: 34px;
         text-align: center;
         margin-left: 50px;
+    }
+    .more-below{
+        left: 84%;
+        bottom: 20%;
+    }
+    .sitemap-footer,.subscribe-footer{
+        padding-top:20px;
     }
 }
 @media (max-width: 600px) {
@@ -138,6 +152,7 @@
     .centermessage p {
         font-size: 13px;
     }
+
 }
 
 @media (max-width: 992px) {

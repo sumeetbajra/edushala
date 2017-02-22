@@ -23,9 +23,8 @@ a {
     text-decoration: none;
 }
 #content_body{
-    padding: 83px 0 0;
+    padding:83px 0 0 0;
 }
-
 .logo img {
     max-height: 56px;
     margin: 2px 0 -4px 0;
@@ -148,6 +147,7 @@ body {
 /*home*/
 .default-header {
     position: fixed;
+    z-index:20;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
@@ -156,6 +156,12 @@ body {
     color: #8bc750 !important;
 }
 .navbar-toggle{z-index: 2}
+.centermessage h4.crou-subscribe{
+    font-size:30px !important;
+}
+.section-signup {
+    margin-right:20px;
+}
 #autobtn{position: fixed;top:-90000px;left: -90000px}
 .close{position: absolute;right: 20px;
     top:20px;
@@ -165,7 +171,7 @@ body {
     padding:0;
 }
 #ad .modal-body img.branch{
-    margin-top:60px;
+    margin-top:45px;
 }
 #ad .modal-body .modal-description{
     padding: 0px 0 20px 0;
@@ -177,11 +183,55 @@ body {
 }
 #ad .modal-body .modal-description span{
     color: #14151f;
+    font-size:10px;
 }
 #ad .modal-body .modal-description .btn-default {
     color: #fff;
     background-color: #8bc750;
     border-color: #8bc750;
+}
+/*footer*/
+.copyrights p.foot_description{
+    text-transform: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+    Multicoloured Hover Variations
+*/
+
+#social-fb:hover {
+    color: #3B5998 !important;
+}
+#social-tw:hover {
+    color: #4099FF !important;
+}
+#social-yo:hover {
+    color: #b31217 !important;
+}
+#social-in:hover {
+    color:rgba(128, 68, 190, 0.78)  !important;
+}
+ p.agree-footer{
+    font-size:10px;
 }
 
 /*about*/
@@ -190,3 +240,12 @@ body {
     background-color: #ecf0f1;
 }
 
+.more-below {
+    position: absolute;
+    left: 80%;
+    bottom: 7%;
+    font-size: 44px;
+}
+.more-below i.fa.fa-chevron-circle-down {
+    font-size: 50px;
+}

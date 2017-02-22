@@ -6019,11 +6019,7 @@ $(function() {
         typeSpeed: 300,
         loop: true,
     });
-    $(".element4").typed({
-        strings: ["Code is Poetry", "Poetry is code"],
-        typeSpeed: 300,
-        loop: true,
-    });
+
 });
 
 /* ==============================================

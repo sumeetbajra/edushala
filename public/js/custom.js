@@ -99,3 +99,12 @@
             return false;
     }
 }; */
+
+
+$(document).on('click', 'a.scrollTo', function(event){
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top - 114
+    }, 500);
+});
