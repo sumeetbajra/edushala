@@ -79,7 +79,7 @@ CKEDITOR.editorConfig = function( config ) {
 	];
     config.disallowedContent = 'img{width,height}';
 
-
+    config.extraPlugins = 'filebrowser';
     config.extraPlugins = 'imageuploader';
     config.imageUploadUrl = '/imguploader/imgupload.php';
 
