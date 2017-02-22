@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../common/head %>
+<!-- <script src="/js/api/user.js" type="text/javascript"></script> -->
+<script src="/js/app/pages/add_content.js" type="text/javascript"></script>
+
+
+<body class="leftmenu memberprofile">
+
+<!-- PRELOADER -->
+<div class="cssload-container">
+    <div class="cssload-loader"></div>
+</div>
+<!-- end PRELOADER -->
+
+<!-- ******************************************
+START SITE HERE
+********************************************** -->
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <a class="navbar-brand with-text" title="Edushala" href="/">Edushala</a>
+        <ul class="sidebar-nav">
+            <li><a href="/admin_dashboard">Dashboard <span><i class="fa fa-user"></i></span></a></li>
+            <li ><a href="/add_contents">Add Content <span><i class="fa fa-plus"></i></span></a></li>
+            <li class="active"><a href="/content_list">Blog Content <span><i class="fa fa-edit"></i></span></a></li>
+            <li><a href="/">Logout  <span><i class="fa fa-sign-out"></i></span></a></li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <div id="page-content-wrapper">
+        <div class="section">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <div class="widget-title">
+                        <h2 class="text-center edu-green"><strong> Edushala BLog Contents</strong></h2>
+                    </div><!-- end title -->
+                </div><!-- end title -->
+                <div class="space-top-small"></div>
+                <div class="row">
+                    <div id="msg"></div>
+                    <div class="col-md-12">
+                        <table id="mytable" class="table table-bordred table-striped">
+
+                            <thead>
+
+                            <th>#Id</th>
+                            <th>Tittle</th>
+                            <th>Date Added</th>
+                            <th>Edit</th>
+                            </thead>
+                            <tbody>
+                            <% for(var i=0; i<blog.length; i++) { %>
+                            <tr>
+
+                                <td><%= blog[i].id%></td>
+                                <td><%= blog[i].title%></td>
+                                <td><%= blog[i].dateAdded%></td>
+                                <td><a href="/content_list/<%= blog[i].id%>"><button class="btn btn-primary btn-xs" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+
+                            </tr>
+                            <% }%>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </div><!-- end section -->
+
+        <% include ../common/footer %>
+
+        <!-- end copyrights -->
+        <!-- end copyrights -->
+    </div>
+    <!-- end page-content-wrapper -->
+</div>
+<!-- end wrapper -->
+
+
+</body>
+</html>

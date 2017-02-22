@@ -143,7 +143,6 @@ body {
     color: #ffffff !important;
 }
 
-
 /*home*/
 .default-header {
     position: fixed;
@@ -248,4 +247,30 @@ body {
 }
 .more-below i.fa.fa-chevron-circle-down {
     font-size: 50px;
+}
+
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.post-padding #content-detail img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+
+.giveMeEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    line-height: 30px;        /* fallback */
+    max-height: 150px;       /* fallback */
 }

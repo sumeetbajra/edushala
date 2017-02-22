@@ -1,0 +1,106 @@
+
+<html>
+<head>
+    <% include ../common/head %>
+</head>
+<body>
+<header id="header" class="header full-width transparent fixed header-small clearfix">
+    <% include ../common/header %>
+</header>
+
+<section id="content_body">
+    <div class="page-title section lb">
+        <div class="container">
+            <div class="clearfix">
+                <div class="title-area pull-left">
+                    <h2>Edushala Blog <small>Welcome to edushala blog page.</small></h2>
+                </div><!-- /.pull-right -->
+                <div class="pull-right hidden-xs">
+                    <div class="bread">
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li class="active">Blog Single</li>
+                        </ol>
+                    </div><!-- end bread -->
+                </div><!-- /.pull-right -->
+            </div><!-- end clearfix -->
+        </div>
+    </div><!-- end page-title -->
+
+    <div class="section">
+
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-9 col-sm-12">
+                   <!-- <div class="post-media">
+                        <img src="images/course.jpg" alt="" class="img-responsive">
+                    </div> -->
+
+                    <div class="post-padding">
+                        <div class="blog-big-title clearfix">
+                            <h3><%= blog.title %></h3>
+                        </div>
+
+                        <div class="blog-single-meta clearfix">
+                            <ul class="list-inline">
+                                <li> <a href="/" class="readmore">Edushala</a></li>
+                                <li><i class="fa fa-clock-o"></i> <%= blog.dateAdded %> </li>
+                            </ul>
+                        </div><!-- end meta -->
+
+                        <div id="content-detail">
+                            <%- blog.blogContent %>
+                        </div>
+
+                        <hr>
+
+                    </div><!-- end post-padding -->
+
+                    <hr class="invis">
+
+                    <div class="post-padding">
+                        <div class="content-widget clearfix">
+                            <!-- begin wwww.htmlcommentbox.com -->
+                            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1487586513072");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                            <!-- end www.htmlcommentbox.com -->
+                        </div>
+                    </div><!-- end post-padding -->
+                </div><!-- end content -->
+
+                <div class="sidebar col-md-3 col-sm-12">
+                    <div class="widget clearfix">
+                        <a href="#"><img src="/images/course2.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                     <div class="widget clearfix">
+                     <div class="widget-title">
+                            <h3>Latest Articles</h3>
+                            <hr>
+                        </div>
+
+                        <div id="related-posts" class="related-posts">
+                            <% for (var i = 0; i < articles.length; i++) { %>
+                            <div class="entry"><p><a href="#"> <%= articles[i].title %> </a></p><small> <%= articles[i].dateAdded %>  </small></div>
+                            <% }%>
+                        </div><!-- end related -->
+
+                    </div><!-- end widget -->
+
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+
+    </div><!-- end section -->
+</section>
+
+
+<footer id="footer">
+    <% include ../common/footer %>
+</footer>
+
+</body>
+</html>
