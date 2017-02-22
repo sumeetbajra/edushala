@@ -97,9 +97,36 @@ module.exports = function (ctx) {
         res.render('cms/add_contents',data);
     });
 
-    ctx.app.get('/add_content',function(req,res){
-        data.page.title = 'CMS - Add Content ';
-        res.render('cms/add_content',data);
+    ctx.app.get('/content_list',function(req,res){
+        Content.find({}).sort('-dateAdded').exec(function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to list content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Content List'
+                    },
+                    blog:doc
+                }
+                res.render('cms/content_list', data);
+            }
+        });
+    });
+
+    ctx.app.get('/content_list/:id',function(req,res){
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Update Content'
+                    },
+                    blog:doc
+                }
+                res.render('cms/update_content', data);
+            }
+        });
     });
 
     ctx.app.get('/blog',function(req,res){
