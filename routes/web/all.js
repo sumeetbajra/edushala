@@ -87,6 +87,16 @@ module.exports = function (ctx) {
         res.render('cms/admin_login',data);
     });
 
+    ctx.app.get('/admin_dashboard',function(req,res){
+        data.page.title = 'CMS - Dashboard ';
+        res.render('cms/admin_dashboard',data);
+    });
+
+    ctx.app.get('/add_contents',function(req,res){
+        data.page.title = 'CMS - Add Content ';
+        res.render('cms/add_contents',data);
+    });
+
     ctx.app.get('/add_content',function(req,res){
         data.page.title = 'CMS - Add Content ';
         res.render('cms/add_content',data);
@@ -103,7 +113,6 @@ module.exports = function (ctx) {
                     },
                     blog:doc
                 }
-                console.log(data);
                 res.render('cms/blog', data);
             }
         });
@@ -136,7 +145,6 @@ module.exports = function (ctx) {
                     },
                     blog: doc
                 }
-                console.log(data);
                 res.render('cms/blog_single', data);
             }
         });

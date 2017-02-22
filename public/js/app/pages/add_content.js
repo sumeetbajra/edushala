@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#btnAddConent').on("click", function () {
-        var data = CKEDITOR.instances.blog_content.getData();
+        var data = CKEDITOR.instances.editor1.getData();
         var title = $('#title').val();
         if(title == ''){
             $( "#msg" ).html( '<p class="text-danger"><strong>Please enter blog title and content.</strong></p>' );

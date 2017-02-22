@@ -43,12 +43,12 @@
 
                     <div class="form-group">
                         <label for="comment">Content:</label>
-                        <textarea class="form-control" name="blog_content" rows="5" id="blog_content"></textarea>
+                        <textarea class="form-control" name="blog_content" rows="5" id="editor1" name="editor1"></textarea>
                     </div>
                     <button type="button" id="btnAddConent" class="btn btn-edushala">Save</button>
                     <script>
-                        CKEDITOR.replace( 'blog_content' );
-                        CKEDITOR.replace( 'blog_content', {
+                        CKEDITOR.replace( 'editor1' );
+                        CKEDITOR.replace( 'editor1', {
                             extraAllowedContent:  'img[alt,border,width,height,align,vspace,hspace,!src];'
                         } );
                         CKEDITOR.config.allowedContent = true;
