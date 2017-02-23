@@ -18,13 +18,10 @@ a {
     font-weight: bold;
 }
 
-
 .btn-success:hover {
     text-decoration: none;
 }
-#content_body{
-    padding:83px 0 0 0;
-}
+
 .logo img {
     max-height: 56px;
     margin: 2px 0 -4px 0;
@@ -146,13 +143,12 @@ body {
 
 /*home*/
 .default-header {
-    position: fixed;
     z-index:20;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
 }
-.normal-header .navbar-nav > li.active > a , .normal-header .navbar-nav > li > a:hover {
+.normal-header .navbar-nav > li > a:hover {
     color: #8bc750 !important;
 }
 .navbar-toggle{z-index: 2}
@@ -162,6 +158,18 @@ body {
 .section-signup {
     margin-right:20px;
 }
+
+
+.modal.in .modal-dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 #autobtn{position: fixed;top:-90000px;left: -90000px}
 .close{position: absolute;right: 20px;
     top:20px;
@@ -232,6 +240,43 @@ body {
 }
  p.agree-footer{
     font-size:10px;
+}
+/*back to top scroll*/
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #777777;
+    color: #eeeeee;
+    width: 50px;
+    height: 48px;
+    line-height: 48px;
+    right: 30px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+    background-color: #8bc750;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+    opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+    line-height: inherit;
 }
 
 /*about*/

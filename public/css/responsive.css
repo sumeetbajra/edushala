@@ -55,7 +55,12 @@
 }
 
 @media (max-width: 768px) {
-
+    .default-header {
+        position: fixed;
+    }
+    #content_body{
+         padding:40px 0 0 0;
+    }
     .centermessage {
         padding:50px 20px 20px;
         background-color: transparent;
@@ -113,6 +118,10 @@
     .row.centermessage{margin-left: 0}
     .carousel-control.right, .carousel-control.left{display:none}
     .achievement .col-xs-12{margin-top: 2em}
+    .modal.in .modal-dialog {
+        left: 47%;
+        top: 60%;
+    }
     #ad .modal-body .modal-description .form-control {
         width: 75%;
         height: 34px;
