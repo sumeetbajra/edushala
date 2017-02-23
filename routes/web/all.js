@@ -1,6 +1,8 @@
 ﻿var rs = require('../../misc/rs');
 var request = require('request');
 var APIConstants = require('../../constants/APIConstants');
+const Content = require('../../models/content');
+
 function checkAuth (req, res, next) {
     console.log('checkAuth ' + req.url);
     // you should add to this list, for each and every secure url
@@ -83,6 +85,125 @@ module.exports = function (ctx) {
     ctx.app.get('/admin',function(req,res){
         data.page.title = 'Edushala - CMS Login';
         res.render('cms/admin_login',data);
+    });
+
+    ctx.app.get('/admin_dashboard',function(req,res){
+        data.page.title = 'CMS - Dashboard ';
+        res.render('cms/admin_dashboard',data);
+    });
+
+    ctx.app.get('/add_contents',function(req,res){
+        data.page.title = 'CMS - Add Content ';
+        res.render('cms/add_contents',data);
+    });
+
+    ctx.app.get('/content_list',function(req,res){
+        Content.find({}).sort('-dateAdded').exec(function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to list content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Content List'
+                    },
+                    blog:doc
+                }
+                res.render('cms/content_list', data);
+            }
+        });
+    });
+
+    ctx.app.get('/content_list/:id',function(req,res){
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Update Content'
+                    },
+                    blog:doc
+                }
+                res.render('cms/update_content', data);
+            }
+        });
+    });
+
+    ctx.app.get('/blog',function(req,res){
+        Content.find({}).sort('-dateAdded').exec(function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to list content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog:doc
+                }
+                res.render('cms/blog', data);
+            }
+        });
+       // data.page.title = 'CMS - Blog ';
+       // res.render('cms/blog');
+     /*   request.get('http://localhost:4232/cms/list', function(error, response, body) {
+            if(!error && response.statusCode === 200) {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog: JSON.parse(body).result
+                }
+                console.log(data);
+                res.render('cms/blog', data);
+            } else {
+                console.log(error);
+            }
+        }) */
+    });
+
+    /* ctx.app.get('/blog/:id',function(req,res){
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                var data = {
+                    page: {
+                        title: 'Edushala - Blog'
+                    },
+                    blog: doc
+                }
+                res.render('cms/blog_single', data);
+            }
+        });
+    }); */
+
+    var getLatestPosts = function() {
+        return Content.find({}).sort('-dateAdded')
+    }
+
+    ctx.app.get('/blog/:id',function(req,res){
+        Content.findById(req.params.id, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                getLatestPosts().sort('-dateAdded').exec(function(err, latestArticles) {
+                    if(err){
+                        res.json({success : false, msg : 'Failed to list content!'});
+                    } else {
+                        var data = {
+                            page:
+                                {
+                                    title:'Edushala - Blog'
+                                },
+                            blog: doc,
+                            articles: latestArticles
+                        }
+                        console.log(data);
+                        res.render('cms/blog_single', data)
+                    }
+                });
+            }
+        });
     });
 
     ctx.app.get('/college',function(req,res){
