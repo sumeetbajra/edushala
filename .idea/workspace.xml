@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="074ea425-9aa4-4cce-b57b-25f9b3ed9fae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/pages/add_content.js" afterPath="$PROJECT_DIR$/public/js/app/pages/add_content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/content.js" afterPath="$PROJECT_DIR$/routes/api/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web/all.js" afterPath="$PROJECT_DIR$/routes/web/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cms/blog_single.ejs" afterPath="$PROJECT_DIR$/views/cms/blog_single.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cms/blog.ejs" afterPath="$PROJECT_DIR$/views/cms/blog.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +22,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="blog_single.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blog_single.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cms/blog_single.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="365">
@@ -56,8 +55,18 @@
       <file leaf-file-name="blog.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cms/blog.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+            <state relative-caret-position="204">
+              <caret line="45" column="75" lean-forward="false" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1365">
+              <caret line="161" column="12" lean-forward="false" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -115,7 +124,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/models/content.js" />
         <option value="$PROJECT_DIR$/public/js/vendors/ckeditor/plugins/image/dialogs/image.js" />
-        <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/public/js/vendors/ckeditor/config.js" />
         <option value="$PROJECT_DIR$/views/cms/add_content.ejs" />
         <option value="$PROJECT_DIR$/views/cms/cms_dashboard.ejs" />
@@ -129,11 +137,12 @@
         <option value="$PROJECT_DIR$/views/cms/add_contents.ejs" />
         <option value="$PROJECT_DIR$/views/cms/content_list.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/cms/blog.ejs" />
         <option value="$PROJECT_DIR$/public/js/app/pages/add_content.js" />
         <option value="$PROJECT_DIR$/routes/web/all.js" />
         <option value="$PROJECT_DIR$/routes/api/content.js" />
         <option value="$PROJECT_DIR$/views/cms/blog_single.ejs" />
+        <option value="$PROJECT_DIR$/views/cms/blog.ejs" />
+        <option value="$PROJECT_DIR$/public/css/custom.css" />
       </list>
     </option>
   </component>
@@ -237,6 +246,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edushala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edushala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -349,12 +376,12 @@
       <workItem from="1487690090854" duration="2668000" />
       <workItem from="1487737162124" duration="59000" />
       <workItem from="1487741053281" duration="18224000" />
-      <workItem from="1488171708683" duration="9323000" />
+      <workItem from="1488171708683" duration="9626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171825000" />
+    <option name="totallyTimeSpent" value="172128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -547,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="157" column="18" lean-forward="false" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/vendors/ckeditor/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-646">
@@ -706,18 +726,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/cms/blog.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cms/blog_single.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cms/blog.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="45" column="75" lean-forward="false" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="161" column="12" lean-forward="false" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
           <folding />
         </state>
       </provider>
