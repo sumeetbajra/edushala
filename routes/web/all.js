@@ -198,7 +198,6 @@ module.exports = function (ctx) {
                             blog: doc,
                             articles: latestArticles
                         }
-                        console.log(data);
                         res.render('cms/blog_single', data)
                     }
                 });

@@ -14,18 +14,20 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
- router.post('/uploadImage', upload.single('featuredImg'), function(req, res, next) {
-    res.redirect('/add_content');
+ router.post('/uploadImg', upload.single('featuredImg'), function(req, res, next) {
+   // res.redirect('/add_content');
     console.log(req.file.filename);
-  /*  res.json({
+    res.json({
         error: false,
-        result: req.file.path
-    }); */
+        result: req.file.filename
+ });
 });
 
 //Add Content
 router.post('/addContent',function (req,res) {
+    console.log(req.body);
     var newContent = new Content({
+        featuredImgUrl : req.body.featuredImgUrl,
         title : req.body.title,
         blogContent : req.body.blogContent
     });

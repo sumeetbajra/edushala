@@ -83,7 +83,7 @@
 
                         <div id="related-posts" class="related-posts">
                             <% for (var i = 0; i < articles.length; i++) { %>
-                            <div class="entry"><p><a href="#"> <%= articles[i].title %> </a></p><small> <%= articles[i].dateAdded %>  </small></div>
+                            <div class="entry"><p><a href="/blog/<%= articles[i]._id %>"> <%= articles[i].title %> </a></p><small> <%= articles[i].dateAdded %>  </small></div>
                             <% }%>
                         </div><!-- end related -->
 

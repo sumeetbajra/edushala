@@ -1,5 +1,23 @@
 $(document).ready(function() {
+    var featuredImgName;
+    $('#uploadForm').submit(function() {
+        $("#status").empty().text("File is uploading...");
+        $(this).ajaxSubmit({
+            error: function(xhr) {
+                status('Error: ' + xhr.status);
+            },
+            success: function(response) {
+                $("#status").empty().text('File Uploaded Successfully.');
+                console.log('name:' + response.result);
+                featuredImgName = response.result;
+            }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+    });
+
     $('#btnAddConent').on("click", function () {
+        var featuredImgUrl = featuredImgName;
         var data = CKEDITOR.instances.editor1.getData();
         var title = $('#title').val();
         if(title == ''){
@@ -8,6 +26,7 @@ $(document).ready(function() {
         }
         else {
             var model = {
+                featuredImgUrl : featuredImgUrl,
                 title: title,
                 blogContent: data
             };
