@@ -16,7 +16,6 @@ var upload = multer({ storage: storage });
 
  router.post('/uploadImg', upload.single('featuredImg'), function(req, res, next) {
    // res.redirect('/add_content');
-    console.log(req.file.filename);
     res.json({
         error: false,
         result: req.file.filename

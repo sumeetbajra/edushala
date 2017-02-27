@@ -8,7 +8,6 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $("#status").empty().text('File Uploaded Successfully.');
-                console.log('name:' + response.result);
                 featuredImgName = response.result;
             }
         });
