@@ -149,7 +149,7 @@ module.exports = function (ctx) {
         return Content.find({}).sort('-dateAdded')
     }
 
-    ctx.app.get('/blog/:id',function(req,res){
+    /* ctx.app.get('/blog/:id',function(req,res){
         Content.findById(req.params.id, function(err, doc) {
             if(err){
                 res.json({success : false, msg : 'Failed to get content!'});
@@ -171,7 +171,33 @@ module.exports = function (ctx) {
                 });
             }
         });
+    }); */
+
+    ctx.app.get('/blog/:seoUrl',function(req,res){
+        Content.find(req.params.seoUrl, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                getLatestPosts().sort('-dateAdded').exec(function(err, latestArticles) {
+                    if(err){
+                        res.json({success : false, msg : 'Failed to list content!'});
+                    } else {
+                        var data = {
+                            page:
+                                {
+                                    title:'Edushala - Blog'
+                                },
+                            blog: doc,
+                            articles: latestArticles
+                        }
+                        console.log(data.blog[0].title);
+                        res.render('cms/blog_single', data)
+                    }
+                });
+            }
+        });
     });
+
 
     ctx.app.get('/college',function(req,res){
         data.page.title = 'Edushala - Courses for College';

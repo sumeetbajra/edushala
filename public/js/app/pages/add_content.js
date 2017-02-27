@@ -19,15 +19,18 @@ $(document).ready(function() {
         var featuredImgUrl = featuredImgName;
         var data = CKEDITOR.instances.editor1.getData();
         var title = $('#title').val();
-        if(title == ''){
-            $( "#msg" ).html( '<p class="text-danger"><strong>Please enter blog title and content.</strong></p>' );
+        var titleId = $('#titleId').val();
+        console.log(titleId);
+        if(title == '' || titleId == ''){
+            $( "#msg" ).html( '<p class="text-danger"><strong>Please enter blog title and title ID.</strong></p>' );
             return;
         }
         else {
             var model = {
                 featuredImgUrl : featuredImgUrl,
                 title: title,
-                blogContent: data
+                blogContent: data,
+                seoUrl : titleId
             };
             $.ajax({
                 method: 'POST',

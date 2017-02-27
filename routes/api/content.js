@@ -28,7 +28,8 @@ router.post('/addContent',function (req,res) {
     var newContent = new Content({
         featuredImgUrl : req.body.featuredImgUrl,
         title : req.body.title,
-        blogContent : req.body.blogContent
+        blogContent : req.body.blogContent,
+        seoUrl : req.body.seoUrl
     });
     newContent.save(function (err,doc) {
         if(err){
@@ -65,6 +66,7 @@ router.post('/:id',function (req,res) {
             res.status(500).send(err);
         } else {
             doc.title = req.body.title || doc.title;
+            doc.seoUrl = req.body.seoUrl || doc.seoUrl;
             doc.blogContent = req.body.blogContent || doc.blogContent;
 
             doc.save(function (err, data) {
