@@ -143,45 +143,13 @@ module.exports = function (ctx) {
                 res.render('cms/blog', data);
             }
         });
-       // data.page.title = 'CMS - Blog ';
-       // res.render('cms/blog');
-     /*   request.get('http://localhost:4232/cms/list', function(error, response, body) {
-            if(!error && response.statusCode === 200) {
-                var data = {
-                    page: {
-                        title: 'Edushala - Blog'
-                    },
-                    blog: JSON.parse(body).result
-                }
-                console.log(data);
-                res.render('cms/blog', data);
-            } else {
-                console.log(error);
-            }
-        }) */
     });
-
-    /* ctx.app.get('/blog/:id',function(req,res){
-        Content.findById(req.params.id, function(err, doc) {
-            if(err){
-                res.json({success : false, msg : 'Failed to get content!'});
-            } else {
-                var data = {
-                    page: {
-                        title: 'Edushala - Blog'
-                    },
-                    blog: doc
-                }
-                res.render('cms/blog_single', data);
-            }
-        });
-    }); */
 
     var getLatestPosts = function() {
         return Content.find({}).sort('-dateAdded')
     }
 
-    ctx.app.get('/blog/:id',function(req,res){
+    /* ctx.app.get('/blog/:id',function(req,res){
         Content.findById(req.params.id, function(err, doc) {
             if(err){
                 res.json({success : false, msg : 'Failed to get content!'});
@@ -198,13 +166,38 @@ module.exports = function (ctx) {
                             blog: doc,
                             articles: latestArticles
                         }
-                        console.log(data);
+                        res.render('cms/blog_single', data)
+                    }
+                });
+            }
+        });
+    }); */
+
+    ctx.app.get('/blog/:seoUrl',function(req,res){
+        Content.find(req.params.seoUrl, function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to get content!'});
+            } else {
+                getLatestPosts().sort('-dateAdded').exec(function(err, latestArticles) {
+                    if(err){
+                        res.json({success : false, msg : 'Failed to list content!'});
+                    } else {
+                        var data = {
+                            page:
+                                {
+                                    title:'Edushala - Blog'
+                                },
+                            blog: doc,
+                            articles: latestArticles
+                        }
+                        console.log(data.blog[0].title);
                         res.render('cms/blog_single', data)
                     }
                 });
             }
         });
     });
+
 
     ctx.app.get('/college',function(req,res){
         data.page.title = 'Edushala - Courses for College';
@@ -239,19 +232,6 @@ module.exports = function (ctx) {
                 res.render('course_details', data);
             }
         })
-        // ctx.api.services.kachha.get({
-        //     data: {class_uuid:req.params.class_uuid},
-        //     success: function (results) {
-        //         var data = {
-        //             page: {title: results.course.name},
-        //             kachha: results
-        //         };
-        //         res.render('course_details',data);
-        //     },
-        //     failure: function (error) {
-        //         res.json(error)
-        //     }
-        // });
     });
 
 

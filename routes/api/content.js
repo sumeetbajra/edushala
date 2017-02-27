@@ -14,20 +14,22 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
- router.post('/uploadImage', upload.single('featuredImg'), function(req, res, next) {
-    res.redirect('/add_content');
-    console.log(req.file.filename);
-  /*  res.json({
+ router.post('/uploadImg', upload.single('featuredImg'), function(req, res, next) {
+   // res.redirect('/add_content');
+    res.json({
         error: false,
-        result: req.file.path
-    }); */
+        result: req.file.filename
+ });
 });
 
 //Add Content
 router.post('/addContent',function (req,res) {
+    console.log(req.body);
     var newContent = new Content({
+        featuredImgUrl : req.body.featuredImgUrl,
         title : req.body.title,
-        blogContent : req.body.blogContent
+        blogContent : req.body.blogContent,
+        seoUrl : req.body.seoUrl
     });
     newContent.save(function (err,doc) {
         if(err){
@@ -64,6 +66,7 @@ router.post('/:id',function (req,res) {
             res.status(500).send(err);
         } else {
             doc.title = req.body.title || doc.title;
+            doc.seoUrl = req.body.seoUrl || doc.seoUrl;
             doc.blogContent = req.body.blogContent || doc.blogContent;
 
             doc.save(function (err, data) {

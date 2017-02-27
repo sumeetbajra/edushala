@@ -14,6 +14,9 @@ const contentSchema = mongoose.Schema({
     featuredImgUrl : {
       type: String
     },
+    seoUrl : {
+      type:String
+    },
     isActive : {
         type : Boolean,
         default : true

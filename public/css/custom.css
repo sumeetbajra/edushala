@@ -274,3 +274,7 @@ body {
     line-height: 30px;        /* fallback */
     max-height: 150px;       /* fallback */
 }
+#featured-image {
+    width:100%;
+    height:200px;
+}

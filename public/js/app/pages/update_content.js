@@ -3,9 +3,11 @@ $(document).ready(function() {
     var id = url.substring(url.lastIndexOf('/') + 1);
     $('#btnUpdateContent').on("click", function () {
         var data = CKEDITOR.instances.editor1.getData();
+        var seoUrl = $('#titleId').val();
         var title = $('#title').val();
         var model = {
             title: title,
+            seoUrl : seoUrl,
             blogContent: data
         };
         $.ajax({

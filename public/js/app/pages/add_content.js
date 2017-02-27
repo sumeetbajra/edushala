@@ -1,15 +1,36 @@
 $(document).ready(function() {
+    var featuredImgName;
+    $('#uploadForm').submit(function() {
+        $("#status").empty().text("File is uploading...");
+        $(this).ajaxSubmit({
+            error: function(xhr) {
+                status('Error: ' + xhr.status);
+            },
+            success: function(response) {
+                $("#status").empty().text('File Uploaded Successfully.');
+                featuredImgName = response.result;
+            }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+    });
+
     $('#btnAddConent').on("click", function () {
+        var featuredImgUrl = featuredImgName;
         var data = CKEDITOR.instances.editor1.getData();
         var title = $('#title').val();
-        if(title == ''){
-            $( "#msg" ).html( '<p class="text-danger"><strong>Please enter blog title and content.</strong></p>' );
+        var titleId = $('#titleId').val();
+        console.log(titleId);
+        if(title == '' || titleId == ''){
+            $( "#msg" ).html( '<p class="text-danger"><strong>Please enter blog title and title ID.</strong></p>' );
             return;
         }
         else {
             var model = {
+                featuredImgUrl : featuredImgUrl,
                 title: title,
-                blogContent: data
+                blogContent: data,
+                seoUrl : titleId
             };
             $.ajax({
                 method: 'POST',
