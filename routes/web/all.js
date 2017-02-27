@@ -61,7 +61,7 @@ module.exports = function (ctx) {
 
     ctx.app.get('/learn',function(req,res){
         request.get(APIConstants.COURSE, function(error, response, body) {
-            console.log(APIConstants.COURSE);
+          //  console.log(APIConstants.COURSE);
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
@@ -69,7 +69,7 @@ module.exports = function (ctx) {
                     },
                     courses: JSON.parse(body).result
                 }
-                console.log(data);
+                console.log(data.courses[9].educator);
                 res.render('learn', data);
             } else {
                 console.log(error);

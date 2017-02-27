@@ -3,7 +3,7 @@
 <head>
     <% include common/head %>
     <!--additional JS and css-->
-    <script src="/js/api/kachha.js" type="text/javascript"></script>
+    <!--<script src="/js/api/kachha.js" type="text/javascript"></script>-->
     <script src="/js/app/pages/home.js" type="text/javascript"></script>
 </head>
 <body>
@@ -16,22 +16,28 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="3" class=""></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
 
-                    <div class="banner-slider-carousel" style="background-image:url(images/edushala1.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala1.jpg); width:100%; height:600px; background-size:cover">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="tagline"><h4>A Powerful <span class="element1"></span><br>Website Template.</h4></div>
-                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="tagline"><h4> <span class="element1"></span><br></h4></div>
+                                    <p>Explore our innovative courses – classroom instructions and online.</p>
                                     <div class="text-left large-buttons">
-                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                        <a target="_blank" href="#courses" class="btn btn-primary btn-lg">Browse Courses</a>
                                     </div><!-- end title -->
                                 </div>
+                            </div>
+                            <div class="more-below">
+                            	<a href="#courses" class="scrollTo"><i class="fa fa-angle-double-down  " aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -39,16 +45,39 @@
                 </div>
                 <div class="item">
 
-                    <div class="banner-slider-carousel" style="background-image:url(images/edushala2.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background:linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala2.jpg); width:100%; height:600px; background-size:cover">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="tagline"><h4>A Powerful <span class="element2"></span><br>Website Template.</h4></div>
-                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
+                                    <div class="tagline"><h4> <span class="element2"></span><br></h4></div>
+                                    <p>Becoming an instructor at Edushala is a cakewalk if you are really passionate about what you want to teach</p>
                                     <div class="text-left large-buttons">
-                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
+                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg text-uppercase ">Get Started </a>
                                     </div><!-- end title -->
                                 </div>
+                            </div>
+	                        <div class="more-below">
+	                        	<a href="#courses" class="scrollTo"><i class="fa fa-angle-double-down " aria-hidden="true"></i></a>
+	                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala3.jpg); width:100%; height:600px; background-size:cover">
+                        <div class="container" style="padding-top:10%">
+                            <div class="row centermessage text-left">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="tagline"><h4><span class="element3"></span><br></h4></div>
+                                    <p> We have our own learning management system - Eduware to manage your organization’s online and offline training needs.</p>
+                                    <div class="text-left large-buttons">
+                                        <a target="_blank" href="#" class="btn btn-primary btn-lg requestdemo text-uppercase">Request for a Demo</a>
+                                    </div><!-- end title -->
+                                </div>
+                            </div>
+                            <div class="more-below">
+                            	<a href="#courses" class="scrollTo"><i class="fa fa-angle-double-down " aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -56,38 +85,48 @@
                 </div>
                 <div class="item">
 
-                    <div class="banner-slider-carousel" style="background-image:url(images/edushala3.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala4.jpg); width:100%; height:600px; background-size:cover">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="tagline"><h4>A Powerful <span class="element3"></span><br>Website Template.</h4></div>
-                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
-                                    <div class="text-left large-buttons">
-                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
-                                    </div><!-- end title -->
+                                    <div class="tagline"><h4 class="crou-subscribe">Get exclusive news about our special events, courses and more</h4></div>
+                                    <!-- end title -->
+                                </div>
+                                <div class="col-md-6">
+                                    <form>
+                                        <div class="row section-signup semitrans">
+                                            <div class="col-md-12">
+                                                <div class="form-group has-icon-left form-control-name">
+                                                    <label class="sr-only" for="inputName">Your name</label>
+                                                    <input type="text" class="form-control form-control-lg" id="inputName" placeholder="Your name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group has-icon-left form-control-email">
+                                                    <label class="sr-only" for="inputEmail">Email address</label>
+                                                    <input type="email" class="form-control form-control-lg" id="inputEmail" placeholder="Email address" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary btn-block">Subscribe us</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>By sharing your email, you agree to our <a href="#">Privacy Policy</a>  and <a href="#">Terms of Service</a>.</p>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
+	                        <div class="more-below">
+	                        	<a href="#courses" class="scrollTo"><i class="fa fa-angle-double-down " aria-hidden="true"></i></a>
+	                        </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="item">
-
-                    <div class="banner-slider-carousel" style="background-image:url(images/edushala4.jpg); width:100%; height:600px; background-size:cover">
-                        <div class="container" style="padding-top:10%">
-                            <div class="row centermessage text-left">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="tagline"><h4>A Powerful <span class="element4"></span><br>Website Template.</h4></div>
-                                    <p>We're among one of the best Education Bootstrap template on the Envato marketplace to build a powerful online university websites. The team family is a small collection of designers and who have one thing in common - we all love coding.</p> 
-                                    <div class="text-left large-buttons">
-                                        <a target="_blank" href="course-list.html" class="btn btn-primary btn-lg">VIEW OUR COURSES</a>
-                                    </div><!-- end title -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -101,16 +140,16 @@
 
         </div> <!-- end section -->
 
-        <div class="section">
+        <div class="section" id="courses">
             <div class="container">
                 <div class="big-title text-center">
-                    <h2 class="text-center edu-green"><strong>Edushala Courses</strong></h2>
+                    <h2 class="text-center edu-green"><strong>Browse Courses</strong></h2>
                     <hr class="customhr customhrcenter">
                 </div><!-- end title -->
 
                 <div id="course_catalog" class="row course-list">
                     <% for (var i = 0; i < 8; i++) { %>
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeIn">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeIn">
                         <div class="video-wrapper course-catalog course-widget clearfix">
                             <div class="post-media">
                                 <div class="entry">
@@ -150,35 +189,35 @@
             </div><!-- end container -->
         </div><!-- end section -->
 
-        <div class="section" data-stellar-background-ratio="0.5" style="background-image:url('images/numbers_bg.jpg');">
+        <div class="section achievement" data-stellar-background-ratio="0.5" style="background-image:url('images/numbers_bg.jpg');">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="custom_fact_item">
                             <div class="custom_fact_name text-center">
                                 <h3 id="course-stat" class="stat-count">224</h3>
                                 <h6>Completed Courses</h6>
-                                <span>We have delivered many courses in short time</span>
+                                <span>We/Edushala have delivered many Project Based Learning courses in short time</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="custom_fact_item">
-                            <div class="custom_fact_name text-center">
-                                <h3 class="stat-count">664</h3>
-                                <h6>Happy Students</h6>
-                                <span>We have hundreds of happy students</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="custom_fact_item">
                             <div class="custom_fact_name text-center">
                                 <h3 class="stat-count">154</h3>
                                 <h6>Proud Teachers</h6>
-                                <span>Hundreds of teachers have worked with edushala</span>
+                                <span>Hundreds of teachers have worked with us/Edushala</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="custom_fact_item">
+                            <div class="custom_fact_name text-center">
+                                <h3 class="stat-count">664</h3>
+                                <h6>Proud Teachers</h6>
+                                <span>We/Edushala have created training courses for top industries in Nepal</span>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -256,6 +295,47 @@
     <footer id="footer">
     <% include common/footer %>
     </footer>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" id="autobtn" data-toggle="modal" data-target="#ad">
+        Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="ad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+
+                <div class="modal-body">
+                    <img src="/images/ad_image.png"  alt="ad" width="300" height="200"/>
+                    <img src="/images/owl2.png"  class="pull-right branch" alt="ad" width="200" height="100"/>
+                    <div class="modal-description text-center">
+                        <h2>Welcome to Edushala!</h2>
+                        <p> Love what you learn here.</p>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email address">
+                            </div>
+                            <button type="submit" class="btn btn-default">SUBSCRIBE</button>
+                        </form>
+                        <p>Sign up for news, special events, career development and more.</p>
+
+                        <span>By sharing your email, you agree to our<a href="#">Privacy Policy</a>  and <a href="#">Terms of Service</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<script>
+    setTimeout(function(){
+    $('#autobtn').trigger("click");
+    },3000);
+   /* setTimeout(function(){
+        $('.close').trigger("click");
+    },50000)*/
+
+</script>
 
 </body>
 </html>

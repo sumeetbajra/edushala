@@ -18,10 +18,13 @@ a {
     font-weight: bold;
 }
 
+
 .btn-success:hover {
     text-decoration: none;
 }
-
+#content_body{
+    padding:83px 0 0 0;
+}
 .logo img {
     max-height: 56px;
     margin: 2px 0 -4px 0;
@@ -32,8 +35,15 @@ a {
   top: -6px;
 }
 
+
+
+
 .check > li > a:hover {
     text-decoration: none;
+}
+.row.centermessage{
+    margin-left:50px;
+    margin-top: 4em;
 }
 
 div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquote .small, blockquote footer, blockquote small, .course-table .fa-question-circle, .course-table .fa-play-circle, .video-wrapper .widget-title .btn-inverse, .awards small, .colorized h3, .team-member-name span, .service-style2 h3, .conecourse hr.customhr::before, .custom_fact_item h6, .blog-wrapper .blog-meta a i, .check li .fa-circle-o, .service-list span, .about-widget span, .yamm-content li:hover a, .copyrights p a, .testibox small a, a:hover, a:focus, .fa-heart, .copyrights li:hover a {
@@ -54,7 +64,8 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
 }
 
 .team-member-img img {
-    height: 240px;
+    height: 300px;
+    width: 250px;
 }
 
 .portfolio-thumb {
@@ -130,6 +141,112 @@ body {
     background-color: #99cc66 !important;
     border-color: #99cc66 !important;
     color: #ffffff !important;
+}
+
+/*home*/
+.default-header {
+    position: fixed;
+    z-index:20;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}
+.normal-header .navbar-nav > li.active > a , .normal-header .navbar-nav > li > a:hover {
+    color: #8bc750 !important;
+}
+.navbar-toggle{z-index: 2}
+.centermessage h4.crou-subscribe{
+    font-size:30px !important;
+}
+.section-signup {
+    margin-right:20px;
+}
+#autobtn{position: fixed;top:-90000px;left: -90000px}
+.close{position: absolute;right: 20px;
+    top:20px;
+    z-index:2;
+}
+#ad .modal-body{
+    padding:0;
+}
+#ad .modal-body img.branch{
+    margin-top:45px;
+}
+#ad .modal-body .modal-description{
+    padding: 0px 0 20px 0;
+}
+#ad .modal-body .modal-description p,#ad .modal-body .modal-description form{
+    color: #14151f;
+    font-size: 16px;
+    font-weight: 700;
+}
+#ad .modal-body .modal-description span{
+    color: #14151f;
+    font-size:10px;
+}
+#ad .modal-body .modal-description .btn-default {
+    color: #fff;
+    background-color: #8bc750;
+    border-color: #8bc750;
+}
+/*footer*/
+.copyrights p.foot_description{
+    text-transform: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+    Multicoloured Hover Variations
+*/
+
+#social-fb:hover {
+    color: #3B5998 !important;
+}
+#social-tw:hover {
+    color: #4099FF !important;
+}
+#social-yo:hover {
+    color: #b31217 !important;
+}
+#social-in:hover {
+    color:rgba(128, 68, 190, 0.78)  !important;
+}
+ p.agree-footer{
+    font-size:10px;
+}
+
+/*about*/
+.edu_owl{
+    padding-top: 50px;
+    background-color: #ecf0f1;
+}
+
+.more-below {
+    position: absolute;
+    left: 80%;
+    bottom: 7%;
+    font-size: 44px;
+}
+.more-below i.fa.fa-chevron-circle-down {
+    font-size: 50px;
 }
 
 .video-wrapper .widget-title img {

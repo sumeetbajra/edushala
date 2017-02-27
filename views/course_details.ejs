@@ -31,11 +31,11 @@
 
                     <div class="widget clearfix">
                         <div class="course-custom-meta">
-                            <p class="course-instructors">Instructor : <a href="#educator" title=""><%= courses[i].educator.firstName %> <%= courses[i].educator.lastName %></a></p>
+                            <p class="course-instructors">Instructor : <a href="#educator" title=""><%= courses[i].educator ? courses[i].educator.firstName + ' ' + courses[i].educator.lastName : 'Not Set' %></a></p>
                             <hr>
                             <p class="course-forum">Price : <span>Rs.</span> <%= courses[i].price %> </p>
                             <hr>
-                            <p class="course-forum">Category :  <%= courses[i].category.name %> </p>
+                            <p class="course-forum">Category :  <%= courses[i].category ? courses[i].category.name : 'Uncategorized' %> </p>
                         </div><!-- end meta -->
                     </div><!-- end widget -->
                 </div><!-- end col -->
@@ -64,9 +64,9 @@
 
                                         <div class="col-md-9 col-sm-12">
                                             <div class="team-member-name">
-                                                <p><%= courses[i].educator.firstName %> <%= courses[i].educator.lastName %> </p>
+                                                <p><%= courses[i].educator ? courses[i].educator.firstName + ' ' + courses[i].educator.lastName : 'Not Set' %> </p>
                                             </div>
-                                            <p><%- courses[i].educator.bio%> </p>
+                                            <p><%- courses[i].educator ? courses[i].bio :'Bio not set' %> </p>
                                             <hr class="invis">
 
                                         </div><!-- end col -->

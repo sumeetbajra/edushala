@@ -19,7 +19,6 @@ var app = express();
 
 var content = require('./routes/api/content');
 
-
 mongoose.connection.on('connected',function () {
     console.log('Connected to database:' + config.database);
 });
