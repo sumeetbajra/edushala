@@ -122,7 +122,7 @@
                         </div>
 
                         <div id="related-posts" class="related-posts">
-                            <% for (var i = 0; i < articles.length; i++) { %>
+                            <% for (var i = 0; i < articles.length; i++) {    if (i === 5) { break; } %>
                             <div class="entry"><p><a href="/blog/<%= articles[i].seoUrl %>"> <%= articles[i].title %> </a></p><small> <%= moment(articles[i].dateAdded).format(shortDateFormat) %>  </small></div>
                             <% }%>
                         </div><!-- end related -->
