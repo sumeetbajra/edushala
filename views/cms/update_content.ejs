@@ -60,8 +60,8 @@ START SITE HERE
                                 <label for="comment">Content:</label>
                                 <textarea class="form-control" rows="5" id="editor1" name="editor1"><%= blog.blogContent %></textarea>
                             </div>
-                            <button type="button" id="btnUpdateContent" class="btn btn-default">Update</button>
-                            <button type="button" id="btnDeleteContent" class="btn btn-primary">Delete</button>
+                            <button type="button" id="btnUpdateContent" class="btn btn-primary">Update</button>
+                            <button type="button" id="btnDeleteContent" class="btn btn-danger">Delete</button>
                             <script>
                                 CKEDITOR.replace( 'editor1' );
                                 CKEDITOR.replace( 'editor1', {
