@@ -39,6 +39,7 @@ $(document).ready(function() {
                     console.log(data);
                     if(data.msg != null){
                         $( "#msg" ).html( '<p class="edu-green"><strong>Content Deleted Successfully.</strong></p>' );
+                        clearForm();
                     }
                     else {
                         $( "#msg" ).html( '<p class="text-danger"><strong>Something went wrogn, plese try again.</strong></p>' );
@@ -56,7 +57,8 @@ $(document).ready(function() {
     });
 });
 
-function deleteContent() {
-    
+function clearForm() {
+    $('#titleId').val('');
+    $('#title').val('');
+    CKEDITOR.instances.editor1.setData('');
 }
-

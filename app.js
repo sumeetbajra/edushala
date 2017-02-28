@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 var rs = require('./misc/rs');
 var apiCls = require('./apiCls');
 var mongoose = require('mongoose');
+var moment = require('moment');
 var config = require('./config/db');
 mongoose.connect(config.database);
 
@@ -26,6 +27,11 @@ mongoose.connection.on('connected',function () {
 mongoose.connection.on('error',function (err) {
     console.log('Database error:' + ' ' + err);
 });
+
+var moment = require('moment');
+var shortDateFormat = "LL";
+app.locals.moment = moment;
+app.locals.shortDateFormat = shortDateFormat;
 
 // view engine setup.
 app.set('views', path.join(__dirname, 'views'));
