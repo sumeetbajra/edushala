@@ -41,7 +41,7 @@
                         <div class="blog-single-meta clearfix">
                             <ul class="list-inline">
                                 <li> <a href="/" class="readmore">Edushala</a></li>
-                                <li><i class="fa fa-clock-o"></i> <%= blog[0].dateAdded %> </li>
+                                <li><i class="fa fa-clock-o"></i> <%= moment(blog[0].dateAdded).format(shortDateFormat) %> </li>
                                 <div class="addthis_inline_share_toolbox"></div>
                             </ul>
                         </div><!-- end meta -->
@@ -123,7 +123,7 @@
 
                         <div id="related-posts" class="related-posts">
                             <% for (var i = 0; i < articles.length; i++) { %>
-                            <div class="entry"><p><a href="/blog/<%= articles[i].seoUrl %>"> <%= articles[i].title %> </a></p><small> <%= articles[i].dateAdded %>  </small></div>
+                            <div class="entry"><p><a href="/blog/<%= articles[i].seoUrl %>"> <%= articles[i].title %> </a></p><small> <%= moment(articles[i].dateAdded).format(shortDateFormat) %>  </small></div>
                             <% }%>
                         </div><!-- end related -->
 

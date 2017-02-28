@@ -48,7 +48,7 @@
                                             </div><!-- end media -->
                                             <div class="course-meta clearfix">
                                                 <div class="pull-left">
-                                                    <p><i class="fa fa-clock-o"></i> <%= blog[i].dateAdded %> </p>
+                                                    <p><i class="fa fa-clock-o"></i> <%= moment(blog[i].dateAdded).format(shortDateFormat) %> </p>
                                                 </div>
                                             </div><!-- end meta -->
                                         </div><!-- end col-->
@@ -94,7 +94,7 @@
                                 <div class="related-posts">
                                     <div class="entry">
                                         <p><a href="/blog/<%= blog[i].seoUrl %>" title=""> <%= blog[i].title %></a></p>
-                                        <small><%= blog[i].dateAdded %></small>
+                                        <small><%= moment(blog[i].dateAdded).format(shortDateFormat) %></small>
                                         <hr>
                                     </div><!-- end entry -->
                                 </div><!-- end related -->
