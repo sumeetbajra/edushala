@@ -35,19 +35,19 @@
                 <div class="content col-md-9 col-sm-12">
                     <div class="post-padding">
                         <div class="blog-big-title clearfix">
-                            <h3><%= blog[0].title %></h3>
+                            <h3><%= blog.title %></h3>
                         </div>
 
                         <div class="blog-single-meta clearfix">
                             <ul class="list-inline">
                                 <li> <a href="/" class="readmore">Edushala</a></li>
-                                <li><i class="fa fa-clock-o"></i> <%= moment(blog[0].dateAdded).format(shortDateFormat) %> </li>
+                                <li><i class="fa fa-clock-o"></i> <%= moment(blog.dateAdded).format(shortDateFormat) %> </li>
                                 <div class="addthis_inline_share_toolbox"></div>
                             </ul>
                         </div><!-- end meta -->
 
                         <div id="content-detail">
-                            <%- blog[0].blogContent %>
+                            <%- blog.blogContent %>
                         </div>
 
                         <hr>
@@ -122,7 +122,7 @@
                         </div>
 
                         <div id="related-posts" class="related-posts">
-                            <% for (var i = 0; i < articles.length; i++) {    if (i === 5) { break; } %>
+                            <% for (var i = 0; i < articles.length; i++) {    if (i === 10) { break; } %>
                             <div class="entry"><p><a href="/blog/<%= articles[i].seoUrl %>"> <%= articles[i].title %> </a></p><small> <%= moment(articles[i].dateAdded).format(shortDateFormat) %>  </small></div>
                             <% }%>
                         </div><!-- end related -->

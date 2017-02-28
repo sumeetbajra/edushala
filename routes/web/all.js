@@ -174,7 +174,7 @@ module.exports = function (ctx) {
     }); */
 
     ctx.app.get('/blog/:seoUrl',function(req,res){
-        Content.find(req.params.seoUrl, function(err, doc) {
+        Content.getContentByUrl(req.params.seoUrl, function(err, doc) {
             if(err){
                 res.json({success : false, msg : 'Failed to get content!'});
             } else {
@@ -190,7 +190,8 @@ module.exports = function (ctx) {
                             blog: doc,
                             articles: latestArticles
                         }
-                        console.log(data.blog[0].title);
+                       // console.log(data.blog);
+                       // console.log(data.blog[0].blogContent);
                         res.render('cms/blog_single', data)
                     }
                 });
