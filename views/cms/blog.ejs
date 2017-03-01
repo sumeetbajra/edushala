@@ -43,7 +43,7 @@
                                         <div class="col-md-4">
                                             <div class="post-media">
                                                 <div class="entry">
-                                                    <img src="/images/blog_small.jpg" alt="" class="img-responsive">
+                                                    <img id="featured-image" src="/images/uploads/<%= blog[i].featuredImgUrl %>" alt="" class="img-responsive">
                                                 </div>
                                             </div><!-- end media -->
                                             <div class="course-meta clearfix">
@@ -55,7 +55,7 @@
 
                                         <div class="col-md-8">
                                             <div class="widget-title clearfix">
-                                                <h3><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h3>
+                                                <h3><a href="/blog/<%= blog[i].seoUrl %>"><%= blog[i].title %></a></h3>
                                                 <hr>
                                                 <div class="giveMeEllipsis">
                                                     <%- blog[i].blogContent %>
@@ -67,7 +67,7 @@
                                                         <a href="/" class="readmore">Edushala</a>
                                                     </div>
                                                     <div class="pull-right">
-                                                        <a href="/blog/<%= blog[i]._id %>" class="btn btn-sm btn-edushala">Read More</a>
+                                                        <a href="/blog/<%= blog[i].seoUrl %>" class="btn btn-sm btn-edushala">Read More</a>
                                                     </div>
                                                 </div><!-- end bottom -->
                                             </div><!-- end title -->
@@ -93,7 +93,7 @@
                                 <% for (var i = 0; i < blog.length; i++) { %>
                                 <div class="related-posts">
                                     <div class="entry">
-                                        <p><a href="/blog/<%= blog[i]._id %>" title=""> <%= blog[i].title %></a></p>
+                                        <p><a href="/blog/<%= blog[i].seoUrl %>" title=""> <%= blog[i].title %></a></p>
                                         <small><%= blog[i].dateAdded %></small>
                                         <hr>
                                     </div><!-- end entry -->

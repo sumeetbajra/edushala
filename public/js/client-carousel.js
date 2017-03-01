@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  console.log('hello');
     //---carousel slider----//
     $('.carousel[data-type="multi"] .item').each(function(){
         var next = $(this).next(); // grabs the next sibling of the carouselGrid
@@ -45,5 +46,15 @@ $(document).ready(function(){
         }
 
     });
-
+    jQuery('.read-more').click(function(e){
+        e.preventDefault();
+        var current = jQuery(this);
+        var target = current.attr('href');
+        if(current.hasClass('open')){
+            current.removeClass('open').text('Read More...');
+        }else{
+            current.addClass('open').text('Read Less...');
+        }
+        jQuery(target).slideToggle('slow');
+    });
 });
