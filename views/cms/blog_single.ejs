@@ -1,0 +1,158 @@
+
+<html>
+<head>
+    <% include ../common/head %>
+</head>
+<body>
+<header id="header" class="header full-width transparent fixed header-small clearfix">
+    <% include ../common/header %>
+</header>
+
+<section id="content_body">
+    <div class="page-title section lb">
+        <div class="container">
+            <div class="clearfix">
+                <div class="title-area pull-left">
+                    <h2>Edushala Blog <small>Welcome to edushala blog page.</small></h2>
+                </div><!-- /.pull-right -->
+                <div class="pull-right hidden-xs">
+                    <div class="bread">
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li class="active">Blog Single</li>
+                        </ol>
+                    </div><!-- end bread -->
+                </div><!-- /.pull-right -->
+            </div><!-- end clearfix -->
+        </div>
+    </div><!-- end page-title -->
+
+    <div class="section">
+
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-9 col-sm-12">
+                    <div class="post-padding">
+                        <div class="blog-big-title clearfix">
+                            <h3><%= blog[0].title %></h3>
+                        </div>
+
+                        <div class="blog-single-meta clearfix">
+                            <ul class="list-inline">
+                                <li> <a href="/" class="readmore">Edushala</a></li>
+                                <li><i class="fa fa-clock-o"></i> <%= blog[0].dateAdded %> </li>
+                                <div class="addthis_inline_share_toolbox"></div>
+                            </ul>
+                        </div><!-- end meta -->
+
+                        <div id="content-detail">
+                            <%- blog[0].blogContent %>
+                        </div>
+
+                        <hr>
+
+                    </div><!-- end post-padding -->
+
+                    <hr class="invis">
+
+
+
+                    <div class="post-padding">
+                        <div id="mailchimp">
+                            <!-- Begin MailChimp Signup Form -->
+                            <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                            </style>
+                            <div id="mc_embed_signup">
+                                <form action="//edushala.us3.list-manage.com/subscribe/post?u=af172ca633421fad063542da5&amp;id=20b30b9fc8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <h2>Subscribe to our mailing list</h2>
+                                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                        <div class="mc-field-group">
+                                            <label for="mce-EMAIL">Email  <span class="asterisk">*</span>
+                                            </label>
+                                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                        </div>
+                                        <div class="mc-field-group">
+                                            <label for="mce-FNAME">Name : </label>
+                                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                                        </div>
+                                        <div id="mce-responses" class="clear">
+                                            <div class="response" id="mce-error-response" style="display:none"></div>
+                                            <div class="response" id="mce-success-response" style="display:none"></div>
+                                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_af172ca633421fad063542da5_20b30b9fc8" tabindex="-1" value=""></div>
+                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                            <!--End mc_embed_signup-->
+                        </div>
+
+                        <hr>
+
+                        <div id="disqus_thread"></div>
+                        <script>
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = '//edushala.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <script id="dsq-count-scr" src="//edushala.disqus.com/count.js" async></script>
+                    </div><!-- end post-padding -->
+                </div><!-- end content -->
+
+                <div class="sidebar col-md-3 col-sm-12">
+                    <div class="widget clearfix">
+                        <a href="#"><img src="/images/course2.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                     <div class="widget clearfix">
+                     <div class="widget-title">
+                            <h3>Latest Articles</h3>
+                            <hr>
+                        </div>
+
+                        <div id="related-posts" class="related-posts">
+                            <% for (var i = 0; i < articles.length; i++) { %>
+                            <div class="entry"><p><a href="/blog/<%= articles[i].seoUrl %>"> <%= articles[i].title %> </a></p><small> <%= articles[i].dateAdded %>  </small></div>
+                            <% }%>
+                        </div><!-- end related -->
+
+                    </div><!-- end widget -->
+
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+
+    </div><!-- end section -->
+</section>
+
+
+<footer id="footer">
+    <% include ../common/footer %>
+</footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-92662560-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58b3fd01b570467a"></script>
+</body>
+</html>

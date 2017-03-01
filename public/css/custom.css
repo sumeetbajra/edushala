@@ -97,6 +97,11 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
 .course-detail-box {
     padding:15px;
 }
+
+body.modal-open {
+  padding-right: 0 !important  
+}
+
 .modal-header {
     background: #82af6f;
     border-color: #82af6f;
@@ -140,7 +145,6 @@ body {
     border-color: #99cc66 !important;
     color: #ffffff !important;
 }
-
 
 /*home*/
 .default-header {
@@ -253,6 +257,7 @@ body {
 .more-below i.fa.fa-chevron-circle-down {
     font-size: 50px;
 }
+
 /*back to top scroll*/
 .scroll-top-wrapper{
     position: fixed;
@@ -339,3 +344,33 @@ p.about-part1,.about-second h2,.about-second p{
     margin-top: 35px
   }
 /***footer****/
+
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.post-padding #content-detail img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+
+.giveMeEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    line-height: 30px;        /* fallback */
+    max-height: 150px;       /* fallback */
+}
+#featured-image {
+    width:100%;
+    height:200px;
+}

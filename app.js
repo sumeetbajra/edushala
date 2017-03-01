@@ -11,13 +11,28 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var rs = require('./misc/rs');
 var apiCls = require('./apiCls');
+var mongoose = require('mongoose');
+var config = require('./config/db');
+mongoose.connect(config.database);
 
 var app = express();
 
+var content = require('./routes/api/content');
+
+mongoose.connection.on('connected',function () {
+    console.log('Connected to database:' + config.database);
+});
+
+mongoose.connection.on('error',function (err) {
+    console.log('Database error:' + ' ' + err);
+});
 
 // view engine setup.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'images/uploads')));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -38,12 +53,14 @@ app.get('/frontend', function (request, response){
   response.sendFile(path.resolve(__dirname, 'frontend/build', 'index.html'))
 })
 
+app.use('/cms',content);
+
 var api = apiCls(context);
 context.api = api;
 require('./routes/web/index')(context);
 require('./routes/web/misc')(context);
 
-// catch 404 and forward to error handlers
+// catch 404 and forward to error handlers.
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
