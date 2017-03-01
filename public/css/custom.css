@@ -144,6 +144,7 @@ body {
 
 /*home*/
 .default-header {
+    position: fixed;
     z-index:20;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
@@ -162,13 +163,14 @@ body {
 
 
 .modal.in .modal-dialog {
-    position: absolute;
+  margin-top: 15vh
+    /*position: relative;
     left: 50%;
     top: 50%;
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
 }
 
 #autobtn{position: fixed;top:-90000px;left: -90000px}
@@ -307,9 +309,15 @@ video {
 }
 
 .about-desc,.about-blended{
+    position: relative;
     margin-bottom:20px;
-    margin-top:40px;
+    top: 40px;
 }
+
+.about-blended:last-child {
+  padding-bottom: 130px
+}
+
 .about-first,.about-second{
     background-color: rgba(0, 0, 0, 0.46);
 }
@@ -320,5 +328,14 @@ p.about-part1,.about-second h2,.about-second p{
 .content_body{
     position:fixed;
 }
+#content_body {
+  position: relative;
+  top: 84px
+}
 /*about page finished*/
 
+/***footer****/
+  footer {
+    margin-top: 35px
+  }
+/***footer****/
