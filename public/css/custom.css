@@ -32,15 +32,16 @@ a {
   top: -6px;
 }
 
-
-
-
 .check > li > a:hover {
     text-decoration: none;
 }
+.banner-slider-carousel{
+    width:100%;
+    height:70vh;
+    background-size:cover;
+}
 .row.centermessage{
     margin-left:50px;
-    margin-top: 4em;
 }
 
 div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquote .small, blockquote footer, blockquote small, .course-table .fa-question-circle, .course-table .fa-play-circle, .video-wrapper .widget-title .btn-inverse, .awards small, .colorized h3, .team-member-name span, .service-style2 h3, .conecourse hr.customhr::before, .custom_fact_item h6, .blog-wrapper .blog-meta a i, .check li .fa-circle-o, .service-list span, .about-widget span, .yamm-content li:hover a, .copyrights p a, .testibox small a, a:hover, a:focus, .fa-heart, .copyrights li:hover a {
@@ -241,8 +242,17 @@ body {
  p.agree-footer{
     font-size:10px;
 }
+.more-below {
+    position: absolute;
+    left: 80%;
+    bottom: 7%;
+    font-size: 44px;
+}
+.more-below i.fa.fa-chevron-circle-down {
+    font-size: 50px;
+}
 /*back to top scroll*/
-.scroll-top-wrapper {
+.scroll-top-wrapper{
     position: fixed;
     opacity: 0;
     visibility: hidden;
@@ -267,6 +277,7 @@ body {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+
 .scroll-top-wrapper:hover {
     background-color: #8bc750;
 }
@@ -279,18 +290,35 @@ body {
     line-height: inherit;
 }
 
+
 /*about*/
-.edu_owl{
-    padding-top: 50px;
-    background-color: #ecf0f1;
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1000;
+    min-width: 100%;
+    min-height: 100%;
+}
+.mejs-container .mejs-controls,.mejs-offscreen {
+    opacity: 0;
 }
 
-.more-below {
-    position: absolute;
-    left: 80%;
-    bottom: 7%;
-    font-size: 44px;
+.about-desc,.about-blended{
+    margin-bottom:20px;
+    margin-top:40px;
 }
-.more-below i.fa.fa-chevron-circle-down {
-    font-size: 50px;
+.about-first,.about-second{
+    background-color: rgba(0, 0, 0, 0.46);
 }
+p.about-part1,.about-second h2,.about-second p{
+    margin: 20px 10px;
+    color: #fff;
+}
+.content_body{
+    position:fixed;
+}
+/*about page finished*/
+

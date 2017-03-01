@@ -45,5 +45,15 @@ $(document).ready(function(){
         }
 
     });
-
+    jQuery('.read-more').click(function(e){
+        e.preventDefault();
+        var current = jQuery(this);
+        var target = current.attr('href');
+        if(current.hasClass('open')){
+            current.removeClass('open').text('Read More...');
+        }else{
+            current.addClass('open').text('Read Less...');
+        }
+        jQuery(target).slideToggle('slow');
+    });
 });
