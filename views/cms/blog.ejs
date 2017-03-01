@@ -1,0 +1,119 @@
+
+<html>
+<head>
+    <% include ../common/head %>
+    <!--additional JS and css-->
+</head>
+<body>
+<header id="header" class="header full-width transparent fixed header-small clearfix">
+    <% include ../common/header %>
+</header>
+
+<section id="content_body">
+    <div class="page-title section lb">
+        <div class="container">
+            <div class="clearfix">
+                <div class="title-area pull-left">
+                    <h2>Edushala Blog <small>Welcome to edushala blog page.</small></h2>
+                </div><!-- /.pull-right -->
+                <div class="pull-right hidden-xs">
+                    <div class="bread">
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="active">Blog</li>
+                        </ol>
+                    </div><!-- end bread -->
+                </div><!-- /.pull-right -->
+            </div><!-- end clearfix -->
+        </div>
+    </div><!-- end page-title -->
+
+    <div class="section">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="content col-md-9 col-sm-12">
+                    <% for (var i = 0; i < blog.length; i++) { %>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="blog-list course-list normal-list">
+                                <div class="video-wrapper course-widget clearfix">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="post-media">
+                                                <div class="entry">
+                                                    <img id="featured-image" src="/images/uploads/<%= blog[i].featuredImgUrl %>" alt="" class="img-responsive">
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="course-meta clearfix">
+                                                <div class="pull-left">
+                                                    <p><i class="fa fa-clock-o"></i> <%= blog[i].dateAdded %> </p>
+                                                </div>
+                                            </div><!-- end meta -->
+                                        </div><!-- end col-->
+
+                                        <div class="col-md-8">
+                                            <div class="widget-title clearfix">
+                                                <h3><a href="/blog/<%= blog[i].seoUrl %>"><%= blog[i].title %></a></h3>
+                                                <hr>
+                                                <div class="giveMeEllipsis">
+                                                    <%- blog[i].blogContent %>
+                                                </div>
+                                                <hr>
+
+                                                <div class="bottom-line clearfix">
+                                                    <div class="pull-left">
+                                                        <a href="/" class="readmore">Edushala</a>
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <a href="/blog/<%= blog[i].seoUrl %>" class="btn btn-sm btn-edushala">Read More</a>
+                                                    </div>
+                                                </div><!-- end bottom -->
+                                            </div><!-- end title -->
+                                        </div><!-- end col -->
+                                    </div>
+                                </div><!--widget -->
+                            </div><!-- end row -->
+                        </div>
+                    </div>
+                    <% } %>
+                </div><!-- end content -->
+
+
+                <div class="sidebar col-md-3 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="widget clearfix">
+                                <div class="widget-title">
+                                    <h3>Latest Articles</h3>
+                                    <hr>
+                                </div><!-- end widget-title -->
+
+                                <% for (var i = 0; i < blog.length; i++) { %>
+                                <div class="related-posts">
+                                    <div class="entry">
+                                        <p><a href="/blog/<%= blog[i].seoUrl %>" title=""> <%= blog[i].title %></a></p>
+                                        <small><%= blog[i].dateAdded %></small>
+                                        <hr>
+                                    </div><!-- end entry -->
+                                </div><!-- end related -->
+                                <% } %>
+                            </div><!-- end widget -->
+                        </div>
+                    </div>
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+</section>
+
+<footer id="footer">
+    <% include ../common/footer %>
+</footer>
+
+</body>
+</html>
