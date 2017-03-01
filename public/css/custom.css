@@ -97,6 +97,11 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
 .course-detail-box {
     padding:15px;
 }
+
+body.modal-open {
+  padding-right: 0 !important  
+}
+
 .modal-header {
     background: #82af6f;
     border-color: #82af6f;
@@ -143,6 +148,7 @@ body {
 
 /*home*/
 .default-header {
+    position: fixed;
     z-index:20;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
@@ -161,13 +167,14 @@ body {
 
 
 .modal.in .modal-dialog {
-    position: absolute;
+  margin-top: 15vh
+    /*position: relative;
     left: 50%;
     top: 50%;
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
 }
 
 #autobtn{position: fixed;top:-90000px;left: -90000px}
@@ -250,6 +257,7 @@ body {
 .more-below i.fa.fa-chevron-circle-down {
     font-size: 50px;
 }
+
 /*back to top scroll*/
 .scroll-top-wrapper{
     position: fixed;
@@ -306,9 +314,15 @@ video {
 }
 
 .about-desc,.about-blended{
+    position: relative;
     margin-bottom:20px;
-    margin-top:40px;
+    top: 40px;
 }
+
+.about-blended:last-child {
+  padding-bottom: 130px
+}
+
 .about-first,.about-second{
     background-color: rgba(0, 0, 0, 0.46);
 }
@@ -319,7 +333,33 @@ p.about-part1,.about-second h2,.about-second p{
 .content_body{
     position:fixed;
 }
+#content_body {
+  position: relative;
+  top: 84px
+}
 /*about page finished*/
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.post-padding #content-detail img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+
+/***footer****/
+  footer {
+    margin-top: 35px
+  }
+/***footer****/
+
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;

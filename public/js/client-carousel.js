@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  console.log('hello');
     //---carousel slider----//
     $('.carousel[data-type="multi"] .item').each(function(){
         var next = $(this).next(); // grabs the next sibling of the carouselGrid
