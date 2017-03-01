@@ -338,6 +338,21 @@ p.about-part1,.about-second h2,.about-second p{
   top: 84px
 }
 /*about page finished*/
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.post-padding #content-detail img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
 
 /***footer****/
   footer {

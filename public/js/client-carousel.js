@@ -46,6 +46,7 @@ $(document).ready(function(){
         }
 
     });
+    /** video-about-about-blended**/
     jQuery('.read-more').click(function(e){
         e.preventDefault();
         var current = jQuery(this);
