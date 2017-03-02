@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  console.log('hello');
     //---carousel slider----//
     $('.carousel[data-type="multi"] .item').each(function(){
         var next = $(this).next(); // grabs the next sibling of the carouselGrid
@@ -18,5 +19,43 @@ $(document).ready(function(){
         }
 
 
+    });
+    /* footer (back to top scroll) js */
+    $(document).ready(function(){
+
+        $(function(){
+
+            $(document).on( 'scroll', function(){
+
+                if ($(window).scrollTop() > 100) {
+                    $('.scroll-top-wrapper').addClass('show');
+                } else {
+                    $('.scroll-top-wrapper').removeClass('show');
+                }
+            });
+
+            $('.scroll-top-wrapper').on('click', scrollToTop);
+        });
+
+        function scrollToTop() {
+            verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+        }
+
+    });
+    /** video-about-about-blended**/
+    jQuery('.read-more').click(function(e){
+        e.preventDefault();
+        var current = jQuery(this);
+        var target = current.attr('href');
+        if(current.hasClass('open')){
+            current.removeClass('open').text('Read More...');
+        }else{
+            current.addClass('open').text('Read Less...');
+        }
+        jQuery(target).slideToggle('slow');
     });
 });

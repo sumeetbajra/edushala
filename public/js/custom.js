@@ -108,3 +108,4 @@ $(document).on('click', 'a.scrollTo', function(event){
         scrollTop: $( $.attr(this, 'href') ).offset().top - 114
     }, 500);
 });
+

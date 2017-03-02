@@ -18,7 +18,17 @@
     }
 }
 @media (max-width:1024px) {
+    .banner-slider-carousel{
+        height:50vh;
+    }
+    .row.centermessage{margin-left: 0;margin-top:4em;}
+    .carousel{
+        margin-top:-30px;
+    }
     .carousel-control.right, .carousel-control.left{display:none}
+    video{
+        width:auto;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -29,7 +39,11 @@
     body.leftmenu #wrapper .container-fluid {
         max-width: 100%;
     }
+    #lab_video_text_wrap {
+        height: 300px;
+    }
 }
+
 
 @media (max-width: 920px) {
     .hot {
@@ -55,9 +69,18 @@
 }
 
 @media (max-width: 768px) {
-
+    .default-header {
+        position: fixed;
+    }
+    #content_body{
+         padding:40px 0 0 0;
+    }
+    .banner-slider-carousel{
+        height:70vh;
+    }
+    .row.centermessage{margin-left: 0;margin-top:4em;}
     .centermessage {
-        padding:50px 20px 20px;
+        padding:0px 20px 20px;
         background-color: transparent;
     }
     .centermessage p {
@@ -88,6 +111,14 @@
     .sitemap-footer,.subscribe-footer{
         padding-top:20px;
     }
+    /*learn*/
+    #main-content{
+        padding-top:130px;
+    }
+    /*about*/
+    video{
+        width:auto;
+    }
 }
 
 @media (max-width:640px){
@@ -108,24 +139,52 @@
     a.requestdemo{
         margin-top:20px;
     }
+    .banner-slider-carousel{
+        height:100vh;
+    }
     .centermessage h4,.centermessage h4.crou-subscribe{font-size: 20px !important}
 
-    .row.centermessage{margin-left: 0}
+    .row.centermessage{margin-left: 0;margin-top:6em;}
     .carousel-control.right, .carousel-control.left{display:none}
     .achievement .col-xs-12{margin-top: 2em}
+    .modal.in .modal-dialog {
+        left: 0;
+        top: 6%;
+    }
     #ad .modal-body .modal-description .form-control {
         width: 75%;
         height: 34px;
         text-align: center;
         margin-left: 50px;
     }
+
     .more-below{
         left: 84%;
-        bottom: 20%;
+        bottom: 5%;
     }
+
     .sitemap-footer,.subscribe-footer{
         padding-top:20px;
     }
+
+    /*learn*/
+    #main-content{
+        padding-top:100px;
+    }
+    /*about*/
+    #lab_video_text_wrap {
+    height: 250px;
+  }
+  #lab_video_text_overlay h2 {
+    font-size: 2em;
+  }
+  #lab_video_text_overlay p {
+    font-size: .9em;
+  }
+  video{
+      width:auto;
+  }
+  /**/
 }
 @media (max-width: 600px) {
     .alignleft {

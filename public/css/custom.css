@@ -18,13 +18,10 @@ a {
     font-weight: bold;
 }
 
-
 .btn-success:hover {
     text-decoration: none;
 }
-#content_body{
-    padding:83px 0 0 0;
-}
+
 .logo img {
     max-height: 56px;
     margin: 2px 0 -4px 0;
@@ -35,15 +32,16 @@ a {
   top: -6px;
 }
 
-
-
-
 .check > li > a:hover {
     text-decoration: none;
 }
+.banner-slider-carousel{
+    width:100%;
+    height:70vh;
+    background-size:cover;
+}
 .row.centermessage{
     margin-left:50px;
-    margin-top: 4em;
 }
 
 div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquote .small, blockquote footer, blockquote small, .course-table .fa-question-circle, .course-table .fa-play-circle, .video-wrapper .widget-title .btn-inverse, .awards small, .colorized h3, .team-member-name span, .service-style2 h3, .conecourse hr.customhr::before, .custom_fact_item h6, .blog-wrapper .blog-meta a i, .check li .fa-circle-o, .service-list span, .about-widget span, .yamm-content li:hover a, .copyrights p a, .testibox small a, a:hover, a:focus, .fa-heart, .copyrights li:hover a {
@@ -99,6 +97,11 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
 .course-detail-box {
     padding:15px;
 }
+
+body.modal-open {
+  padding-right: 0 !important  
+}
+
 .modal-header {
     background: #82af6f;
     border-color: #82af6f;
@@ -151,7 +154,7 @@ body {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
 }
-.normal-header .navbar-nav > li.active > a , .normal-header .navbar-nav > li > a:hover {
+.normal-header .navbar-nav > li > a:hover {
     color: #8bc750 !important;
 }
 .navbar-toggle{z-index: 2}
@@ -161,6 +164,19 @@ body {
 .section-signup {
     margin-right:20px;
 }
+
+
+.modal.in .modal-dialog {
+  margin-top: 15vh
+    /*position: relative;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+}
+
 #autobtn{position: fixed;top:-90000px;left: -90000px}
 .close{position: absolute;right: 20px;
     top:20px;
@@ -232,13 +248,6 @@ body {
  p.agree-footer{
     font-size:10px;
 }
-
-/*about*/
-.edu_owl{
-    padding-top: 50px;
-    background-color: #ecf0f1;
-}
-
 .more-below {
     position: absolute;
     left: 80%;
@@ -248,6 +257,119 @@ body {
 .more-below i.fa.fa-chevron-circle-down {
     font-size: 50px;
 }
+
+/*back to top scroll*/
+.scroll-top-wrapper{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #777777;
+    color: #eeeeee;
+    width: 50px;
+    height: 48px;
+    line-height: 48px;
+    right: 30px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.scroll-top-wrapper:hover {
+    background-color: #8bc750;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+    opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+    line-height: inherit;
+}
+
+
+/*about*/
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1000;
+    min-width: 100%;
+    min-height: 100%;
+}
+.mejs-container .mejs-controls,.mejs-offscreen {
+    opacity: 0;
+}
+
+.about-desc,.about-blended{
+    position: relative;
+    margin-bottom:20px;
+    top: 40px;
+}
+
+.about-blended:last-child {
+  padding-bottom: 130px
+}
+
+.about-first,.about-second{
+    background-color: rgba(0, 0, 0, 0.46);
+}
+p.about-part1,.about-second h2,.about-second p{
+    margin: 20px 10px;
+    color: #fff;
+}
+.content_body{
+    position:fixed;
+}
+#content_body {
+  position: relative;
+  top: 84px
+}
+/*about page finished*/
+/***learn page***/
+.learn-grp{
+    padding-top: 40px;
+}
+.learn-grp p{
+    padding: 20px 30px;
+}
+
+
+
+/** learn page finished**/
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.video-wrapper .widget-title img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+.post-padding #content-detail img {
+    max-width: 100%;
+    display:block;
+    height: auto;
+}
+
+/***footer****/
+  footer {
+    margin-top: 70px
+  }
+/***footer****/
 
 .video-wrapper .widget-title img {
     max-width: 100%;

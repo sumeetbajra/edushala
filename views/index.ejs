@@ -25,7 +25,7 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
 
-                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala1.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala1.jpg);">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="item">
 
-                    <div class="banner-slider-carousel" style="background:linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala2.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background:linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala2.jpg);">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -65,12 +65,12 @@
                 </div>
                 <div class="item">
 
-                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala3.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)),                                                       url(/images/edushala3.jpg);">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="tagline"><h4><span class="element3"></span><br></h4></div>
-                                    <p> We have our own learning management system - Eduware to manage your organization’s online and offline training needs.</p>
+                                    <p> We have our own learning management system - Eduware to manage your organization’s online and offline                                          training needs.</p>
                                     <div class="text-left large-buttons">
                                         <a target="_blank" href="#" class="btn btn-primary btn-lg requestdemo text-uppercase">Request for a Demo</a>
                                     </div><!-- end title -->
@@ -85,7 +85,7 @@
                 </div>
                 <div class="item">
 
-                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala4.jpg); width:100%; height:600px; background-size:cover">
+                    <div class="banner-slider-carousel" style="background: linear-gradient(rgba(31, 33, 32, 0.86), rgba(21, 6, 6, 0.84)), url(/images/edushala4.jpg);">
                         <div class="container" style="padding-top:10%">
                             <div class="row centermessage text-left">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -113,7 +113,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <p>By sharing your email, you agree to our <a href="#">Privacy Policy</a>  and <a href="#">Terms of Service</a>.</p>
+                                                <p>By sharing your email, you agree to our <a href="/terms">Privacy Policy</a>  and <a href="/terms">Terms of Service</a>.</p>
                                             </div>
                                         </div>
                                     </form>
@@ -126,7 +126,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -139,14 +139,41 @@
             </a>
 
         </div> <!-- end section -->
+        <script>
+            $(document).ready(function(){
+                // Top slider
+                $('#myCarousel').carousel({
+                    interval:4000,
+                    pause: "hover"
+                });
+
+                $('#myCarousel').hover(
+                    function() {
+                        $(this).carousel('pause');
+                    },
+                    function() {
+                        $(this).carousel('cycle');
+                    }
+                );
+
+                $('#myCarousel').mouseenter(function() {
+                    $(this).carousel('pause');
+                }).mouseleave(function() {
+                    $(this).carousel('next');
+                });
+            });
+        </script>
 
         <div class="section" id="courses">
             <div class="container">
-                <div class="big-title text-center">
-                    <h2 class="text-center edu-green"><strong>Browse Courses</strong></h2>
-                    <hr class="customhr customhrcenter">
-                </div><!-- end title -->
-
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="big-title text-center">
+                            <h2 class="text-center edu-green"><strong>Browse Courses</strong></h2>
+                            <hr class="customhr customhrcenter">
+                        </div><!-- end title -->
+                    </div>
+                </div>
                 <div id="course_catalog" class="row course-list">
                     <% for (var i = 0; i < 8; i++) { %>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 wow fadeIn">
@@ -197,7 +224,7 @@
                             <div class="custom_fact_name text-center">
                                 <h3 id="course-stat" class="stat-count">224</h3>
                                 <h6>Completed Courses</h6>
-                                <span>We/Edushala have delivered many Project Based Learning courses in short time</span>
+                                <span>We have delivered many Project Based Learning courses in short time.</span>
                             </div>
                         </div>
                     </div>
@@ -207,7 +234,7 @@
                             <div class="custom_fact_name text-center">
                                 <h3 class="stat-count">154</h3>
                                 <h6>Proud Teachers</h6>
-                                <span>Hundreds of teachers have worked with us/Edushala</span>
+                                <span>Hundreds of teachers have worked with us.</span>
                             </div>
                         </div>
                     </div>
@@ -217,7 +244,7 @@
                             <div class="custom_fact_name text-center">
                                 <h3 class="stat-count">664</h3>
                                 <h6>Proud Teachers</h6>
-                                <span>We/Edushala have created training courses for top industries in Nepal</span>
+                                <span>We have created training courses for top industries in Nepal.</span>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -229,7 +256,7 @@
             <div class="container">
                 <div class="row">
                     <div class="widget-title">
-                        <h2 class="text-center edu-green"><strong>We are featured on</strong></h2>
+                        <h2 class="text-center edu-green"><strong>We're proud to have been covered on TV, on the web and in print.</strong></h2>
                     </div><!-- end title -->
                 </div>
             </div>
@@ -307,7 +334,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 
                 <div class="modal-body">
-                    <img src="/images/ad_image.png"  alt="ad" width="300" height="200"/>
+                    <img src="/images/owl.png"  alt="ad" width="300" height="200"/>
                     <img src="/images/owl2.png"  class="pull-right branch" alt="ad" width="200" height="100"/>
                     <div class="modal-description text-center">
                         <h2>Welcome to Edushala!</h2>
@@ -320,7 +347,7 @@
                         </form>
                         <p>Sign up for news, special events, career development and more.</p>
 
-                        <span>By sharing your email, you agree to our<a href="#">Privacy Policy</a>  and <a href="#">Terms of Service</a></span>
+                        <span>By sharing your email, you agree to our<a href="/terms">Privacy Policy</a>  and <a href="/terms">Terms of Service</a></span>
                     </div>
                 </div>
 
@@ -329,7 +356,7 @@
     </div>
 <script>
     setTimeout(function(){
-    $('#autobtn').trigger("click");
+      $('#ad').modal('show');
     },3000);
    /* setTimeout(function(){
         $('.close').trigger("click");
