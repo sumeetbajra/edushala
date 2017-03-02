@@ -338,6 +338,17 @@ p.about-part1,.about-second h2,.about-second p{
   top: 84px
 }
 /*about page finished*/
+/***learn page***/
+.learn-grp{
+    padding-top: 40px;
+}
+.learn-grp p{
+    padding: 20px 30px;
+}
+
+
+
+/** learn page finished**/
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;
@@ -356,7 +367,7 @@ p.about-part1,.about-second h2,.about-second p{
 
 /***footer****/
   footer {
-    margin-top: 35px
+    margin-top: 70px
   }
 /***footer****/
 
