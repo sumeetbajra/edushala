@@ -44,6 +44,7 @@ module.exports = function (ctx) {
     });
 
     ctx.app.post('/loginReq',function(req,res){
+        console.log(req.body);
         request({
             method: 'POST',
             json : true,
@@ -56,12 +57,12 @@ module.exports = function (ctx) {
                             page: {
                                 title: 'Edushala - Dashboard'
                             },
-                            data: body.result
+                            userData: body.data
                 }
                   req.session.authenticated = true;
-                  req.session.user = data.data;
+                  req.session.user = data.userData;
                   res.render('get_token',{
-                      userToken:req.session.user.token,
+                      userToken:req.session.user.rs_token,
                       user: JSON.stringify(req.session.user.user),
                       lmsClient: APIConstants.LMS_CLIENT
                   });

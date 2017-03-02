@@ -61,7 +61,6 @@ module.exports = function (ctx) {
 
     ctx.app.get('/learn',function(req,res){
         request.get(APIConstants.COURSE, function(error, response, body) {
-          //  console.log(APIConstants.COURSE);
             if(!error && response.statusCode === 200) {
                 var data = {
                     page: {
@@ -76,6 +75,22 @@ module.exports = function (ctx) {
             }
         })
     });
+
+ /*   ctx.app.get('/learn',function(req,res){
+        console.log('learn');
+        ctx.services.kachha.listKachha({
+            success: function (results) {
+                var data = {
+                    page: {title: 'Learn'},
+                    kachha: results
+                };
+                res.render('learn',data);
+            },
+            failure: function (error) {
+                res.json(error)
+            }
+        });
+    }); */
 
     ctx.app.get('/terms',function(req,res){
         data.page.title = 'Edushala - Terms & Conditions';

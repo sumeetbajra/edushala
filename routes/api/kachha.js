@@ -17,7 +17,7 @@ module.exports = function (context) {
         next();
     });
 
-    router.get('/', function (req, res) {
+    router.get('/list', function (req, res) {
         params.data = {
             price: req.query.price || 0,
             category: req.query.category || 'all',
