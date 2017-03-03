@@ -63,17 +63,13 @@ module.exports = function (ctx) {
                   req.session.user = data.userData;
                   res.render('get_token',{
                       userToken:req.session.user.rs_token,
-                      user: JSON.stringify(req.session.user.user),
-                      lmsClient: APIConstants.LMS_CLIENT
+                      user: JSON.stringify(req.session.user)
                   });
 
-            } else if(response.statusCode === 401) {
+            } else {
                 req.flash('error', 'Incorrect username or password!!')
                 res.redirect('/login');
-            } else {
-              req.flash('error', 'Oops!! Something went wrong. Please try again.')
-              res.redirect('/login');
-          }
+            }
         });
     });
 
@@ -85,25 +81,27 @@ module.exports = function (ctx) {
             body: req.body
         },
             function(error, response, body) {
-            console.log(response);
                 if(!error && response.statusCode === 200) {
                     var data = {
                         page: {
                             title: 'Edushala - Dashboard'
                         },
-                        data: body.result
+                        userData: body.data
                     }
-                    if(data.data._id != null){
+                    if(data.userData.user_uuid != null){
                         req.session.authenticated = true;
-                        req.session.user = data.data.user;
-                        res.redirect('/login');
+                        req.session.user = data.userData;
+                        res.render('get_token',{
+                            userToken:req.session.user.rs_token,
+                            user: JSON.stringify(req.session.user)
+                        });
                     }
                     else {
-                        req.flash('message', 'Error message');
+                        req.flash('error', 'Email already exists!');
                         res.redirect('/signup');
                     }
                 } else {
-                    req.flash('message', 'Error message');
+                    req.flash('error', 'Oops something went wrong!!!');
                     res.redirect('/signup');
                 }
             });

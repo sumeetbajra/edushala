@@ -7,5 +7,5 @@ module.exports = {
 	LMS_CLIENT: lmsClient,
 	COURSE: serverUrl + 'courses/',
   LOGIN: ezzoClient + 'rs/user/1/auth',
-  SIGNUP: serverUrl + 'users/signup'
+  SIGNUP: ezzoClient + 'rs/user/1/users/signup'
 }
