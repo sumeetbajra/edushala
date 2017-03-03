@@ -113,7 +113,7 @@ body.modal-open {
     color: #8bc750!important;
 }
 body {
-    font-size: 15px;
+    font-size: 16px;
 }
 .edu-title {
     font-size: 28px;
@@ -349,6 +349,52 @@ p.about-part1,.about-second h2,.about-second p{
 
 
 /** learn page finished**/
+/**enterprise page**/
+.paddingt20px{
+    padding-top:20px;
+}
+.change-colour{
+    color:#8bc750;
+}
+.enterprise-grp{
+    padding: 40px 0;
+}
+.enterprise-desc1,.enterprise-eduware{
+    padding-bottom: 20px;
+}
+
+.eduware-defination{
+    padding: 8em 10px 0;
+}
+.eduware-defination p{
+    font-size: 20px;
+}
+.eduware-defination a{
+    margin:10px 0;
+}
+.eduware-brief p{
+    text-align: center;
+    padding:15px 0;
+}
+.enterprise-org-emp{
+    padding:20px 0 40px;
+}
+.enterprise-org{
+    padding:40px 0 60px;
+}
+.enterprise-emp{
+    padding:0 0 20px;
+}
+.enterprise-feature{
+    padding-bottom: 20px;
+}
+.enterprise-feature-part{
+    padding-bottom: 20px;
+}
+.enterprise-collaboration {
+  padding-bottom:40px;
+}
+ /* enterprise end*/
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;

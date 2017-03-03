@@ -25,6 +25,11 @@ module.exports = function (ctx) {
         res.render('about', data)
     });
 
+    ctx.app.get('/edushala-for-enterprise', function(req, res){
+        data.page.title = 'Edushala for Enterprise - Edushala';
+        res.render('enterprise', data)
+    });
+
     ctx.app.get('/', function(req, res){
         request.get(APIConstants.COURSE, function(error, response, body) {
             if(!error && response.statusCode === 200) {
