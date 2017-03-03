@@ -22,8 +22,8 @@ var ajax = function(cfg){
     })
 };
 
-var api_user_path = "/rs/user/1/";
-var serverUrl = 'http://139.59.111.216:8081/';
+var api_user_path = "rs/user/1/";
+var serverUrl = 'http://localhost:4232/';
 
 var api = {
     user: {
@@ -44,11 +44,19 @@ var api = {
             console.log(cfg.url);
             ajax(cfg)
         }, */
-        change_password: function(cfg){
+
+        forgot: function(cfg){
             cfg.method = 'POST';
-            cfg.url = api_user_path + 'me/password/change';
+            cfg.url = serverUrl + api_user_path + 'auth/password/forgot';
             ajax(cfg)
         },
+
+        change_password: function(cfg){
+            cfg.method = 'POST';
+            cfg.url = serverUrl + api_user_path + 'auth/password/change';
+            ajax(cfg)
+        },
+
         get_profile: function(cfg){
             cfg.url = api_user_path + 'users/' + sessionMgr.get('user').user_uuid;
             ajax(cfg)

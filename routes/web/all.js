@@ -2,6 +2,7 @@
 var request = require('request');
 var APIConstants = require('../../constants/APIConstants');
 const Content = require('../../models/content');
+var session = require('express-session');
 
 function checkAuth (req, res, next) {
     console.log('checkAuth ' + req.url);
@@ -41,12 +42,11 @@ module.exports = function (ctx) {
 
     ctx.app.get('/dashboard', function(req, res){
         var data = {
-            user: req.session,
+            userData: req.session.user,
             page : {
                 title: 'Edushala - Dashboard'
             }
         }
-       console.log(data.user.user.email);
         res.render('dashboard', data);
     });
 

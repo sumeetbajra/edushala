@@ -57,17 +57,19 @@ module.exports = function (ctx) {
                             page: {
                                 title: 'Edushala - Dashboard'
                             },
-                            userData: body.data
+                            userData: body.data,
+                          //  user: JSON.stringify(req.session.user)
                 }
                   req.session.authenticated = true;
                   req.session.user = data.userData;
-                  res.render('get_token',{
+                  res.render('dashboard', data);
+                /*  res.render('dashboard', {
                       userToken:req.session.user.rs_token,
                       user: JSON.stringify(req.session.user)
-                  });
+                  }); */
 
             } else {
-                req.flash('error', 'Incorrect username or password!!')
+                req.flash('error', 'Wrong email or password. Please try again!');
                 res.redirect('/login');
             }
         });
@@ -93,11 +95,12 @@ module.exports = function (ctx) {
                         req.session.user = data.userData;
                         res.render('get_token',{
                             userToken:req.session.user.rs_token,
-                            user: JSON.stringify(req.session.user)
+                            user: JSON.stringify(req.session.user),
+                            data : data
                         });
                     }
                     else {
-                        req.flash('error', 'Email already exists!');
+                        req.flash('error', 'An Edushala account with that email address already exists. Please login with your email.');
                         res.redirect('/signup');
                     }
                 } else {

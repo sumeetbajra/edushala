@@ -11,6 +11,9 @@
                     "password": "T$mp1234",
                     "database": "rs_users"
                 }
+            },
+            "templates": {
+                "email": "S:/mongo/edushala/public/templates/email/index.js"
             }
         },
         "raven": {
@@ -39,7 +42,7 @@
                 "database": "ezzo_dev"
             }
         },
-        "data_path":"S:\\edushala\\localdata"
+        "data_path":"S:\\Rumsan\\binod\\projects\\edushala\\website\\localdata"
     }
 }
 

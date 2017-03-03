@@ -97,7 +97,7 @@ if (app.get('env') === 'development') {
 }
 
 // production error handlers
-// no stacktraces leaked to user
+// no stacktraces leaked to user.
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     delete err.source;

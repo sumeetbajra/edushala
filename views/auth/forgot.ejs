@@ -7,16 +7,22 @@
     <script>
         $(document).ready(function(){
             $('#btnForgot').on("click", function () {
-                api.user.forgot({
-                    data: {email: $('#email').val()},
-                    success: function () {
-                        location.href = 'forgot/checkemail'
-                    },
-                    error: function (d) {
-                        $('#message-text').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
-                       // alert(d.message);
-                    }
-                })
+                var email =$('#email').val();
+                if(email == ''){
+                    $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                }
+                else {
+                    api.user.forgot({
+                        data: {email: $('#email').val()},
+                        success: function () {
+                            location.href = 'forgot/checkemail'
+                        },
+                        error: function (d) {
+                            $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                            // alert(d.message);
+                        }
+                    })
+                }
             });
         });
     </script>
