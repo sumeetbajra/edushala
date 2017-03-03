@@ -29,3 +29,8 @@ const contentSchema = mongoose.Schema({
 
 const Content = module.exports = mongoose.model('Content',contentSchema);
 
+module.exports.getContentByUrl = function (seoUrl, callback) {
+    const query = {seoUrl : seoUrl}
+    Content.findOne(query,callback);
+}
+

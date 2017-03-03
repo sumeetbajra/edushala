@@ -6,17 +6,23 @@
     <!--additional JS and css-->
     <script>
         $(document).ready(function(){
-            $("#submit").click(function(){
-                api.user.forgot({
-                    data: {email: $('#email').val()},
-                    success: function () {
-                        location.href = 'forgot/checkemail'
-                    },
-                    error: function (d) {
-                        $('#message-text').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
-                       // alert(d.message);
-                    }
-                })
+            $('#btnForgot').on("click", function () {
+                var email =$('#email').val();
+                if(email == ''){
+                    $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                }
+                else {
+                    api.user.forgot({
+                        data: {email: $('#email').val()},
+                        success: function () {
+                            location.href = 'forgot/checkemail'
+                        },
+                        error: function (d) {
+                            $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                            // alert(d.message);
+                        }
+                    })
+                }
             });
         });
     </script>
@@ -37,13 +43,13 @@
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <div id="message-text"></div>
+                            <div id="error-msg"></div>
                             <form>
                                 <div class="form-group">
-                                    <label for="cname">Email Address:</label>
+                                    <label for="email">Email Address:</label>
                                     <input type="email" class="form-control" id="email" placeholder="Please enter your email address to get verification code.">
                                 </div>
-                                <button type="button" class="btn btn-edushala" id="submit">Submit</button>
+                                <button type="button" class="btn btn-edushala" id="btnForgot">Submit</button>
                             </form>
                         </div>
                         <div class="col-md-3"></div>

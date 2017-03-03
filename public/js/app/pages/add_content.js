@@ -56,6 +56,7 @@ $(document).ready(function() {
 });
 
 function clearForm() {
+    $('#titleId').val('');
     $('#title').val('');
-    CKEDITOR.instances.blog_content.setDate('');
+    CKEDITOR.instances.editor1.setData('');
 }

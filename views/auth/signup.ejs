@@ -20,16 +20,16 @@
                         <div class="widget-title">
                             <h2>Registration</h2>
                             <hr>
-                            <div id="msg"></div>
+                            <% if(messages.error) { %>
+                            <div class="alert alert-danger">
+                                <%= messages.error %>
+                            </div>
+                            <% } %>
                         </div><!-- end title -->
                         <div class="row">
                             <div class="form-group col-lg-12">
-                                <label>First Name</label>
-                                <input type="text" name="firstName" class="form-control" placeholder="Enter first name" required>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label>Last Name</label>
-                                <input type="text" name="lastName" class="form-control" placeholder="Enter last name" required>
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label>Email</label>
