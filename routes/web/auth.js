@@ -1,5 +1,6 @@
 ﻿var rs = require('../../misc/rs');
 var request = require('request');
+var passport = require('passport');
 var APIConstants = require('../../constants/APIConstants');
 
 function checkAuth (req, res, next) {
@@ -9,7 +10,6 @@ function checkAuth (req, res, next) {
         res.render('unauthorised', { status: 403 });
         return;
     }
-
     next();
 }
 
@@ -58,7 +58,6 @@ module.exports = function (ctx) {
                                 title: 'Edushala - Dashboard'
                             },
                             userData: body.data,
-                          //  user: JSON.stringify(req.session.user)
                 }
                   req.session.authenticated = true;
                   req.session.user = data.userData;

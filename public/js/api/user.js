@@ -29,31 +29,22 @@ var api = {
     user: {
         signup: function(cfg){
             cfg.method = 'POST',
-            cfg.url = api_user_path + 'users/signup';
+                cfg.url = api_user_path + 'users/signup';
             ajax(cfg)
         },
         login: function(cfg){
-            console.log(cfg);
             cfg.method = 'POST';
             cfg.url = api_user_path + 'auth';
             ajax(cfg)
         },
-      /*  login: function(cfg){
-            cfg.method = 'POST';
-            cfg.url = serverUrl + 'users/login';
-            console.log(cfg.url);
-            ajax(cfg)
-        }, */
-
         forgot: function(cfg){
             cfg.method = 'POST';
-            cfg.url = serverUrl + api_user_path + 'auth/password/forgot';
+            cfg.url = api_user_path + 'auth/password/forgot';
             ajax(cfg)
         },
-
         change_password: function(cfg){
             cfg.method = 'POST';
-            cfg.url = serverUrl + api_user_path + 'auth/password/change';
+            cfg.url = api_user_path + 'auth/password/change';
             ajax(cfg)
         },
 

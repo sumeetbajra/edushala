@@ -25,4 +25,23 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#btnGetCode').on("click", function () {
+        getCode();
+    });
 });
+
+function getCode() {
+    var email = $('#email').val();
+    console.log(email);
+    api.user.forgot({
+        data: {email: email},
+        success: function (data) {
+            console.log(data);
+            $('#lblMsg').html('<p class="text-success"><strong>Please check your email to change password</strong></p>');
+        },
+        error: function (d) {
+            $('#lblMsg').html('Email not found');
+        }
+    });
+}
