@@ -23,9 +23,6 @@
                 api.user.change_password({
                     data: data,
                     success: function (data) {
-                        sessionMgr.set('isLoggedIn', true);
-                        sessionMgr.set('user', data);
-                        sessionMgr.makeSecure(true);
                         location.replace('/forgot/thankyou');
                     },
                     error: function (data) {

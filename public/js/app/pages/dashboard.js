@@ -1,34 +1,30 @@
 $(document).ready(function() {
-    $('#btnUpdate').on("click", function () {
+    if(sessionMgr.get('is_secure') != true){
+        location.replace('/login');
+    }
+    else {
         var data = {
-            firstName: $('#fname').val(),
-            lastName: $('#lname').val(),
-            phone: $('#phone').val()
+            user : sessionMgr.get('user'),
         };
-        $.ajax({
-            method: 'PUT',
-            data: data,
-           // headers: {"Authorization": localStorage.getItem('token')},
-            url: 'http://139.59.111.216:8081/users/' + '',
+        api.user.get_profile({
             success: function (data) {
                 console.log(data);
-                return;
-                if(data.result.user.email!=null){
-
-                }
-                else {
-                    $( "#msg" ).html( '<p class="text-danger"><strong>Incorrect login details. Forgot Password? or Sign up for an account?</strong></p>' );
-                }
-            },
-            error: function(err) {
-                $( "#msg" ).html( '<p class="text-danger"><strong>Incorrect login details. Forgot Password? or Sign up for an account?</strong></p>' );
+                $('#email').val(data.email);
+                $('#fname').val(data.name_parts.first_name);
+                $('#lname').val(data.name_parts.last_name);
+                $('#user_fname').html(data.name_parts.first_name);
+                $('.team-member-name > p').html(data.name_parts.first_name + ' ' + data.name_parts.last_name);
             }
         });
-    });
 
-    $('#btnGetCode').on("click", function () {
-        getCode();
-    });
+        $('#btnGetCode').on("click", function () {
+            getCode();
+        });
+
+        $('#btnUpdate').on('click',function() {
+            updateProfile();
+        });
+    }
 });
 
 function getCode() {

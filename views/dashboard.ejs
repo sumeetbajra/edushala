@@ -91,17 +91,17 @@ START SITE HERE
                             <div class="defaultform">
                                 <form class="row">
                                     <div class="col-md-12">
-                                        <input type="text" id="email" disabled="disabled"  value="john@gmail.com" class="form-control" placeholder="email">
+                                        <input type="text" id="email" disabled="disabled"  class="form-control" placeholder="email">
                                     </div>
                                     <div class="col-md-12">
-                                        <input type="text" id="fname" class="form-control" value="John" placeholder="Firstname">
+                                        <input type="text" id="fname" class="form-control"  placeholder="Firstname">
                                     </div>
                                     <div class="col-md-12">
-                                        <input type="text"  id="lname" class="form-control" value="Doe" placeholder="Lastname">
+                                        <input type="text"  id="lname" class="form-control" placeholder="Lastname">
                                     </div>
-                                    <div class="col-md-12">
-                                        <input type="text"  id="phone" class="form-control" value="Phone" placeholder="Phone">
-                                    </div>
+                                  <!--  <div class="col-md-12">
+                                        <input type="text"  id="phone" class="form-control" placeholder="Phone">
+                                    </div> -->
                                    <div class="col-md-12 clearfix">
                                          <button type="button" id="btnUpdate" class="btn btn-edushala"> Update</button>
                                      </div>
@@ -113,54 +113,6 @@ START SITE HERE
                 </div><!-- end row -->
             </div><!-- end container -->
         </div><!-- end section -->
-
-        <div class="modal fade" id="changePassword" role="dialog" style="margin-top: 150px;">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Change Password</h3>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal">
-                            <div class="row">
-                                <label class="control-label col-sm-2"></label>
-                                <div class="col-sm-10">
-                                    <div id="change_pass_msg"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="full_name">Password:</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="pwd" placeholder="Enter a strong password">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="phone">Confirm:</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="confirmPwd" placeholder="Confirm password">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="btnChangePassword" class="btn btn-default">Change</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
 
         <% include common/footer %>
 
