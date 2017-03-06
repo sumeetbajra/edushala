@@ -154,7 +154,7 @@ body {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
 }
-.normal-header .navbar-nav > li > a:hover {
+.normal-header .navbar-nav > li > a:hover{
     color: #8bc750 !important;
 }
 .navbar-toggle{z-index: 2}
@@ -356,7 +356,7 @@ p.about-part1,.about-second h2,.about-second p{
 .change-colour{
     color:#8bc750;
 }
-.enterprise-grp{
+.enterprise-grp,.demo-grp{
     padding: 40px 0;
 }
 .enterprise-desc1,.enterprise-eduware{
@@ -393,8 +393,34 @@ p.about-part1,.about-second h2,.about-second p{
 }
 .enterprise-collaboration {
   padding-bottom:40px;
+    position: relative;
 }
  /* enterprise end*/
+ /*demoPage*/
+ .demo-contact{
+    padding-top: 30px;
+    padding-bottom: 60px;
+ }
+ ul.demo-features {
+    margin-top:30px;
+ }
+ ul.demo-features li{
+    font-size: 28px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+ .demo-defination{
+    text-align:center;
+ }
+ .demo-defination h2{
+    padding-bottom: 20px;
+ }
+ .demo-defination p{
+    font-size:18px;
+    font-weight: 700;
+ }
+ /**/
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;
