@@ -26,9 +26,15 @@
         margin-top:-30px;
     }
     .carousel-control.right, .carousel-control.left{display:none}
+    /*about*/
     video{
         width:auto;
     }
+    /**/
+    /*enterprise*/
+
+
+    /**/
 }
 
 @media (max-width: 1000px) {
@@ -115,10 +121,20 @@
     #main-content{
         padding-top:130px;
     }
-    /*about*/
-    video{
-        width:auto;
+    /**/
+    /*enterprise*/
+    img.enterprise-image{
+        width:300px;
+        height:300px;
     }
+    .eduware-defination {
+        padding: 1em 10px 0;
+    }
+    .eduware-defination p {
+        font-size: 16px;
+    }
+
+    /**/
 }
 
 @media (max-width:640px){
@@ -181,10 +197,13 @@
   #lab_video_text_overlay p {
     font-size: .9em;
   }
-  video{
-      width:auto;
-  }
   /**/
+    /*enterprise*/
+    .eduware-defination {
+        padding: 0 20px 0;
+        text-align: center;
+    }
+    /**/
 }
 @media (max-width: 600px) {
     .alignleft {
