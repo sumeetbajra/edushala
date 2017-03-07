@@ -389,14 +389,22 @@ p.about-part1,.about-second h2,.about-second p{
     padding-bottom: 20px;
 }
 .enterprise-feature-part{
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 .enterprise-collaboration {
   padding-bottom:40px;
     position: relative;
 }
  /* enterprise end*/
+
  /*demoPage*/
+.trial-bg-overlay {
+    background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/demo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
  .demo-contact{
     padding-top: 30px;
     padding-bottom: 60px;
@@ -421,6 +429,32 @@ p.about-part1,.about-second h2,.about-second p{
     font-weight: 700;
  }
  /**/
+/*feedback page*/
+.feedback-body{
+    background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/feedback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height:100vh;
+}
+.feedback-heading{
+    padding-top: 40px;
+}
+.feedback-heading h1{
+    padding-top:30px;
+    color:#8bc750;
+}
+.feedback-heading p{
+    color:#fff;
+    font-size: 16px;
+}
+.feedback-contact{
+    padding:40px 0;
+}
+.feedback-contact label{
+    color:#fff;
+}
+    /**/
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;

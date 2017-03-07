@@ -31,8 +31,7 @@
         width:auto;
     }
     /**/
-    /*enterprise*/
-
+    /*feedback*/
 
     /**/
 }
@@ -135,6 +134,16 @@
     }
 
     /**/
+    /*request a demo */
+    .trial-bg-overlay{
+        margin-top:-30px;
+    }
+    /**/
+    /*feedback*/
+    .feedback-body{
+        margin-top:-30px;
+    }
+    /**/
 }
 
 @media (max-width:640px){
@@ -203,6 +212,9 @@
         padding: 0 20px 0;
         text-align: center;
     }
+    /**/
+    /*request a demo*/
+
     /**/
 }
 @media (max-width: 600px) {
