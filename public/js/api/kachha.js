@@ -29,7 +29,7 @@ var api = {
     kachha: {
         list:function (cfg) {
             cfg = cfg || {};
-            cfg.url = api_course + 'list/kachha';
+            cfg.url = api_course + 'list';
             ajax(cfg)
         },
         getClass:function (cfg) {

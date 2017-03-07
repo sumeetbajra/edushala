@@ -3,6 +3,7 @@ var request = require('request');
 var APIConstants = require('../../constants/APIConstants');
 const Content = require('../../models/content');
 var session = require('express-session');
+var service = require('../../services');
 
 function checkAuth (req, res, next) {
     console.log('checkAuth ' + req.url);
@@ -69,7 +70,7 @@ module.exports = function (ctx) {
         res.render('get_token');
     });
 
-    ctx.app.get('/learn',function(req,res){
+  /*  ctx.app.get('/learn',function(req,res){
         request.get(APIConstants.COURSE, function(error, response, body) {
             if(!error && response.statusCode === 200) {
                 var data = {
@@ -86,9 +87,9 @@ module.exports = function (ctx) {
         })
     });
 
- /*   ctx.app.get('/learn',function(req,res){
-        console.log('learn');
-        ctx.services.kachha.listKachha({
+    ctx.app.get('/learn',function(req,res){
+        console.log('service:' + ctx.service.kachha.listKachha);
+        ctx.service.kachha.listKachha({
             success: function (results) {
                 var data = {
                     page: {title: 'Learn'},
@@ -101,6 +102,11 @@ module.exports = function (ctx) {
             }
         });
     }); */
+
+    ctx.app.get('/learn',function(req,res){
+        data.page.title = 'Edushala - Learn';
+        res.render('learn',data);
+    });
 
     ctx.app.get('/terms',function(req,res){
         data.page.title = 'Edushala - Terms & Conditions';

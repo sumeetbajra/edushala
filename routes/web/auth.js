@@ -1,6 +1,5 @@
 ﻿var rs = require('../../misc/rs');
 var request = require('request');
-var passport = require('passport');
 var APIConstants = require('../../constants/APIConstants');
 
 function checkAuth (req, res, next) {

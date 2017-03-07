@@ -38,6 +38,7 @@ module.exports = function (ctx) {
     var kachha = require('./kachha')(ctx);
     this.user = require('./user')(ctx);
 
+
     //Create route paths
     ctx.app.use('/api/1', router);
     ctx.app.use('/api/1/misc', misc);
