@@ -255,7 +255,7 @@ module.exports = function (ctx) {
         res.render('logout_process',data);
     });
 
-    ctx.app.get('/learn/:id',function(req,res){
+  /*  ctx.app.get('/learn/:id',function(req,res){
         request.get(APIConstants.COURSE + '/' + req.params.id, function(error, response, body) {
             if(!error && response.statusCode === 200) {
                 var data = {
@@ -268,6 +268,23 @@ module.exports = function (ctx) {
                 res.render('course_details', data);
             }
         })
+    }); */
+
+    ctx.app.get('/learn/:class_uuid',function(req,res){
+        ctx.api.services.kachha.get({
+            data: {class_uuid:req.params.class_uuid},
+            success: function (results) {
+                console.log(results);
+                var data = {
+                    page: {title: results.course.name},
+                    kachha: results
+                };
+                res.render('course_details',data);
+            },
+            failure: function (error) {
+                res.json(error)
+            }
+        });
     });
 
 

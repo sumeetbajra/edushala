@@ -12,6 +12,7 @@ $(document).ready(function() {
                 $('#email').val(data.email);
                 $('#fname').val(data.name_parts.first_name);
                 $('#lname').val(data.name_parts.last_name);
+                $('#phone').val(data.phone);
                 $('#user_fname').html(data.name_parts.first_name);
                 $('.team-member-name > p').html(data.name_parts.first_name + ' ' + data.name_parts.last_name);
             }
