@@ -1,6 +1,6 @@
 ﻿module.exports = {
     signup: {
-        subject:'Thank you for signing up. Please verify',
+        subject:'Thank you for signing up.',
         from: 'Rumsan User<rs_users@rumsan.com>',
         body: {
             file: __dirname + '/signup.htm'
