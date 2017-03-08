@@ -164,8 +164,14 @@ body {
 .section-signup {
     margin-right:20px;
 }
-
-
+.blog-grp{
+    padding:60px 0;
+}
+.magnifier .magni-desc .secondicon, .magnifier .magni-desc .firsticon {
+    font-size: 20px !important;
+    color: #8bc750 !important;
+    background-color: transparent;
+}
 .modal.in .modal-dialog {
   margin-top: 15vh
     /*position: relative;
@@ -296,8 +302,11 @@ body {
 .scroll-top-wrapper i.fa {
     line-height: inherit;
 }
-
-
+/*teach*/
+.service-style2 .widget{
+    min-height:440px;
+}
+/**/
 /*about*/
 video {
     position: fixed;
@@ -455,6 +464,11 @@ p.about-part1,.about-second h2,.about-second p{
     color:#fff;
 }
     /**/
+/**how it works**/
+.widget p {
+    padding-top: 10px;
+}
+/**/
 .video-wrapper .widget-title img {
     max-width: 100%;
     display:block;

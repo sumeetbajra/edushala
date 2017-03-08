@@ -363,6 +363,21 @@ module.exports = function (ctx) {
         res.render('clients/worldbank',data);
     });
 
+    ctx.app.get('/partners/shuvatara',function(req,res){
+        data.page.title = 'Edushala - Shuvatara';
+        res.render('clients/shuvatara',data);
+    });
+
+    ctx.app.get('/partners/investment',function(req,res){
+        data.page.title = 'Edushala - Investment';
+        res.render('clients/investment',data);
+    });
+
+    ctx.app.get('/partners/home-loan',function(req,res){
+        data.page.title = 'Edushala - Home-loan';
+        res.render('clients/home-loan',data);
+    });
+
     ctx.app.get('/partners/icimod',function(req,res){
         data.page.title = 'Edushala - ICIMOD';
         res.render('clients/icimod',data);
