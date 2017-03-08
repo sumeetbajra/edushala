@@ -30,6 +30,9 @@ $(document).ready(function() {
         });
     }
     else  {
+        if($('#email').val() == '') {
+            $('#enroll_footer').html(' <button type="button" id="btnEnroll" class="btn btn-edushala">Signup & Enroll</button>');
+        }
         $( "#msg_info" ).html( '<div class="text-info"><strong>Fill the form below to Enroll</strong></div>' );
         $( "#btnEnroll" ).click(function() {
             var name=$('#full_name').val();
@@ -46,7 +49,7 @@ $(document).ready(function() {
                 api.user.exists({
                     data: data,
                     success: function (data) {
-                        if(data.data == false){
+                        if(data == false){
                             signup();
                         }
                         else {
@@ -85,11 +88,6 @@ $(document).ready(function() {
         })
     }
 });
-
-function blinker() {
-    $('#msg_info').fadeOut(500);
-    $('#msg_info').fadeIn(500);
-}
 
 function userDetails() {
     api.user.get_profile({
@@ -139,19 +137,17 @@ function login() {
 }
 
 function signup() {
-    var password = randomText();
+  //  var password = randomText();
     var fullname = $('#full_name').val();
     // var fname =  fullname.split(' ').slice(0, -1).join(' ');
     //  var lname = fullname.split(' ').slice(-1).join(' ');
     var data = {
         name: fullname,
-        email: $('#email').val(),
-        password: password
+        email: $('#email').val()
     };
     api.user.signup({
         data: data,
         success: function (data) {
-            console.log(data);
             if(data.user_uuid!=null){
                 $( "#btnUser" ).html( '<a href="/dashboard">Dashboard</a>' );
                 sessionMgr.set('isLoggedIn', true);
