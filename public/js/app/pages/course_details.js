@@ -19,8 +19,7 @@ $(document).ready(function() {
             api.kachha.enroll({
                 data: data,
                 success: function (data) {
-                    console.log(data);
-                    $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
+                  //  $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
                     $('#enrollModal').modal('toggle');
                     $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
                 },
@@ -33,8 +32,6 @@ $(document).ready(function() {
     else  {
         $( "#msg_info" ).html( '<div class="text-info"><strong>Fill the form below to Enroll</strong></div>' );
         $( "#btnEnroll" ).click(function() {
-            // location.replace('/login');
-            // return;
             var name=$('#full_name').val();
             var email=$('#email').val();
             var phone  = $('#phone').val();
@@ -79,7 +76,6 @@ $(document).ready(function() {
             data: data,
             success: function (data) {
                 if(data[0].user_uuid !=  null){
-                    //  $("#enroll_popup").replaceWith('<p class="edu-green text-center"><strong>You have enrolled this course.</strong></p>');
                     $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
                 }
             },
@@ -133,11 +129,11 @@ function login() {
                 location.replace('/learn/' + class_uid);
             }
             else {
-                $( "#check-pass" ).html( '<p class="text-danger"><strong>Incorrect login details</strong></p>' );
+                $( "#check-pass" ).html( '<p class="text-danger"><strong>Password you entered is wrong.</strong></p>' );
             }
         },
         error : function () {
-            $( "#check-pass" ).html( '<p class="text-danger"><strong>Incorrect login details</strong></p>' );
+            $( "#check-pass" ).html( '<p class="text-danger"><strong>Password you entered is wrong.</strong></p>' );
         }
     });
 }
