@@ -32,7 +32,7 @@ module.exports = function (ctx) {
         res.render('enterprise', data)
     });
 
-    ctx.app.get('/enterprise/request-a-demo', function(req, res){
+    ctx.app.get('/enterprise/demo', function(req, res){
         data.page.title = 'Request a demo - Edushala';
         res.render('request-a-demo', data)
     });
