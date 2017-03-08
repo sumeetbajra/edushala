@@ -113,7 +113,6 @@ var service = rs.classy.define({
             schema: ['price','category','special_tag','ratings'],
             procedure: 'EZ_Class_ListOverview'
         });
-        console.log(c);
     },
 
     getCoupon : function (c) {
