@@ -32,7 +32,7 @@ module.exports = function (ctx) {
         res.render('enterprise', data)
     });
 
-    ctx.app.get('/request-a-demo', function(req, res){
+    ctx.app.get('/enterprise/request-a-demo', function(req, res){
         data.page.title = 'Request a demo - Edushala';
         res.render('request-a-demo', data)
     });
@@ -295,6 +295,10 @@ module.exports = function (ctx) {
     ctx.app.get('/contact',function(req,res){
         data.page.title = 'Edushala - Contact Us';
         res.render('contact',data);
+    });
+
+    ctx.app.post('/contact', function(req, res) {
+
     });
 
     ctx.app.get('/portfolio',function(req,res){

@@ -396,9 +396,12 @@
         </div>
     </div>
 <script>
+  if(!localStorage.getItem('oldUser')) {
     setTimeout(function(){
       $('#ad').modal('show');
+      localStorage.setItem('oldUser', true)
     },3000);
+  }
    /* setTimeout(function(){
         $('.close').trigger("click");
     },50000)*/
