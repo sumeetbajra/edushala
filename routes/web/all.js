@@ -36,6 +36,12 @@ module.exports = function (ctx) {
         data.page.title = 'Request a demo - Edushala';
         res.render('request-a-demo', data)
     });
+
+    ctx.app.get('/enterprise', function(req, res){
+        data.page.title = 'Request a demo - Edushala';
+        res.render('request-a-demo', data)
+    });
+
     ctx.app.get('/feedback', function(req, res){
         data.page.title = 'feedback - Edushala';
         res.render('feedback', data)
