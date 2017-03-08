@@ -274,7 +274,6 @@ module.exports = function (ctx) {
         ctx.api.services.kachha.get({
             data: {class_uuid:req.params.class_uuid},
             success: function (results) {
-                console.log(results);
                 var data = {
                     page: {title: results.course.name},
                     kachha: results

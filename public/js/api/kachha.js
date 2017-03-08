@@ -24,6 +24,7 @@ var ajax = function(cfg){
 };
 
 var api_course = '/api/1/course/';
+var api_user_path = "/rs/user/1/";
 
 var api = {
     kachha: {
@@ -36,6 +37,16 @@ var api = {
             cfg.url = api_course + 'kachha/' + class_uuid;
             ajax(cfg)
         },
+        enroll:function (cfg) {
+            cfg.method = 'POST';
+            cfg.url = api_course + 'enroll';
+            ajax(cfg)
+        },
+        isEnrolled:function (cfg) {
+            cfg.method = 'POST';
+            cfg.url = api_course + 'is_enrolled';
+            ajax(cfg)
+        },
         listEnrolled:function (cfg) {
             cfg.url = api_course + 'enrolled/' + sessionMgr.get('user').user_uuid;
             ajax(cfg)
@@ -46,6 +57,35 @@ var api = {
         },
         listByFlag:function (cfg) {
             cfg.url = api_course + flag;
+            ajax(cfg)
+        }
+    },
+    user: {
+        get_profile: function(cfg){
+            var user = sessionMgr.get('user');
+            cfg.headers = {rs_token: user.rs_token, 'content-type':'application/json'};
+            cfg.url = api_user_path + 'me';
+            ajax(cfg)
+        },
+        update_profile : function (cfg) {
+            var user = sessionMgr.get('user');
+            cfg.headers = {rs_token: user.rs_token, 'content-type':'application/json'};
+            cfg.method = 'POST';
+            cfg.url = api_user_path + 'me';
+        },
+        signup: function(cfg){
+            cfg.method = 'POST',
+                cfg.url = api_user_path + 'users/signup';
+            ajax(cfg)
+        },
+        exists: function(cfg){
+            cfg.method = 'POST',
+                cfg.url = api_user_path + 'users/exists';
+            ajax(cfg)
+        },
+        login: function(cfg){
+            cfg.method = 'POST';
+            cfg.url = api_user_path + 'auth';
             ajax(cfg)
         }
     }
