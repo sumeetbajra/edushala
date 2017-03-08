@@ -41,13 +41,13 @@
                     <p>Get exclusive news about our special events, courses and more.</p>
                     <form action="//edushala.us3.list-manage.com/subscribe/post?u=af172ca633421fad063542da5&amp;id=12b291330c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
                         <div class="form-group">
-                            <input type="text" value="" name="FNAME" class="required name form-control" id="mce-FNAME" placeholder="Enter your name here..">
+                            <input type="text" name="FNAME" onkeyup="changeHandler(event)" class="required name form-control mce-FNAME" placeholder="Enter your name here..">
                         </div>
                         <div class="form-group">
-                            <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Enter your email here..">
+                            <input type="email" name="EMAIL" onkeyup="changeHandler(event)" class="required email form-control mce-EMAIL" placeholder="Enter your email here..">
                             <input type="hidden" value="FOOTER" name="SOURCE" id="mce-SOURCE">
                         </div>
-                        <button type="submit" id="btnSubscribe" class="btn btn-edushala">Subscribe</button>
+                        <button type="submit" disabled="true" id="btnSubscribe" class="btn btn-edushala">Subscribe</button>
                         <p id="response"></p>
                     </form>
 
@@ -85,3 +85,20 @@
     <!-- end container -->
 </footer>
 <!-- end copyrights -->
+
+<script>
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  function changeHandler(e) {
+    var form = $(e.target).parents('form').eq(0)
+    var submitBtn = form.find('button')
+    submitBtn.prop('disabled', true)
+    if(form.find('.mce-FNAME').val().length && form.find('.mce-EMAIL').val().length && validateEmail(form.find('.mce-EMAIL').val())) {
+      submitBtn.prop('disabled', false)
+    }
+  }
+</script>
