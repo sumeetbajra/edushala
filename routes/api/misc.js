@@ -28,6 +28,24 @@ module.exports = function (context) {
         });
     });
 
+    router.post('/request-a-demo', function (req, res) {
+        var tpl = tplMgr.request_a_demo;
+        raven.send({
+            data: req.body,
+            body: tpl.body,
+            from: tpl.from,
+            to: tpl.to,
+            subject: tpl.subject
+        }, {
+            success: function (results) {
+                res.send(results);
+            },
+            fail: function (error) {
+                res.json(error);
+            }
+        });
+    });
+
     router.post('/proposal', function (req, res) {
         var tpl = tplMgr.proposal;
         raven.send({

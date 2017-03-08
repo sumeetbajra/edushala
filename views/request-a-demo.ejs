@@ -27,34 +27,41 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-6  col-md-6  col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
-	                	<form action="/request-a-demo-post" method="POST">
+                    <div class="alert alert-success hidden" id="request-a-demo-success-alert">We have received your request</div>
+	                	<form action="/" method="POST" id="requestADemoForm">
 	                		<div class="form-group">
 							    <label for="name">Name</label>
-							    <input type="text" class="form-control" id="name" placeholder="Enter your full name" name="name" required>
+							    <input type="text" class="form-control" id="name" placeholder="Enter your full name" name="name" required="true">
+                  <span class="help-block hidden">Name is required</span>
 						  	</div>
 						  	<div class="form-group">
 							    <label for="organization">Organization</label>
 							    <input type="text" class="form-control" id="organization" placeholder="Organization's name" name="organization">
+                  <span class="help-block hidden">Organization is required</span>
 						  	</div>
 
 						  	<div class="form-group">
 							    <label for="address">Address</label>
 							    <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+                  <span class="help-block hidden">Address is required</span>
 						  	</div>
 						  	<div class="form-group">
 							    <label for="position">Position</label>
 							    <input type="text" class="form-control" id="position" placeholder="Position" name="position">
+                  <span class="help-block hidden">Position is required</span>
 						  	</div>
 							<div class="form-group">
 								<label for="email">Email address</label>
 								<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                <span class="help-block hidden">Email address is required</span>
 							</div>
 						  	<div class="form-group">
 							    <label for="contact">Contact Number</label>
 							    <input type="number" class="form-control" id="contact" placeholder="Contact Number" name="contact">
+                  <span class="help-block hidden">Contact number is required</span>
 						  	</div>
-						  
-						  <button type="submit" class="btn btn-primary">Submit</button>
+
+						  <button type="submit" id="requestADemoBtn" class="btn btn-primary">Submit</button>
 						</form>
 	                </div>
 	            </div>
@@ -64,5 +71,41 @@
 	<footer id="footer">
 	    <% include common/footer %>
 	</footer>
+  <script>
+    (function() {
+      $('#requestADemoBtn').on('click', function(e) {
+        e.preventDefault()
+        var valid = true;
+        var form = $('#requestADemoForm')
+        var submitBtn = $(this)
+
+        $('.help-block').addClass('hidden')
+        $('.form-group').removeClass('has-error')
+        var valid = true
+        $('#requestADemoForm input, #requestADemoForm textarea').each(function () {
+          if(!$(this).val().length) {
+            $(this).next('.help-block').removeClass('hidden')
+            $(this).parents('.form-group').eq(0).addClass('has-error')
+            valid = false
+          }
+        })
+        if(valid) {
+          submitBtn.html('Sending...').prop('disabled', true)
+          $.ajax({
+            method: 'POST',
+            url: '/api/1/misc/request-a-demo',
+            data: form.serialize(),
+            success: function(response) {
+              if(response.success) {
+                submitBtn.html('Submit').prop('disabled', false)
+                form[0].reset();
+                $('#request-a-demo-success-alert').removeClass('hidden')
+              }
+            }
+          })
+        }
+      })
+    })()
+  </script>
 </body>
 </html>
