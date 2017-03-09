@@ -32,10 +32,16 @@ module.exports = function (ctx) {
         res.render('enterprise', data)
     });
 
-    ctx.app.get('/request-a-demo', function(req, res){
+    ctx.app.get('/enterprise/demo', function(req, res){
         data.page.title = 'Request a demo - Edushala';
         res.render('request-a-demo', data)
     });
+
+    ctx.app.get('/enterprise', function(req, res){
+        data.page.title = 'Request a demo - Edushala';
+        res.render('request-a-demo', data)
+    });
+
     ctx.app.get('/feedback', function(req, res){
         data.page.title = 'feedback - Edushala';
         res.render('feedback', data)
@@ -274,7 +280,6 @@ module.exports = function (ctx) {
         ctx.api.services.kachha.get({
             data: {class_uuid:req.params.class_uuid},
             success: function (results) {
-                console.log(results);
                 var data = {
                     page: {title: results.course.name},
                     kachha: results
@@ -296,6 +301,10 @@ module.exports = function (ctx) {
     ctx.app.get('/contact',function(req,res){
         data.page.title = 'Edushala - Contact Us';
         res.render('contact',data);
+    });
+
+    ctx.app.post('/contact', function(req, res) {
+
     });
 
     ctx.app.get('/portfolio',function(req,res){

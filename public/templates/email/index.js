@@ -42,5 +42,13 @@
         body: {
             file: __dirname + '/proposal.htm'
         }
+    },
+    request_a_demo: {
+        subject: 'Request a Demo',
+        from: 'Rumsan User<rs_users@rumsan.com>',
+        to: 'team@edushala.com',
+        body: {
+            file: __dirname + '/request_a_demo.htm'
+        }
     }
 };

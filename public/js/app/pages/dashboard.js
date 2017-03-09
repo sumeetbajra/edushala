@@ -4,11 +4,10 @@ $(document).ready(function() {
     }
     else {
         var data = {
-            user : sessionMgr.get('user'),
+            user : sessionMgr.get('user')
         };
         api.user.get_profile({
             success: function (data) {
-                console.log(data);
                 $('#email').val(data.email);
                 $('#fname').val(data.name_parts.first_name);
                 $('#lname').val(data.name_parts.last_name);
