@@ -90,7 +90,7 @@ module.exports = function (context) {
 
     router.get('/:class_uuid', function (req, res) {
         params.data ={class_uuid:req.params.class_uuid};
-        kachha.getClass(params)
+        kachha.get(params)
     });
 
     router.get('/:class_uuid/students/', function (req, res){

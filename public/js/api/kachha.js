@@ -48,7 +48,9 @@ var api = {
             ajax(cfg)
         },
         listEnrolled:function (cfg) {
-            cfg.url = api_course + 'enrolled/' + sessionMgr.get('user').user_uuid;
+            var user = sessionMgr.get('user');
+            cfg.headers = {rs_token: user.rs_token, 'content-type':'application/json'};
+            cfg.url = api_course + 'enrolled';
             ajax(cfg)
         },
         listTeaching:function (cfg) {

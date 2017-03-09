@@ -5,8 +5,8 @@
             "db": {
                 "conn": {
                     "name": "rs.user",
-                    "host": "localhost",
-                    "port": "1433",
+                    "host": "rumsan.net",
+                    "port": "9433",
                     "user": "develop",
                     "password": "T$mp1234",
                     "database": "rs_users"
@@ -35,11 +35,11 @@
         "db": {
             "conn": {
                 "name": "default",
-                "host": "localhost",
-                "port": "1433",
+                "host": "rumsan.net",
+                "port": "9433",
                 "user": "develop",
                 "password": "T$mp1234",
-                "database": "ezzo_dev"
+                "database": "Ezzo"
             }
         },
         "data_path":"S:\\Rumsan\\binod\\projects\\edushala\\website\\localdata"
