@@ -81,15 +81,15 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
 
 .course-catalog  {
     width:100%;
-    height: 290px;
-    overflow: hidden;
+    max-height: 545px;
+    overflow: visible;
 }
 .intro-edu {
     color: #ffffff !important;
     font-size: 17px !important;
 }
  .course-widget {
-    padding: 0px;
+    padding: 10px;
 }
  .edu-box {
       padding:10px;
@@ -464,7 +464,11 @@ p.about-part1,.about-second h2,.about-second p{
     position: relative;
 }
  /* enterprise end*/
-
+/** faq**/
+.faq-space{
+    margin:100px 0;
+}
+/****/
  /*demoPage*/
 .request-bg-overlay {
     background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/demo.jpg);

@@ -1,7 +1,7 @@
+
 $(document).ready(function() {
     api.kachha.list({
         success:function (d) {
-            console.log(d[0].class_uuid);
             $.each(d, function (i, v) {
                 if(!(i % 4)) {
                     $('#course_catalog').append('<div class="row course_catalog_row"></div>')
