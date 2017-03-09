@@ -54,7 +54,9 @@ var api = {
             ajax(cfg)
         },
         listTeaching:function (cfg) {
-            cfg.url = api_course + 'teaching/' + sessionMgr.get('user').user_uuid;
+            var user = sessionMgr.get('user');
+            cfg.headers = {rs_token: user.rs_token, 'content-type':'application/json'};
+            cfg.url = api_course + 'teaching';
             ajax(cfg)
         },
         listByFlag:function (cfg) {

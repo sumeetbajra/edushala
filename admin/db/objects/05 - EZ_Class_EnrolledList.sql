@@ -1,20 +1,19 @@
-USE [ezzo_dev]
+USE [Ezzo]
 GO
-/****** Object:  StoredProcedure [dbo].[EZ_Class_ListTeaching]    Script Date: 1/21/2017 2:02:52 PM ******/
+/****** Object:  StoredProcedure [dbo].[EZ_Class_ListEnrolled]    Script Date: 1/21/2017 1:11:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-Create PROCEDURE [dbo].[EZ_Class_TeachingList]
+Create PROCEDURE [dbo].[EZ_Class_EnrolledList]
 (
 	@user_uuid uniqueidentifier
 )
 AS
 BEGIN TRY
 	-- Declare Statement
-
     
-	SELECT * FROM vEZ_Class WHERE user_uuid=@user_uuid
+	SELECT * FROM vEZ_Class WHERE class_uuid in (select class_uuid from EZ_Class_Students WHERE user_uuid=@user_uuid)
 
 	RETURN 0
 END TRY

@@ -1,12 +1,13 @@
-USE [ezzo_dev]
+USE [Ezzo]
 GO
 
-/****** Object:  View [dbo].[vEZ_Class]    Script Date: 1/11/2017 9:06:59 PM ******/
+/****** Object:  View [dbo].[vEZ_Class]    Script Date: 3/9/2017 12:18:44 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 ALTER VIEW [dbo].[vEZ_Class]
@@ -17,6 +18,7 @@ select *, dbo.EZ_Class_GetFlags(a.class_uuid) as active_flags_xml,
 	(SELECT * FROM vEZ_User where user_uuid=a.user_uuid FOR JSON Path, WITHOUT_ARRAY_WRAPPER) as educator,
 	(SELECT * FROM EZ_Venue where venue_uuid=a.venue_uuid FOR XML Path('venue'), TYPE) as venue
  from dbo.EZ_Class a
+
 
 
 
