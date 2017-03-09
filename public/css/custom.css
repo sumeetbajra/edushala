@@ -161,11 +161,17 @@ body {
 .centermessage h4.crou-subscribe{
     font-size:30px !important;
 }
+.semitrans.section-signup .form-control{
+    text-transform: none;
+}
 .section-signup {
     margin-right:20px;
 }
 .blog-grp{
     padding:60px 0;
+}
+.blog-list{
+    padding-bottom: 40px;
 }
 .magnifier .magni-desc .secondicon, .magnifier .magni-desc .firsticon {
     font-size: 20px !important;
@@ -302,7 +308,23 @@ body {
 .scroll-top-wrapper i.fa {
     line-height: inherit;
 }
+/**/
+
 /*teach*/
+.teach-overlay{
+    background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/teach-b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
+p.teach-desc{
+    padding: 20px 30px;
+}
+.teach-list{
+    padding-top:40px;
+}
+
 .service-style2 .widget{
     min-height:440px;
 }
@@ -347,7 +369,43 @@ p.about-part1,.about-second h2,.about-second p{
   top: 84px
 }
 /*about page finished*/
+
 /***learn page***/
+
+.learn-banner {
+    height:200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.learn-banner > .image-zoom {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -moz-transition: all 5s;
+    -webkit-transition: all 5s;
+    transition: all 5s;
+    -moz-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+    background-image: url("/images/learning.jpg");
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+}
+
+.learn-banner:hover > .image-zoom{
+    -moz-transform: scale(2,2);
+    -webkit-transform: scale(2,2);
+    transform: scale(2,2);
+}
+
+
+
 .learn-grp{
     padding-top: 40px;
 }
@@ -358,6 +416,7 @@ p.about-part1,.about-second h2,.about-second p{
 
 
 /** learn page finished**/
+
 /**enterprise page**/
 .paddingt20px{
     padding-top:20px;
@@ -407,13 +466,14 @@ p.about-part1,.about-second h2,.about-second p{
  /* enterprise end*/
 
  /*demoPage*/
-.trial-bg-overlay {
+.request-bg-overlay {
     background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/demo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 200px;
 }
+
  .demo-contact{
     padding-top: 30px;
     padding-bottom: 60px;
@@ -465,6 +525,13 @@ p.about-part1,.about-second h2,.about-second p{
 }
     /**/
 /**how it works**/
+.works-overlay{
+    background: linear-gradient(rgba(13, 13, 14, 0.86), rgba(9, 14, 10, 0.48)), url(/images/works.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
 .widget p {
     padding-top: 10px;
 }
