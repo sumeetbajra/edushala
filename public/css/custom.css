@@ -91,6 +91,9 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
  .course-widget {
     padding: 10px;
 }
+ .course-box-height{
+     min-height:365px;
+ }
  .edu-box {
       padding:10px;
   }
@@ -355,7 +358,7 @@ video {
 }
 
 .about-first,.about-second{
-    background-color: rgba(0, 0, 0, 0.46);
+    background-color: rgba(0, 0, 0, 0.82);
 }
 p.about-part1,.about-second h2,.about-second p{
     margin: 20px 10px;
@@ -366,7 +369,7 @@ p.about-part1,.about-second h2,.about-second p{
 }
 #content_body {
   position: relative;
-  top: 84px
+  top: 84px;
 }
 /*about page finished*/
 
@@ -561,6 +564,15 @@ p.about-part1,.about-second h2,.about-second p{
     margin-top: 70px
   }
 /***footer****/
+/*sign-in nav bar*/
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: transparent;
+}
+/**/
 
 .video-wrapper .widget-title img {
     max-width: 100%;
