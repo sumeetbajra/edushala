@@ -150,6 +150,9 @@ body {
 }
 
 /*home*/
+#user_dashboard{
+    text-transform: lowercase;
+}
 .default-header {
     position: fixed;
     z-index:20;
