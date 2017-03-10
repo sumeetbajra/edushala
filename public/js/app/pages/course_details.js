@@ -1,7 +1,16 @@
 $(document).ready(function() {
+
     calculatePrice();
     var url = window.location.pathname;
     var class_uid = url.substring(url.lastIndexOf('/') + 1);
+    var serverUrl = 'http://139.59.111.216:9000/'
+
+    var sessionUrl = serverUrl + 'demo/'
+
+    var courseSessionMapList = {
+       '14EB3C67-62D6-4E72-B540-EA2665206826': sessionUrl + '58abfdec74111836429a83bd',
+       'C33B2C56-2173-4C0B-A852-7D3797BA2BB4': sessionUrl + '58abfdec74111836429a83bd',
+    }
     if(sessionMgr.get('is_secure') == true){
         userDetails();
         isEnrolled();
@@ -21,7 +30,7 @@ $(document).ready(function() {
                 success: function (data) {
                   //  $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
                     $('#enrollModal').modal('toggle');
-                    $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
+                    $("#enroll_popup").replaceWith('<a href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
                 },
                 error : function () {
                     console.log('Error occured');
@@ -79,7 +88,7 @@ $(document).ready(function() {
             data: data,
             success: function (data) {
                 if(data[0].user_uuid !=  null){
-                    $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
+                    $("#enroll_popup").replaceWith('<a target="_blank" href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
                 }
             },
             error : function () {

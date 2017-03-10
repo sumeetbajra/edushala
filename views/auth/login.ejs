@@ -3,7 +3,6 @@
 <head>
     <% include ../common/head %>
     <script src="/js/api/user.js" type="text/javascript"></script>
-    <script src="/js/app/pages/login.js" type="text/javascript"></script>
 
     <!--additional JS and css-->
 </head>
@@ -16,7 +15,7 @@
     <div class="space-box">
         <div class="container-fluid">
             <!--<form class="defaultform row" method="post" action="loginReq">-->
-                <form class="defaultform row">
+                <form class="defaultform row" id="login-form" method="POST">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="register-widget clearfix">
                         <div class="space-top-small"></div>
@@ -40,7 +39,7 @@
                                 <input type="checkbox" id="rem_me" class="checkbox" />  Remember me
                             </div>
                             <div class="col-sm-12">
-                                <button type="button" id="btnLogin" class="btn btn-edushala">Login</button><br>
+                                <button type="submit" id="btnLogin" class="btn btn-edushala">Login</button><br>
                                 <a href="/forgot">Forgot Password</a>
                                 <hr />
                                 <p>Don't have an accout yet? <a href="/signup">Signup Here</a></p>
@@ -104,6 +103,8 @@
 <footer id="footer">
     <% include ../common/footer %>
 </footer>
+
+<script src="/js/app/pages/login.js" type="text/javascript"></script>
 
 </body>
 </html>
