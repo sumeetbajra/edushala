@@ -606,4 +606,8 @@ p.about-part1,.about-second h2,.about-second p{
     line-height: 30px;        /* fallback */
     max-height: 90px;       /* fallback */
 }
+.demo-parallax.onecourse, .demo-parallax {
+    padding: 22rem 0 15rem !important;
+}
+
 
