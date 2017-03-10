@@ -29,6 +29,7 @@ var api_user_path = "/rs/user/1/";
 var api = {
     kachha: {
         list:function (cfg) {
+            console.log(cfg);
             cfg = cfg || {};
             cfg.url = api_course + 'list';
             ajax(cfg)

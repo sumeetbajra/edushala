@@ -48,17 +48,19 @@ module.exports = function (ctx) {
     });
 
     ctx.app.get('/', function(req, res){
-        request.get(APIConstants.COURSE, function(error, response, body) {
-            if(!error && response.statusCode === 200) {
+        Content.find({}).sort('-dateAdded').exec(function(err, doc) {
+            if(err){
+                res.json({success : false, msg : 'Failed to list content!'});
+            } else {
                 var data = {
                     page: {
                         title: 'Edushala - Home'
                     },
-                    courses: JSON.parse(body).result
+                    blog:doc
                 }
                 res.render('index', data);
             }
-        })
+        });
     });
 
     ctx.app.get('/dashboard', function(req, res){

@@ -621,3 +621,21 @@ p.about-part1,.about-second h2,.about-second p{
     height: 35px;
 }
 /************ added by sumit march 10 *******************/
+
+.latest-post {
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: justify;
+}
+.home-latest-blog-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-height: 30px;        /* fallback */
+    max-height: 90px;       /* fallback */
+}
+.demo-parallax.onecourse, .demo-parallax {
+    padding: 22rem 0 15rem !important;
+}
