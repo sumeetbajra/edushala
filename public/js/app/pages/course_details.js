@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     calculatePrice();
     var url = window.location.pathname;
     var class_uid = url.substring(url.lastIndexOf('/') + 1);
@@ -28,7 +27,6 @@ $(document).ready(function() {
             api.kachha.enroll({
                 data: data,
                 success: function (data) {
-                  //  $("#enroll_popup").replaceWith('<a href="#" class="btn btn-edushala btn-block">Start Session</a>');
                     $('#enrollModal').modal('toggle');
                     $("#enroll_popup").replaceWith('<a href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
                 },

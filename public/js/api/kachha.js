@@ -29,7 +29,6 @@ var api_user_path = "/rs/user/1/";
 var api = {
     kachha: {
         list:function (cfg) {
-            console.log(cfg);
             cfg = cfg || {};
             cfg.url = api_course + 'list';
             ajax(cfg)
@@ -58,6 +57,10 @@ var api = {
             var user = sessionMgr.get('user');
             cfg.headers = {rs_token: user.rs_token, 'content-type':'application/json'};
             cfg.url = api_course + 'teaching';
+            ajax(cfg)
+        },
+        completedCourses:function (cfg) {
+            cfg.url = api_course + 'completed';
             ajax(cfg)
         },
         listByFlag:function (cfg) {

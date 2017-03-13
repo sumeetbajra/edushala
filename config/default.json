@@ -7,6 +7,7 @@
                     "name": "rs.user",
                     "host": "rumsan.net",
                     "port": "9433",
+                    //"port": "1433",
                     "user": "develop",
                     "password": "T$mp1234",
                     "database": "rs_users"
@@ -35,6 +36,7 @@
         "db": {
             "conn": {
                 "name": "default",
+                //"host":"localhost",
                 "host": "rumsan.net",
                 "port": "9433",
                 "user": "develop",

@@ -2,6 +2,7 @@ $(document).ready(function() {
     var data = {
         is_secure : sessionMgr.get('is_secure'),
     };
+    console.log('Is Secure:' + data.is_secure);
     if(data.is_secure == true){
         var user = sessionMgr.get('user');
         $( "#btnUser" ).html( '<li class="dropdown normal-menu has-submenu"><a href="#" class="dropdown-toggle" id="user_dashboard" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'+ user.username +' <span class="fa fa-angle-down"></span></a><ul class="dropdown-menu"><li><a href="/dashboard">Dashboard</a></li><li><a href="/enrolled">Enrolled</a></li><li><a href="/logout_process">Logout</a></li></ul></li>' );
