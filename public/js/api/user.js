@@ -43,7 +43,6 @@ var api = {
             ajax(cfg)
         },
         change_password: function(cfg){
-            console.log('hello');
             cfg.method = 'POST';
             cfg.url = serverUrl + api_user_path + 'auth/password/change';
             ajax(cfg)

@@ -3,9 +3,6 @@ $(document).ready(function() {
         location.replace('/login');
     }
     else {
-        var data = {
-            user : sessionMgr.get('user')
-        };
         api.user.get_profile({
             success: function (data) {
                 $('#email').val(data.email);
