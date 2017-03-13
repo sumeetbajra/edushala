@@ -19,6 +19,7 @@
 }
 @media (max-width:1024px) {
     #content_body{
+        top: 39px;
         padding:40px 0 0 0;
     }
     .banner-slider-carousel{
@@ -34,8 +35,10 @@
         width:auto;
     }
     /**/
-    /*feedback*/
-
+    /*footer*/
+    footer {
+        margin-top: 45px;
+    }
     /**/
 }
 
@@ -150,9 +153,13 @@
         margin-top:-30px;
     }
     /**/
+
 }
 
 @media (max-width:640px){
+    #content_body {
+        top: 50px;
+    }
 
     ul.nav-list{
         padding-top:10px;
@@ -222,6 +229,7 @@
     /*request a demo*/
 
     /**/
+
 }
 @media (max-width: 600px) {
     .alignleft {

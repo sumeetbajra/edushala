@@ -6,10 +6,13 @@
     <!--additional JS and css-->
     <script>
         $(document).ready(function(){
-            $('#btnForgot').on("click", function () {
+            $('#forgot-password-form').on("submit", function () {
+                var submitBtn = $('#btnForgot');
+                loadingBtn(submitBtn, 'Please wait..');
                 var email =$('#email').val();
-                if(email == ''){
+                if(email == '' || !validateEmail(email)){
                     $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                    submitBtn.prop('disabled', false).html('Submit')
                 }
                 else {
                     api.user.forgot({
@@ -19,10 +22,12 @@
                         },
                         error: function (d) {
                             $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                            submitBtn.prop('disabled', false).html('Submit')
                             // alert(d.message);
                         }
                     })
                 }
+                return false
             });
         });
     </script>
@@ -44,12 +49,12 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <div id="error-msg"></div>
-                            <form>
+                            <form id="forgot-password-form" method="POST">
                                 <div class="form-group">
                                     <label for="email">Email Address:</label>
                                     <input type="email" class="form-control" id="email" placeholder="Please enter your email address to get verification code.">
                                 </div>
-                                <button type="button" class="btn btn-edushala" id="btnForgot">Submit</button>
+                                <button type="submit" class="btn btn-edushala" id="btnForgot">Submit</button>
                             </form>
                         </div>
                         <div class="col-md-3"></div>

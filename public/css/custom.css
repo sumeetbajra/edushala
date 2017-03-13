@@ -91,6 +91,9 @@ div.bbp-template-notice a, .related-posts .entry small, .notfound p a, blockquot
  .course-widget {
     padding: 10px;
 }
+ .course-box-height{
+     min-height:365px;
+ }
  .edu-box {
       padding:10px;
   }
@@ -147,6 +150,9 @@ body {
 }
 
 /*home*/
+#user_dashboard{
+    text-transform: lowercase;
+}
 .default-header {
     position: fixed;
     z-index:20;
@@ -355,7 +361,7 @@ video {
 }
 
 .about-first,.about-second{
-    background-color: rgba(0, 0, 0, 0.46);
+    background-color: rgba(0, 0, 0, 0.82);
 }
 p.about-part1,.about-second h2,.about-second p{
     margin: 20px 10px;
@@ -366,7 +372,7 @@ p.about-part1,.about-second h2,.about-second p{
 }
 #content_body {
   position: relative;
-  top: 84px
+  top: 84px;
 }
 /*about page finished*/
 
@@ -561,6 +567,15 @@ p.about-part1,.about-second h2,.about-second p{
     margin-top: 70px
   }
 /***footer****/
+/*sign-in nav bar*/
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: transparent;
+}
+/**/
 
 .video-wrapper .widget-title img {
     max-width: 100%;
@@ -592,6 +607,36 @@ p.about-part1,.about-second h2,.about-second p{
     height:245px;
 }
 
+/************ added by sumit march 10 *******************/
+.entry-course {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.entry-course:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.entry-course > a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: deepskyblue;
+  /* let's see it! */
+  color: white;
+}
+
+.widget-title h3 {
+    height: 35px;
+}
+/************ added by sumit march 10 *******************/
+
 .latest-post {
     padding-right: 50px;
     padding-left: 50px;
@@ -609,5 +654,3 @@ p.about-part1,.about-second h2,.about-second p{
 .demo-parallax.onecourse, .demo-parallax {
     padding: 22rem 0 15rem !important;
 }
-
-

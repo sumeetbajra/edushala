@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    $('#btnLogin').on("click", function () {
+    $('#login-form').on('submit', function (e) {
+        var submitBtn = $('#btnLogin')
+        submitBtn.html('Please wait..').prop('disabled', true);
         var data = {
             username: $('#username').val(),
             password: $('#password').val()
@@ -17,11 +19,14 @@ $(document).ready(function() {
                 }
                 else {
                     $( "#errorMsg" ).html( '<div class="alert alert-danger"><p class="text-danger"><stron>Wrong email or password. Please try again!</stron></p></div>' );
+                    submitBtn.html('Login').prop('disabled', false);
                 }
             },
             error :function () {
-                $( "#errorMsg" ).html( '<p class="text-danger"><strong>Wrong email or password. Please try again!</strong></p>' );
+                $( "#errorMsg" ).html( '<p class="text-danger"><strong>Something went wrong. Please try again later!!</strong></p>' );
+                submitBtn.html('Login').prop('disabled', false);
             }
         });
+        return false
     });
 });
