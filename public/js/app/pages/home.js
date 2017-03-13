@@ -17,4 +17,17 @@ $(document).ready(function() {
         }
     });
 
+    completedCourses();
+
 });
+
+function completedCourses() {
+    api.kachha.completedCourses({
+        success:function (data) {
+            $('#course-stat').html(data.completed_course);
+        },
+        error:function () {
+            $('#course-stat').html('Server error!');
+        }
+    });
+}

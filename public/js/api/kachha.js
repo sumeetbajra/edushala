@@ -59,6 +59,10 @@ var api = {
             cfg.url = api_course + 'teaching';
             ajax(cfg)
         },
+        completedCourses:function (cfg) {
+            cfg.url = api_course + 'completed';
+            ajax(cfg)
+        },
         listByFlag:function (cfg) {
             cfg.url = api_course + flag;
             ajax(cfg)
