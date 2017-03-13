@@ -42,9 +42,14 @@ module.exports = function (ctx) {
         res.render('request-a-demo', data)
     });
 
-    ctx.app.get('/feedback', function(req, res){
-        data.page.title = 'feedback - Edushala';
-        res.render('feedback', data)
+    ctx.app.get('/career', function(req, res){
+        data.page.title = 'career - Edushala';
+        res.render('career', data)
+    });
+
+    ctx.app.get('/press', function(req, res){
+        data.page.title = 'press - Edushala';
+        res.render('press', data)
     });
 
     ctx.app.get('/', function(req, res){

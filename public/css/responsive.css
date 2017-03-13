@@ -22,9 +22,6 @@
         top: 39px;
         padding:40px 0 0 0;
     }
-    .banner-slider-carousel{
-        height:50vh;
-    }
     .row.centermessage{margin-left: 0;margin-top:4em;}
     .carousel{
         margin-top:-30px;
@@ -35,9 +32,15 @@
         width:auto;
     }
     /**/
+    /***** career page*****/
+    .error-404 {
+        top: 35%;
+        left: 21%;
+    }
+    /********/
     /*footer*/
     footer {
-        margin-top: 45px;
+        margin-top: 38px;
     }
     /**/
 }
@@ -148,11 +151,16 @@
         margin-top:-30px;
     }
     /**/
-    /*feedback*/
-    .feedback-body{
+    /*career*/
+    .career-body{
         margin-top:-30px;
     }
     /**/
+    /************* footer ****************/
+    .error-404 {
+        left: 12%;
+    }
+    /**************/
 
 }
 
@@ -182,7 +190,6 @@
     }
     .centermessage h4,.centermessage h4.crou-subscribe{font-size: 20px !important}
 
-    .row.centermessage{margin-left: 0;margin-top:6em;}
     .carousel-control.right, .carousel-control.left{display:none}
     .achievement .col-xs-12{margin-top: 2em}
     .modal.in .modal-dialog {
@@ -226,9 +233,12 @@
         text-align: center;
     }
     /**/
-    /*request a demo*/
-
-    /**/
+    /************* footer ****************/
+    .error-404 {
+        left:0;
+        top:0;
+    }
+    /**************/
 
 }
 @media (max-width: 600px) {
