@@ -24,6 +24,7 @@ $(document).ready(function() {
 function completedCourses() {
     api.kachha.completedCourses({
         success:function (data) {
+            console.log(data);
             $('#course-stat').html(data.completed_course);
         },
         error:function () {

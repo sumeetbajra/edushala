@@ -21,7 +21,7 @@
                             location.href = 'forgot/checkemail'
                         },
                         error: function (d) {
-                            $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                            $('#error-msg').html('<p class="text-danger"><strong>Oops, Server Error! Please try again.</strong</p>');
                             submitBtn.prop('disabled', false).html('Submit')
                             // alert(d.message);
                         }
