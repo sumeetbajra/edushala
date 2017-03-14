@@ -42,10 +42,6 @@ module.exports = function (ctx) {
         res.render('request-a-demo', data)
     });
 
-    ctx.app.get('/press', function(req, res){
-        data.page.title = 'press - Edushala';
-        res.render('press', data)
-    });
 
     ctx.app.get('/', function(req, res){
         Content.find({}).sort('-dateAdded').exec(function(err, doc) {
