@@ -405,5 +405,10 @@ module.exports = function (ctx) {
         res.render('clients/triyog',data);
     });
 
+    ctx.app.get('/partners/worldlink',function(req,res){
+        data.page.title = 'Edushala - WorldLink';
+        res.render('clients/worldlink',data);
+    });
+
 
 };
