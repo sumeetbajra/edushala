@@ -14,7 +14,7 @@
                 }
             },
             "templates": {
-                "email": "S:/mongo/edushala/public/templates/email/index.js"
+                "email": "" //overwrite it in misc/rs
             }
         },
         "raven": {
