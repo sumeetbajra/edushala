@@ -664,6 +664,10 @@ p.about-part1,.about-second h2,.about-second p{
 .widget-title h3 {
     height: 35px;
 }
+
+body.modal-open {
+    overflow: hidden !important
+}
 /************ added by sumit march 10 *******************/
 
 .latest-post {
