@@ -42,10 +42,6 @@ module.exports = function (ctx) {
         res.render('request-a-demo', data)
     });
 
-    ctx.app.get('/press', function(req, res){
-        data.page.title = 'press - Edushala';
-        res.render('press', data)
-    });
 
     ctx.app.get('/', function(req, res){
         Content.find({}).sort('-dateAdded').exec(function(err, doc) {
@@ -398,6 +394,11 @@ module.exports = function (ctx) {
     ctx.app.get('/partners/triyog',function(req,res){
         data.page.title = 'Edushala - Triyog';
         res.render('clients/triyog',data);
+    });
+
+    ctx.app.get('/partners/worldlink',function(req,res){
+        data.page.title = 'Edushala - WorldLink';
+        res.render('clients/worldlink',data);
     });
 
 
