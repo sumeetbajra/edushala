@@ -1,0 +1,44 @@
+<div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">User must login to enroll</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="defaultform row" id="login-form" method="POST">
+                        <div class="col-md-12">
+                            <div class="register-widget clearfix">
+                                <div class="space-top-small"></div>
+                                <div class="widget-title">
+                                    <div id="errorMsg">
+                                    </div>
+                                </div><!-- end title -->
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        <label>Username or Email</label>
+                                        <input type="text" id="username" name="username" placeholder="Enter email address" class="form-control">
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <label>Password</label>
+                                        <input type="password" id="password" name="password" placeholder="Enter password" class="form-control">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="checkbox" id="rem_me" class="checkbox" />  Remember me
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button type="submit" id="btnLogin" class="btn btn-edushala">Login</button><br>
+                                        <a href="/forgot">Forgot Password</a>
+                                        <hr />
+                                        <p>Don't have an accout yet? <a target="_new" href="/signup">Signup Here</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form><!-- end row -->
+                </div>
+            </div>
+
+        </div>
+    </div>
