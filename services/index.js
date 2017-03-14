@@ -2,6 +2,7 @@
 module.exports = rs.classy.define({
     forceInstance: true,
     init: function (context) {
+        console.log(context.templates)
 
         var ctx = {
             templates: context.templates || {},
