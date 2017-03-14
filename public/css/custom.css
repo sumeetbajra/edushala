@@ -152,6 +152,7 @@ body {
 /*home*/
 #user_dashboard{
     text-transform: lowercase;
+    padding: 30px 0;
 }
 .default-header {
     position: fixed;
@@ -667,6 +668,15 @@ p.about-part1,.about-second h2,.about-second p{
 
 body.modal-open {
     overflow: hidden !important
+}
+
+.readmore-ellipses {
+    white-space: nowrap;
+    width: 61%;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: inline-block;
 }
 /************ added by sumit march 10 *******************/
 
