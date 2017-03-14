@@ -26,7 +26,7 @@
                             </div>
                         </div><!-- end media -->
                         <hr>
-                        <a href="" data-toggle="modal" id="enroll_popup" data-target="#enrollModal" class="btn btn-edushala btn-block">Enroll Course</a>
+                        <a href="#" id="enroll_popup" class="btn btn-edushala btn-block">Enroll Course</a>
                     </div><!-- end widget -->
 
                     <div class="widget clearfix">
@@ -150,50 +150,6 @@
                         </div>
                     </div>
                     <div class="space-top-small"></div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="msg_info"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="msg">
-
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <form class="form-horizontal">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="full_name">Name:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="full_name" placeholder="Enter full name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="phone">Phone:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="email">Email:</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" required="true">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-
-                            </div>
-                        </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <div id="enroll_footer">
@@ -201,49 +157,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
-    <div class="modal fade" id="logRegModal" role="dialog" style="margin-top: 200px;">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">User must login to enroll</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2"></label>
-                                    <div class="col-sm-10">
-                                        <div class="alert alert-info"><p id="check-pass">Your email already exists, Enter password to login.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="email">Password:</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="pwd" placeholder="Please enter password" required="true">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="btnLogReg" class="btn btn-edushala">Login</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <% include common/login_modal %>
 </section>
 
 
