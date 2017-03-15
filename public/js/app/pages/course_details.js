@@ -86,7 +86,11 @@ $(document).ready(function() {
             data: data,
             success: function (data) {
                 $('#enrollModal').modal('toggle');
-                $("#enroll_popup").replaceWith('<a href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
+                if(courseSessionMapList[class_uid]) {
+                    $("#enroll_popup").replaceWith('<a target="_blank" href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
+                }else {
+                    $("#enroll_popup").replaceWith('<i class="fa fa-check-circle" style="color: #8bc750; margin-right: 5px;"></i> <b>Enrolled</b>')
+                }
             },
             error : function () {
                 console.log('Error occured');
@@ -108,7 +112,11 @@ $(document).ready(function() {
 
     function replaceEnrollWithStartSession(data) {
         if(!!data.length){
-            $("#enroll_popup").replaceWith('<a target="_blank" href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
+            if(courseSessionMapList[class_uid]) {
+                $("#enroll_popup").replaceWith('<a target="_blank" href="' + courseSessionMapList[class_uid] + '" class="btn btn-edushala btn-block">Start Session</a>');
+            }else {
+                $("#enroll_popup").replaceWith('<i class="fa fa-check-circle" style="color: #8bc750; margin-right: 5px;"></i> <b>Enrolled</b>')
+            }
         }
     }
 
@@ -201,4 +209,3 @@ $(document).ready(function() {
         return pass;
     }
 });
-
