@@ -9,11 +9,11 @@
                 var pwd = $('#pwd').val();
                 if(!pwd)
                 {
-                    $( "#msg" ).html( '<div class="text-danger"><strong>Password can not be empty.</strong></div>' );
+                    $( "#msg" ).html( '<div class="alert alert-danger"><strong><p class="text-danger">Password can not be empty!</p></strong></div>' );
                     return;
                 }
                 if(pwd!=$('#pwd2').val()){
-                    $( "#msg" ).html( '<div class="text-danger"><strong>Password did not match. Please try again</strong></div>' );
+                    $( "#msg" ).html( '<div class="alert alert-danger"><strong><p class="text-danger">Password did not match. Please try again!.</p></strong></div>' );
                     return;
                 }
                 var data = {
@@ -26,7 +26,7 @@
                         location.replace('/forgot/thankyou');
                     },
                     error: function (data) {
-                        $( "#msg" ).html( '<div class="text-danger"><strong>Oops something went wrong! Please try again.</strong></div>' );
+                        $( "#msg" ).html( '<div class="alert alert-danger"><strong><p class="text-danger">Oops something went wrong. Please try again!</p></strong></div>' );
                     }
                 });
             });

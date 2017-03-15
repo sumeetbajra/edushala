@@ -23,7 +23,7 @@ var ajax = function(cfg){
 };
 
 var api_user_path = "rs/user/1/";
-var serverUrl = 'http://localhost:4232/';
+var serverUrl = 'http://rumsan.xyz:4232/';
 
 var api = {
     user: {
@@ -40,6 +40,11 @@ var api = {
         forgot: function(cfg){
             cfg.method = 'POST';
             cfg.url = api_user_path + 'auth/password/forgot';
+            ajax(cfg)
+        },
+        exists: function(cfg){
+            cfg.method = 'POST',
+            cfg.url = api_user_path + 'users/exists';
             ajax(cfg)
         },
         change_password: function(cfg){
