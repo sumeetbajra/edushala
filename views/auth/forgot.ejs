@@ -11,21 +11,31 @@
                 loadingBtn(submitBtn, 'Please wait..');
                 var email =$('#email').val();
                 if(email == '' || !validateEmail(email)){
-                    $('#error-msg').html('<p class="text-danger"><strong>Please enter valid email.</strong</p>');
+                    $('#error-msg').html('<div class="alert alert-danger"><p class="text-danger"><strong>Please enter valid email address!</strong></p></div>');
                     submitBtn.prop('disabled', false).html('Submit')
                 }
                 else {
-                    api.user.forgot({
+                    api.user.exists({
                         data: {email: $('#email').val()},
-                        success: function () {
-                            location.href = 'forgot/checkemail'
-                        },
-                        error: function (d) {
-                            $('#error-msg').html('<p class="text-danger"><strong>Oops, Server Error! Please try again.</strong</p>');
-                            submitBtn.prop('disabled', false).html('Submit')
-                            // alert(d.message);
+                        success: function (data) {
+                            if(data == false){
+                                $('#error-msg').html('<div class="alert alert-danger"><p class="text-danger"><strong>Email not found, Please follow  <a href="/signup">Signup</a> page to register!</strong></p></div>');
+                                submitBtn.prop('disabled', false).html('Submit');
+                            }
+                            else {
+                                api.user.forgot({
+                                    data: {email: $('#email').val()},
+                                    success: function () {
+                                        location.href = 'forgot/checkemail'
+                                    },
+                                    error: function (d) {
+                                        $('#error-msg').html('<div class="alert alert-danger"><p class="text-danger"><strong>Oops something went wrong. Please try again</strong></p></div>');
+                                        submitBtn.prop('disabled', false).html('Submit')
+                                    }
+                                })
+                            }
                         }
-                    })
+                    });
                 }
                 return false
             });

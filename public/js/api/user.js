@@ -42,6 +42,11 @@ var api = {
             cfg.url = api_user_path + 'auth/password/forgot';
             ajax(cfg)
         },
+        exists: function(cfg){
+            cfg.method = 'POST',
+            cfg.url = api_user_path + 'users/exists';
+            ajax(cfg)
+        },
         change_password: function(cfg){
             cfg.method = 'POST';
             cfg.url = serverUrl + api_user_path + 'auth/password/change';
