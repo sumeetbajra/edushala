@@ -23,7 +23,7 @@ var ajax = function(cfg){
 };
 
 var api_user_path = "rs/user/1/";
-var serverUrl = 'http://localhost:4232/';
+var serverUrl = 'http://rumsan.xyz:4232/';
 
 var api = {
     user: {
