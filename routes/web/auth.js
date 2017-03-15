@@ -145,7 +145,7 @@ module.exports = function (ctx) {
 
     ctx.app.get('/forgot/thankyou', function(req, res){
         data.page.title = 'Edushala - Forgot Password';
-        data.message = 'You password has been successfully reset.';
+        data.message = 'Your password has been successfully reset.' + '<br><br>  <a href="/login">Login</a> to your account using recently set password.';
         res.render('message', data)
     });
 
